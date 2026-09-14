@@ -83,7 +83,7 @@ export function HomePage() {
       <header className="masthead">
         <div>
           <h1 className="wordmark">
-            Tier<em>lists</em>
+            Ouic<em>Tierlist</em>
           </h1>
           <p className="tagline">
             {loading

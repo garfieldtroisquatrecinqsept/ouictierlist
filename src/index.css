@@ -4,26 +4,25 @@
 :root {
   color-scheme: light;
 
-  --paper: #faf8f5;
+  --paper: #ffffff;
   --paper-raised: #ffffff;
-  --ink: #1c1b19;
-  --ink-soft: #6f6a63;
-  --ink-faint: #a29b92;
-  --line: #e4dfd7;
-  --line-strong: #d3ccc1;
-  --accent: #2f4858;
-  --accent-deep: #253845;
-  --accent-soft: #eef1f3;
-  --on-accent: #fdfcfa;
-  --danger: #9c3b2e;
-  --danger-deep: #852f24;
-  --danger-soft: #f7ecea;
-  --dot: rgba(28, 27, 25, 0.035);
-  --veil: rgba(28, 27, 25, 0.32);
-  --hover-wash: rgba(28, 27, 25, 0.045);
-  --glass: rgba(255, 255, 255, 0.5);
-  --skeleton-base: #ece7e0;
-  --skeleton-shine: #f6f2ec;
+  --ink: #0d0d0e;
+  --ink-soft: #6b6b70;
+  --ink-faint: #9d9da3;
+  --line: #e3e3e5;
+  --line-strong: #cbcbcf;
+  --accent: #0d0d0e;
+  --accent-deep: #2a2a2d;
+  --accent-soft: #f1f1f2;
+  --on-accent: #ffffff;
+  --danger: #98342a;
+  --danger-deep: #7c281f;
+  --danger-soft: #f6ecea;
+  --veil: rgba(13, 13, 14, 0.28);
+  --hover-wash: rgba(13, 13, 14, 0.05);
+  --glass: rgba(255, 255, 255, 0.6);
+  --skeleton-base: #eeeeef;
+  --skeleton-shine: #f8f8f9;
 
   --tier-1: #a8574a;
   --tier-2: #b97c4e;
@@ -31,14 +30,17 @@
   --tier-4: #7d8f6b;
   --tier-5: #6d7d8b;
 
-  --radius: 10px;
-  --shadow-sm: 0 1px 2px rgba(28, 27, 25, 0.05);
-  --shadow-md: 0 6px 24px -10px rgba(28, 27, 25, 0.22);
-  --shadow-lg: 0 24px 60px -24px rgba(28, 27, 25, 0.35);
+  --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+
+  --radius: 3px;
+  --shadow-sm: 0 1px 1px rgba(13, 13, 14, 0.04);
+  --shadow-md: 0 4px 16px -8px rgba(13, 13, 14, 0.2);
+  --shadow-lg: 0 20px 50px -22px rgba(13, 13, 14, 0.3);
 
   --overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: var(--font-ui);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
@@ -46,30 +48,29 @@
 :root[data-theme='dark'] {
   color-scheme: dark;
 
-  --paper: #16171b;
-  --paper-raised: #1e2026;
-  --ink: #ecebe7;
-  --ink-soft: #9c9992;
-  --ink-faint: #6e6c67;
-  --line: #2b2d33;
-  --line-strong: #3a3d45;
-  --accent: #9bbacd;
-  --accent-deep: #b3ccdb;
-  --accent-soft: #242c33;
-  --on-accent: #14181c;
-  --danger: #c4685a;
-  --danger-deep: #d27f70;
-  --danger-soft: #2c1e1b;
-  --dot: rgba(255, 253, 248, 0.045);
-  --veil: rgba(8, 8, 10, 0.55);
-  --hover-wash: rgba(255, 253, 248, 0.06);
-  --glass: rgba(30, 32, 38, 0.5);
-  --skeleton-base: #24262c;
-  --skeleton-shine: #2e3138;
+  --paper: #000000;
+  --paper-raised: #0d0d0f;
+  --ink: #f2f2f0;
+  --ink-soft: #97979c;
+  --ink-faint: #66666b;
+  --line: #232326;
+  --line-strong: #37373c;
+  --accent: #f2f2f0;
+  --accent-deep: #d5d5d2;
+  --accent-soft: #191919;
+  --on-accent: #000000;
+  --danger: #bf5748;
+  --danger-deep: #d06c5c;
+  --danger-soft: #241413;
+  --veil: rgba(0, 0, 0, 0.62);
+  --hover-wash: rgba(255, 255, 255, 0.07);
+  --glass: rgba(13, 13, 15, 0.6);
+  --skeleton-base: #161618;
+  --skeleton-shine: #222225;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 26px -12px rgba(0, 0, 0, 0.75);
-  --shadow-lg: 0 28px 70px -30px rgba(0, 0, 0, 0.9);
+  --shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 18px -8px rgba(0, 0, 0, 0.85);
+  --shadow-lg: 0 22px 54px -24px rgba(0, 0, 0, 0.95);
 }
 
 * {
@@ -79,8 +80,6 @@
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
-  background-size: 22px 22px;
   color: var(--ink);
   font-size: 15px;
   line-height: 1.55;
@@ -216,9 +215,9 @@ input:focus {
 }
 
 .wordmark {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(3.75rem, 13vw, 8.5rem);
+  font-size: clamp(2.6rem, 9vw, 6.25rem);
   line-height: 0.86;
   letter-spacing: -0.03em;
   margin: 0;
@@ -226,7 +225,7 @@ input:focus {
 
 .wordmark em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--ink-soft);
 }
 
 .masthead-actions {
@@ -268,7 +267,7 @@ input:focus {
 }
 
 .logo-fallback {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-ui);
   font-size: 1.5rem;
   letter-spacing: -0.01em;
 }
@@ -284,7 +283,7 @@ input:focus {
   width: 38px;
   height: 38px;
   padding: 0;
-  border-radius: 999px;
+  border-radius: var(--radius);
   color: var(--ink-soft);
 }
 
@@ -330,7 +329,7 @@ input:focus {
   min-width: 18px;
   height: 18px;
   padding: 0 5px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   background: var(--accent);
   color: var(--on-accent);
   font-size: 0.68rem;
@@ -345,7 +344,7 @@ input:focus {
   width: 296px;
   padding: 1rem;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 4px;
   background: var(--paper-raised);
   box-shadow: var(--shadow-lg);
   animation: modal-in 0.32s var(--overshoot) both;
@@ -385,7 +384,7 @@ input:focus {
   width: 100%;
   padding: 0.42rem 0.5rem;
   border: 0;
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: transparent;
   box-shadow: none;
   text-align: left;
@@ -428,7 +427,7 @@ input:focus {
 }
 
 .filter-box {
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .filter-radio {
@@ -477,7 +476,7 @@ input:focus {
   height: 100%;
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 4px;
   padding: 1.25rem 1.25rem 1.1rem;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
@@ -499,7 +498,8 @@ input:focus {
 }
 
 .tierlist-card h2 {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-ui);
+  font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.2;
   margin: 0.75rem 0 0.5rem;
@@ -521,7 +521,7 @@ input:focus {
   text-transform: uppercase;
   color: var(--ink-soft);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius);
   padding: 0.16rem 0.65rem;
 }
 
@@ -542,12 +542,13 @@ input:focus {
   text-align: center;
   padding: 5rem 1.5rem;
   border: 1px dashed var(--line-strong);
-  border-radius: 16px;
+  border-radius: 4px;
   background: var(--glass);
 }
 
 .empty p {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-ui);
+  font-weight: 400;
   font-size: 1.7rem;
   margin: 0 0 1.25rem;
   color: var(--ink-soft);
@@ -569,15 +570,17 @@ input:focus {
   width: min(540px, 100%);
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: 5px;
   padding: 1.9rem;
   box-shadow: var(--shadow-lg);
   animation: modal-in 0.42s var(--overshoot) both;
 }
 
 .modal h2 {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 2rem;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: -0.015em;
   margin: 0 0 1.4rem;
 }
 
@@ -670,8 +673,7 @@ input:focus {
 }
 
 .sheet-title {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-weight: 400;
+  font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4rem);
   line-height: 1;
   letter-spacing: -0.02em;
@@ -706,8 +708,7 @@ input:focus {
   border-radius: 0;
   background: none;
   box-shadow: none;
-  font-family: 'Instrument Serif', Georgia, serif;
-  letter-spacing: 0.02em;
+  font-family: var(--font-ui);
 }
 
 :where(.board) input:focus {
@@ -726,8 +727,8 @@ input:focus {
 
 .skeleton-card {
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1.25rem;
+  border-radius: 4px;
+  border-radius: 4px;
   background: var(--paper-raised);
   display: flex;
   flex-direction: column;
@@ -735,8 +736,13 @@ input:focus {
 }
 
 .shimmer {
-  border-radius: 6px;
-  background: linear-gradient(90deg, var(--skeleton-base) 25%, var(--skeleton-shine) 50%, var(--skeleton-base) 75%);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base) 75%
+  );
   background-size: 240% 100%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
@@ -744,7 +750,7 @@ input:focus {
 .shimmer.badge-line {
   width: 44px;
   height: 16px;
-  border-radius: 999px;
+  border-radius: var(--radius);
 }
 
 .shimmer.title-line {

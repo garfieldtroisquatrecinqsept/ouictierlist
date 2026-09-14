@@ -245,7 +245,7 @@ export function TierList({
 
   return (
     <div className={"select-none " + (className ?? "")}>
-      <div className="overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_1px_3px_rgba(24,24,27,0.05)] transition-colors duration-200 dark:border-white/10 dark:bg-zinc-900 dark:shadow-[0_28px_70px_-32px_rgba(0,0,0,0.9)] dark:ring-1 dark:ring-white/[0.04]">
+      <div className="overflow-hidden rounded-sm border border-zinc-200/80 bg-white shadow-[0_1px_3px_rgba(24,24,27,0.05)] transition-colors duration-200 dark:border-white/10 dark:bg-zinc-900 dark:shadow-[0_28px_70px_-32px_rgba(0,0,0,0.9)] dark:ring-1 dark:ring-white/[0.04]">
         {value.tiers.map((tier, ti) => (
           <motion.div
             key={tier.id}
@@ -274,7 +274,7 @@ export function TierList({
                     aria-label="Monter le tier"
                     disabled={ti === 0}
                     onClick={() => moveTier(tier.id, -1)}
-                    className="pointer-events-auto absolute left-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-md bg-black/20 text-white hover:bg-black/40 disabled:opacity-25"
+                    className="pointer-events-auto absolute left-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-sm bg-black/20 text-white hover:bg-black/40 disabled:opacity-25"
                   >
                     <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
                       <path d="M6 15l6-6 6 6" />
@@ -285,7 +285,7 @@ export function TierList({
                     aria-label="Descendre le tier"
                     disabled={ti === value.tiers.length - 1}
                     onClick={() => moveTier(tier.id, 1)}
-                    className="pointer-events-auto absolute bottom-1.5 left-1.5 grid h-5 w-5 place-items-center rounded-md bg-black/20 text-white hover:bg-black/40 disabled:opacity-25"
+                    className="pointer-events-auto absolute bottom-1.5 left-1.5 grid h-5 w-5 place-items-center rounded-sm bg-black/20 text-white hover:bg-black/40 disabled:opacity-25"
                   >
                     <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
                       <path d="M6 9l6 6 6-6" />
@@ -296,7 +296,7 @@ export function TierList({
                       type="button"
                       aria-label="Supprimer le tier"
                       onClick={() => removeTier(tier.id)}
-                      className="pointer-events-auto absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-md bg-black/20 text-white hover:bg-black/40"
+                      className="pointer-events-auto absolute right-1.5 top-1.5 grid h-5 w-5 place-items-center rounded-sm bg-black/20 text-white hover:bg-black/40"
                     >
                       <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round">
                         <path d="M6 6l12 12M18 6L6 18" />
@@ -327,7 +327,7 @@ export function TierList({
           <button
             type="button"
             onClick={addTier}
-            className="inline-flex items-center gap-1 rounded-lg px-2 py-1 text-[12px] font-medium text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+            className="inline-flex items-center gap-1 rounded-sm px-2 py-1 text-[12px] font-medium text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
           >
             <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
               <path d="M12 5v14M5 12h14" />
@@ -339,7 +339,7 @@ export function TierList({
 
       <div
         className={
-          "mt-3 rounded-2xl border p-3 transition-colors duration-200 " +
+          "mt-3 rounded-sm border p-3 transition-colors duration-200 " +
           (over?.zone === POOL
             ? "border-zinc-300 bg-zinc-100/80 dark:border-white/20 dark:bg-zinc-800"
             : "border-zinc-200 bg-zinc-50/80 dark:border-white/10 dark:bg-zinc-900 dark:ring-1 dark:ring-white/[0.04]")
@@ -353,7 +353,7 @@ export function TierList({
           <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-zinc-400 dark:text-zinc-500">
             Non classés
           </span>
-          <span className="grid h-4 min-w-4 place-items-center rounded-full bg-zinc-200 px-1 text-[10px] font-semibold tabular-nums text-zinc-500 dark:bg-zinc-700 dark:text-zinc-300">
+          <span className="grid h-4 min-w-4 place-items-center rounded-sm bg-zinc-200 px-1 text-[10px] font-semibold tabular-nums text-zinc-500 dark:bg-zinc-700 dark:text-zinc-300">
             {value.pool.length}
           </span>
         </div>
@@ -435,7 +435,7 @@ function Tile({
           aria-label={`Retirer ${item.label ?? ""}`}
           onPointerDown={(e) => e.stopPropagation()}
           onClick={onRemove}
-          className="absolute -right-1.5 -top-1.5 z-30 grid h-5 w-5 place-items-center rounded-full border border-zinc-300 bg-white p-0 text-zinc-500 opacity-0 shadow-sm transition-opacity hover:text-zinc-900 group-hover/tile:opacity-100 focus-visible:opacity-100"
+          className="absolute -right-1.5 -top-1.5 z-30 grid h-5 w-5 place-items-center rounded-sm border border-zinc-300 bg-white p-0 text-zinc-500 opacity-0 shadow-sm transition-opacity hover:text-zinc-900 group-hover/tile:opacity-100 focus-visible:opacity-100"
         >
           <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round">
             <path d="M6 6l12 12M18 6L6 18" />
@@ -470,7 +470,7 @@ function TileFace({ item, size, dragging }: { item: TierItem; size: number; drag
   return (
     <div
       className={
-        "flex select-none flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-zinc-200/80 transition-colors duration-200 dark:bg-zinc-800 dark:ring-zinc-700 " +
+        "flex select-none flex-col overflow-hidden rounded-sm bg-white ring-1 ring-zinc-200/80 transition-colors duration-200 dark:bg-zinc-800 dark:ring-zinc-700 " +
         (dragging
           ? "shadow-[0_22px_38px_-12px_rgba(24,24,27,0.45)] ring-zinc-300 dark:ring-zinc-600"
           : "shadow-[0_1px_2px_rgba(24,24,27,0.06)]")
@@ -502,7 +502,7 @@ function Indicator({ size, height }: { size: number; height: number }) {
     <motion.span
       layout
       aria-hidden
-      className="shrink-0 rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-200/40 dark:border-zinc-600 dark:bg-zinc-700/40"
+      className="shrink-0 rounded-sm border-2 border-dashed border-zinc-300 bg-zinc-200/40 dark:border-zinc-600 dark:bg-zinc-700/40"
       style={{ width: size, height }}
     />
   );
