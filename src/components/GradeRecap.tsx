@@ -45,6 +45,8 @@ export function GradeRecap({ tierlist }: Props) {
     }
   }
 
+  const columns = rosters.length <= 3 ? 1 : rosters.length <= 12 ? 2 : 3
+
   if (rosters.length === 0) {
     return (
       <section className="recap">
@@ -72,7 +74,7 @@ export function GradeRecap({ tierlist }: Props) {
           <span>OuicTierlist</span>
         </div>
 
-        <div className="recap-grid">
+        <div className={`recap-grid cols-${columns}`}>
           {rosters.map((roster) => {
             const team = teamByShort(roster.short)
             return (

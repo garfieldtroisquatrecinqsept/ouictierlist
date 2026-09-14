@@ -6,6 +6,7 @@ import { ConfirmDialog } from '../components/ConfirmDialog'
 import { FilterMenu } from '../components/FilterMenu'
 import type { SortId } from '../components/FilterMenu'
 import { SkeletonGrid } from '../components/SkeletonGrid'
+import { TierlistPreview } from '../components/TierlistPreview'
 import { getCategory } from '../lib/categories'
 import { useTierlists } from '../store/TierlistsContext'
 import type { CategoryId, TierlistMode } from '../types'
@@ -184,6 +185,7 @@ export function HomePage() {
                   <span className="badge">{category ? category.label : tierlist.category}</span>
                   {tierlist.mode === 'grades' ? <span className="badge">Notation</span> : null}
                   <h2>{tierlist.name}</h2>
+                  <TierlistPreview tierlist={tierlist} />
                   <p className="meta">
                     {tierlist.items.length} élément{tierlist.items.length > 1 ? 's' : ''} ·{' '}
                     {new Date(tierlist.updatedAt).toLocaleDateString('fr-FR')}

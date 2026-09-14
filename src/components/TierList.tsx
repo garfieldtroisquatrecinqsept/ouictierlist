@@ -48,7 +48,7 @@ export type TierListProps = {
 const SPRING = { type: "spring" as const, stiffness: 560, damping: 38, mass: 0.7 };
 
 // Any CSS background value works (gradients read more premium than flat fills).
-const TIER_COLORS = [
+export const TIER_COLORS = [
   "linear-gradient(135deg,#FB7185,#9F1239)", // S - rose to crimson
   "linear-gradient(135deg,#FDBA74,#C2410C)", // A - amber to burnt orange
   "linear-gradient(135deg,#FDE047,#A16207)", // B - gold
