@@ -1464,6 +1464,35 @@ input:focus {
   margin: 0;
 }
 
+.sheet-title-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: text;
+  border-radius: 3px;
+}
+
+.sheet-title-edit svg {
+  opacity: 0;
+  color: var(--ink-faint);
+  transition: opacity 0.18s ease;
+}
+
+.sheet-title-edit:hover svg,
+.sheet-title-edit:focus-visible svg {
+  opacity: 1;
+}
+
+.sheet-title-input {
+  min-width: 0;
+  width: min(100%, 22ch);
+  padding: 0 0.3rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
 .sheet-title {
   font-family: var(--font-display);
   font-weight: 600;
@@ -2368,8 +2397,19 @@ span.gcell-box {
   object-fit: contain;
 }
 
+.rt-side {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.rt-side.end {
+  justify-content: flex-end;
+}
+
 .recap-title strong {
-  flex: 1;
+  flex: 0 1 auto;
   min-width: 0;
   text-align: center;
   font-family: var(--font-poster);

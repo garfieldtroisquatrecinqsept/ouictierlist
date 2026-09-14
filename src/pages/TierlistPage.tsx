@@ -47,6 +47,8 @@ export function TierlistPage() {
   const boardSheet = useRef<HTMLDivElement>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [freeEntry, setFreeEntry] = useState(false)
+  const [renaming, setRenaming] = useState(false)
+  const [draftName, setDraftName] = useState('')
   const [background, setBackground] = useState<ExportChoice>(() => loadChoice())
 
   const tierlist = getTierlist(id)
@@ -178,6 +180,13 @@ export function TierlistPage() {
   }
   const activeFilters = benchRoles.length + benchTeams.length + benchLeagues.length
 
+  function commitName() {
+    const trimmed = draftName.trim()
+    setRenaming(false)
+    if (!trimmed || trimmed === tierlist?.name) return
+    updateTierlist(id, (current) => ({ ...current, name: trimmed, updatedAt: Date.now() }))
+  }
+
   async function exportBoard() {
     if (!boardSheet.current || !tierlist) return
     setExporting(true)
@@ -296,7 +305,42 @@ export function TierlistPage() {
           <button type="button" className="ghost" onClick={() => navigate('/')}>
             ← Toutes les tierlists
           </button>
-          <h1 className="sheet-title">{tierlist.name}</h1>
+          {renaming ? (
+            <input
+              className="sheet-title sheet-title-input"
+              autoFocus
+              value={draftName}
+              onChange={(event) => setDraftName(event.target.value)}
+              onBlur={commitName}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') commitName()
+                if (event.key === 'Escape') setRenaming(false)
+              }}
+            />
+          ) : (
+            <h1
+              className="sheet-title sheet-title-edit"
+              title="Cliquer pour renommer"
+              tabIndex={0}
+              role="button"
+              onClick={() => {
+                setDraftName(tierlist.name)
+                setRenaming(true)
+              }}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  setDraftName(tierlist.name)
+                  setRenaming(true)
+                }
+              }}
+            >
+              {tierlist.name}
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" />
+              </svg>
+            </h1>
+          )}
           <p className="tagline">{category ? category.fullName : tierlist.category}</p>
         </div>
       </header>

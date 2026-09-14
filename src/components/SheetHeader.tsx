@@ -12,17 +12,21 @@ export function SheetHeader({ title, onDark }: Props) {
 
   return (
     <div className="recap-title">
-      <img
-        className="recap-worlds"
-        src={`${base}worlds-2026-${light ? 'light' : 'dark'}.png`}
-        alt="Worlds 2026"
-      />
+      <span className="rt-side">
+        <img
+          className="recap-worlds"
+          src={`${base}worlds-2026-${light ? 'light' : 'dark'}.png`}
+          alt="Worlds 2026"
+        />
+      </span>
       <strong>{title}</strong>
-      <img
-        className="recap-brand-logo"
-        src={`${base}raphcorp-${light ? 'dark' : 'light'}.png`}
-        alt="RaphCorp"
-      />
+      <span className="rt-side end">
+        <img
+          className="recap-brand-logo"
+          src={`${base}raphcorp-${light ? 'dark' : 'light'}.png`}
+          alt="RaphCorp"
+        />
+      </span>
     </div>
   )
 }
