@@ -53,6 +53,31 @@ remplaces par des underscores. L'API Cargo elle-meme est fortement limitee en an
 La qualification n'etait pas terminee a la date de collecte (2026-09-14) : 11 equipes sur
 une vingtaine de places. Pour completer, relancer la collecte et regenerer le JSON.
 
+## Statistiques individuelles
+
+`src/data/stats.json` contient les stats de chaque joueur pour la saison S16 (2026),
+tous splits et tous tournois, collectees sur [gol.gg](https://gol.gg/) :
+
+| Bloc | Contenu |
+| --- | --- |
+| general | bilan, winrate, KDA, CS/min, or/min, part d'or, participation aux kills |
+| earlyGame | differentiels CS / or / XP a 15 min, % devant en CS, first blood |
+| aggression | degats/min, part des degats, K+A/min, solo kills, pentakills |
+| vision | score de vision, wards, wards de controle, wards nettoyees, par minute |
+| champions | les 10 plus joues avec parties, winrate et KDA |
+
+Les icones de champions sont dans `public/champions/`.
+
+Pour regenerer apres une mise a jour des rosters ou un changement de saison :
+
+```bash
+python scripts/collect_stats.py        # saison S16 par defaut
+python scripts/collect_stats.py S17    # autre saison
+```
+
+Le script rattache chaque joueur a son identifiant gol.gg par son pseudo et signale
+ceux qu'il n'arrive pas a rattacher plutot que de deviner.
+
 ## Developpement
 
 ```bash

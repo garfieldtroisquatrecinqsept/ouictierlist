@@ -1,5 +1,6 @@
 import data from '../data/players.json'
 import type { RoleId } from '../types'
+import statsData from '../data/stats.json'
 
 export interface PlayerTeam {
   short: string
@@ -68,3 +69,86 @@ export function roleIcon(role: RoleId, variant: 'light' | 'dark' = 'dark'): stri
 export function teamByShort(short: string): PlayerTeam | undefined {
   return TEAMS.find((team) => team.short === short)
 }
+
+
+export interface ChampionStat {
+  name: string
+  slug: string
+  games: number
+  winrate: string
+  kda: string
+}
+
+export interface PlayerStats {
+  golggId: string
+  general: Record<string, string | null>
+  earlyGame: Record<string, string | null>
+  aggression: Record<string, string | null>
+  vision: Record<string, string | null>
+  champions: ChampionStat[]
+}
+
+export const STATS_SEASON: string = statsData.season
+export const STATS_SOURCE: string = statsData.source
+const STATS = statsData.players as unknown as Record<string, PlayerStats>
+
+export function statsFor(playerId: string): PlayerStats | undefined {
+  return STATS[playerId]
+}
+
+export function championIcon(slug: string): string {
+  return `${import.meta.env.BASE_URL}champions/${slug}.png`
+}
+
+export const STAT_BLOCKS: { key: keyof PlayerStats; title: string; fields: [string, string][] }[] = [
+  [
+    'general',
+    'Général',
+    [
+      ['record', 'Bilan'],
+      ['winrate', 'Winrate'],
+      ['kda', 'KDA'],
+      ['csPerMin', 'CS / min'],
+      ['goldPerMin', 'Or / min'],
+      ['goldShare', "Part d'or"],
+      ['killParticipation', 'Participation aux kills'],
+    ],
+  ],
+  [
+    'earlyGame',
+    'Early game',
+    [
+      ['csDiff15', 'Diff. CS à 15 min'],
+      ['goldDiff15', "Diff. d'or à 15 min"],
+      ['xpDiff15', "Diff. d'XP à 15 min"],
+      ['aheadInCs15', 'Devant en CS à 15 min'],
+      ['firstBloodParticipation', 'Participation au first blood'],
+      ['firstBloodVictim', 'Victime du first blood'],
+    ],
+  ],
+  [
+    'aggression',
+    'Agression',
+    [
+      ['damagePerMin', 'Dégâts / min'],
+      ['damageShare', 'Part des dégâts'],
+      ['kaPerMin', 'K+A / min'],
+      ['soloKills', 'Solo kills'],
+      ['pentakills', 'Pentakills'],
+    ],
+  ],
+  [
+    'vision',
+    'Vision',
+    [
+      ['visionScorePerMin', 'Score de vision / min'],
+      ['wardsPerMin', 'Wards / min'],
+      ['controlWardsPerMin', 'Wards de contrôle / min'],
+      ['wardsClearedPerMin', 'Wards nettoyées / min'],
+    ],
+  ],
+].map(([key, title, fields]) => ({
+  key: key as keyof PlayerStats,
+  title: title as string,
+  fields: fields as [string, string][],
+}))

@@ -1,28 +1,38 @@
 import { useState } from 'react'
 import { PlayerSelect } from '../components/PlayerSelect'
 import { TopNav } from '../components/TopNav'
-import { PLAYERS, ROLE_LABELS, asset, roleIcon, teamByShort } from '../lib/players'
-import { useTheme } from '../store/ThemeContext'
-import type { Player } from '../lib/players'
+import {
+  PLAYERS,
+  ROLE_LABELS,
+  STATS_SEASON,
+  STAT_BLOCKS,
+  asset,
+  championIcon,
+  roleIcon,
+  statsFor,
+  teamByShort,
+} from '../lib/players'
+import type { Player, PlayerStats } from '../lib/players'
 
 const SLOTS = ['left', 'right'] as const
 type Slot = (typeof SLOTS)[number]
 
+const HIGHER_IS_WORSE = new Set(['firstBloodVictim'])
+
+function numeric(value: string | null | undefined): number | null {
+  if (!value) return null
+  const cleaned = value.replace(/\s/g, '').replace('%', '').replace(',', '.')
+  const match = cleaned.match(/^[+-]?\d+(\.\d+)?$/)
+  return match ? Number(cleaned) : null
+}
+
 export function ComparePage() {
-  const { theme } = useTheme()
-  const uiVariant = theme === 'dark' ? 'dark' : 'light'
   const [picked, setPicked] = useState<Record<Slot, string>>({ left: '', right: '' })
 
   const left = PLAYERS.find((p) => p.id === picked.left) ?? null
   const right = PLAYERS.find((p) => p.id === picked.right) ?? null
-
-  const rows: { label: string; get: (p: Player) => string }[] = [
-    { label: 'Poste', get: (p) => ROLE_LABELS[p.role] },
-    { label: 'Équipe', get: (p) => teamByShort(p.team)?.name ?? p.team },
-    { label: 'Ligue', get: (p) => p.league },
-    { label: 'Région', get: (p) => p.region },
-    { label: 'Pays', get: (p) => p.country },
-  ]
+  const leftStats = left ? statsFor(left.id) : undefined
+  const rightStats = right ? statsFor(right.id) : undefined
 
   function slot(side: Slot, player: Player | null) {
     const team = player ? teamByShort(player.team) : null
@@ -47,7 +57,7 @@ export function ComparePage() {
               </div>
               <h2>{player.name}</h2>
               <p className="meta">
-                {team?.name ?? player.team} · {player.league}
+                {team?.name ?? player.team} · {ROLE_LABELS[player.role]} · {player.league}
               </p>
             </>
           ) : (
@@ -58,6 +68,44 @@ export function ComparePage() {
     )
   }
 
+  function statRow(field: string, label: string, blockKey: keyof PlayerStats) {
+    const a = (leftStats?.[blockKey] as Record<string, string | null>)?.[field] ?? null
+    const b = (rightStats?.[blockKey] as Record<string, string | null>)?.[field] ?? null
+    const na = numeric(a)
+    const nb = numeric(b)
+    let lead: 'left' | 'right' | null = null
+    if (na !== null && nb !== null && na !== nb) {
+      const leftBetter = HIGHER_IS_WORSE.has(field) ? na < nb : na > nb
+      lead = leftBetter ? 'left' : 'right'
+    }
+    return (
+      <tr key={field}>
+        <td className={lead === 'left' ? 'compare-value lead' : 'compare-value'}>{a ?? '—'}</td>
+        <th>{label}</th>
+        <td className={lead === 'right' ? 'compare-value lead' : 'compare-value'}>{b ?? '—'}</td>
+      </tr>
+    )
+  }
+
+  function champColumn(stats: PlayerStats | undefined) {
+    if (!stats) return null
+    return (
+      <ul className="champ-list">
+        {stats.champions.map((champ) => (
+          <li key={champ.slug}>
+            <img src={championIcon(champ.slug)} alt="" />
+            <span className="champ-name">{champ.name}</span>
+            <span className="champ-meta">
+              {champ.games} parties · {champ.winrate} · KDA {champ.kda}
+            </span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  const both = left && right
+
   return (
     <div className="page">
       <TopNav />
@@ -67,7 +115,9 @@ export function ComparePage() {
           <h1 className="wordmark">
             Face à <em>face</em>
           </h1>
-          <p className="tagline">Choisis deux joueurs pour les mettre côte à côte</p>
+          <p className="tagline">
+            Statistiques {STATS_SEASON} (2026), tous splits et tous tournois · source gol.gg
+          </p>
         </div>
       </header>
 
@@ -76,41 +126,32 @@ export function ComparePage() {
         {slot('right', right)}
       </div>
 
-      {left && right ? (
+      {both ? (
         <div className="compare-table-wrap">
-        <table className="compare-table">
-          <tbody>
-            {rows.map((row) => {
-              const a = row.get(left)
-              const b = row.get(right)
-              const same = a === b
-              return (
-                <tr key={row.label} className={same ? 'same' : ''}>
-                  <td className="compare-value">{a}</td>
-                  <th>{row.label}</th>
-                  <td className="compare-value">{b}</td>
-                </tr>
-              )
-            })}
-            <tr className="same">
-              <td className="compare-value">
-                <img src={roleIcon(left.role, uiVariant)} alt="" width={20} height={20} />
-              </td>
-              <th>Picto</th>
-              <td className="compare-value">
-                <img src={roleIcon(right.role, uiVariant)} alt="" width={20} height={20} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      ) : null}
+          {STAT_BLOCKS.map((block) => (
+            <section key={block.key as string} className="compare-block">
+              <h3>{block.title}</h3>
+              <table className="compare-table">
+                <tbody>
+                  {block.fields.map(([field, label]) => statRow(field, label, block.key))}
+                </tbody>
+              </table>
+            </section>
+          ))}
 
-      <p className="compare-note">
-        Les statistiques de jeu (KDA, winrate, CS par minute…) ne sont pas encore dans la base :
-        elle ne contient aujourd'hui que l'identité des joueurs. Il faut une seconde collecte sur
-        Leaguepedia pour les ajouter.
-      </p>
+          <section className="compare-block">
+            <h3>Champions les plus joués</h3>
+            <div className="champ-grid">
+              {champColumn(leftStats)}
+              {champColumn(rightStats)}
+            </div>
+          </section>
+        </div>
+      ) : (
+        <p className="compare-note">
+          Choisis deux joueurs pour comparer leurs statistiques de la saison {STATS_SEASON}.
+        </p>
+      )}
     </div>
   )
 }

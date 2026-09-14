@@ -8,6 +8,7 @@ import {
   TEAMS,
   asset,
   roleIcon,
+  statsFor,
   teamByShort,
 } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
@@ -108,12 +109,16 @@ export function PlayersPage() {
               <th>Poste</th>
               <th>Équipe</th>
               <th>Ligue</th>
+              <th className="num">Winrate</th>
+              <th className="num">KDA</th>
+              <th className="num">CS/min</th>
               <th>Pays</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((player) => {
               const team = teamByShort(player.team)
+              const stats = statsFor(player.id)?.general
               return (
                 <tr key={player.id}>
                   <td className="db-photo">
@@ -133,6 +138,9 @@ export function PlayersPage() {
                     </span>
                   </td>
                   <td>{player.league}</td>
+                  <td className="num">{stats?.winrate ?? '—'}</td>
+                  <td className="num">{stats?.kda ?? '—'}</td>
+                  <td className="num">{stats?.csPerMin ?? '—'}</td>
                   <td className="db-muted">{player.country}</td>
                 </tr>
               )
