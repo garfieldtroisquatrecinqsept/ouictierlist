@@ -1,4 +1,12 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/anton.woff2') format('woff2');
+}
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 :root {
@@ -33,6 +41,7 @@
 
   --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-poster: 'Anton', 'Space Grotesk', 'Inter', system-ui, sans-serif;
 
   --radius: 3px;
   --shadow-sm: 0 1px 1px rgba(13, 13, 14, 0.04);
@@ -2363,10 +2372,11 @@ span.gcell-box {
   flex: 1;
   min-width: 0;
   text-align: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  font-size: 2.15rem;
+  font-family: var(--font-poster);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-size: 2.3rem;
   line-height: 1.1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2374,22 +2384,17 @@ span.gcell-box {
 }
 
 .recap-title span {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-poster);
+  font-size: 0.92rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-faint);
 }
 
-.recap-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+.recap-brand-logo {
+  width: 92px;
+  height: 92px;
   flex: none;
-}
-
-.recap-brand img {
-  width: 64px;
-  height: 64px;
   object-fit: contain;
 }
 
@@ -2919,8 +2924,7 @@ span.gcell-box {
   transition: background 0.25s ease, padding 0.25s ease;
 }
 
-.on-dark > .recap-title strong,
-.on-dark > .recap-title .recap-brand {
+.on-dark > .recap-title strong {
   color: #f4f4f2;
 }
 

@@ -18,10 +18,11 @@ export function SheetHeader({ title, onDark }: Props) {
         alt="Worlds 2026"
       />
       <strong>{title}</strong>
-      <span className="recap-brand">
-        <img src={`${base}raphcorp-${light ? 'dark' : 'light'}.png`} alt="RaphCorp" />
-        OuicTierlist
-      </span>
+      <img
+        className="recap-brand-logo"
+        src={`${base}raphcorp-${light ? 'dark' : 'light'}.png`}
+        alt="RaphCorp"
+      />
     </div>
   )
 }
