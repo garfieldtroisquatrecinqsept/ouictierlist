@@ -7,11 +7,12 @@ import { ThemeToggle } from '../components/ThemeToggle'
 import { TierList } from '../components/TierList'
 import type { TierListValue } from '../components/TierList'
 import { getCategory } from '../lib/categories'
-import { asset, teamByShort } from '../lib/players'
+import { ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort } from '../lib/players'
 import type { Player } from '../lib/players'
+import { useTheme } from '../store/ThemeContext'
 import { createId } from '../lib/storage'
 import { useTierlists } from '../store/TierlistsContext'
-import type { TierItem } from '../types'
+import type { RoleId, TierItem } from '../types'
 
 const TIER_COLORS = ['#a8574a', '#b97c4e', '#b39a51', '#7d8f6b', '#6d7d8b', '#8a7a6b', '#6f6a63']
 
@@ -19,10 +20,23 @@ export function TierlistPage() {
   const { id = '' } = useParams()
   const navigate = useNavigate()
   const { getTierlist, updateTierlist, loading } = useTierlists()
+  const { theme } = useTheme()
   const [label, setLabel] = useState('')
   const [pickerOpen, setPickerOpen] = useState(false)
+  const [benchRoles, setBenchRoles] = useState<RoleId[]>([])
 
   const tierlist = getTierlist(id)
+
+  const hiddenPoolIds = useMemo(() => {
+    if (!tierlist || benchRoles.length === 0) return new Set<string>()
+    const byId = new Map(tierlist.items.map((item) => [item.id, item]))
+    return new Set(
+      tierlist.poolItemIds.filter((itemId) => {
+        const role = byId.get(itemId)?.role
+        return !role || !benchRoles.includes(role)
+      }),
+    )
+  }, [tierlist, benchRoles])
 
   const board = useMemo<TierListValue | null>(() => {
     if (!tierlist) return null
@@ -35,7 +49,7 @@ export function TierlistPage() {
         label: item.label,
         image: item.image ?? undefined,
         badge: item.teamLogo ?? undefined,
-        roleIcon: item.role ? `${import.meta.env.BASE_URL}roles/${item.role}-dark.webp` : undefined,
+        roleIcon: item.role ? roleIcon(item.role) : undefined,
       }
     }
     return {
@@ -45,9 +59,12 @@ export function TierlistPage() {
         color: TIER_COLORS[index % TIER_COLORS.length],
         items: tier.itemIds.map(toTile).filter((tile) => tile !== null),
       })),
-      pool: tierlist.poolItemIds.map(toTile).filter((tile) => tile !== null),
+      pool: tierlist.poolItemIds
+        .filter((itemId) => !hiddenPoolIds.has(itemId))
+        .map(toTile)
+        .filter((tile) => tile !== null),
     }
-  }, [tierlist])
+  }, [tierlist, hiddenPoolIds])
 
   if (loading) {
     return (
@@ -103,8 +120,14 @@ export function TierlistPage() {
         label: tier.label,
         itemIds: tier.items.map(register),
       }))
-      const poolItemIds = next.pool.map(register)
-      return { ...current, tiers, items: [...seen.values()], poolItemIds }
+      const hidden = current.poolItemIds.filter((itemId) => hiddenPoolIds.has(itemId))
+      const poolItemIds = [...next.pool.map(register), ...hidden]
+      const items = [...seen.values()]
+      const kept = new Set(items.map((item) => item.id))
+      current.items.forEach((item) => {
+        if (hidden.includes(item.id) && !kept.has(item.id)) items.push(item)
+      })
+      return { ...current, tiers, items, poolItemIds }
     })
   }
 
@@ -194,6 +217,40 @@ export function TierlistPage() {
           />
           <button type="submit">Ajouter</button>
         </form>
+      </div>
+
+      <div className="bench-filter">
+        <span className="bench-filter-label">Banc</span>
+        <div className="picker-roles">
+          {ROLE_ORDER.map((role) => (
+            <button
+              key={role}
+              type="button"
+              className={benchRoles.includes(role) ? 'role-toggle on' : 'role-toggle'}
+              onClick={() =>
+                setBenchRoles((current) =>
+                  current.includes(role)
+                    ? current.filter((value) => value !== role)
+                    : [...current, role],
+                )
+              }
+              aria-pressed={benchRoles.includes(role)}
+              title={ROLE_LABELS[role]}
+            >
+              <img src={roleIcon(role, theme === 'dark' ? 'dark' : 'light')} alt={ROLE_LABELS[role]} />
+            </button>
+          ))}
+        </div>
+        {benchRoles.length > 0 ? (
+          <>
+            <span className="hint">{hiddenPoolIds.size} masqué{hiddenPoolIds.size > 1 ? 's' : ''}</span>
+            <button type="button" className="link" onClick={() => setBenchRoles([])}>
+              Tout afficher
+            </button>
+          </>
+        ) : (
+          <span className="hint">tous les rôles</span>
+        )}
       </div>
 
       <TierList
