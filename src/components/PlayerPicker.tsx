@@ -9,6 +9,7 @@ import {
   roleIcon,
   teamByShort,
 } from '../lib/players'
+import { useTheme } from '../store/ThemeContext'
 import type { Player } from '../lib/players'
 import type { RoleId } from '../types'
 
@@ -20,6 +21,8 @@ interface Props {
 }
 
 export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
+  const { theme } = useTheme()
+  const uiVariant = theme === 'dark' ? 'dark' : 'light'
   const [search, setSearch] = useState('')
   const [roles, setRoles] = useState<RoleId[]>([])
   const [team, setTeam] = useState<string | 'all'>('all')
@@ -115,7 +118,7 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
                 aria-pressed={roles.includes(role)}
                 title={ROLE_LABELS[role]}
               >
-                <img src={roleIcon(role, 'light')} alt={ROLE_LABELS[role]} />
+                <img src={roleIcon(role, uiVariant)} alt={ROLE_LABELS[role]} />
               </button>
             ))}
           </div>

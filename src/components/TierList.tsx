@@ -503,45 +503,54 @@ function TileFace({ item, size, dragging }: { item: TierItem; size: number; drag
 }
 
 function PlayerOverlay({ item, size }: { item: TierItem; size: number }) {
-  const pad = Math.max(3, Math.round(size * 0.05));
-  const chip = Math.max(15, Math.round(size * 0.21));
-  const name = Math.max(9, Math.round(size * 0.108));
+  const padX = Math.max(3, Math.round(size * 0.045));
+  const padY = Math.max(3, Math.round(size * 0.042));
+  const gap = Math.max(2, Math.round(size * 0.035));
+  const mark = Math.max(11, Math.round(size * 0.14));
+  const base = Math.max(9, Math.round(size * 0.105));
+  const length = (item.label ?? "").length;
+  const room = size - 2 * padX - 2 * mark - 2 * gap;
+  const fitted = length > 0 ? Math.floor(room / (length * 0.8)) : base;
+  const name = Math.max(6, Math.min(base, fitted));
 
   return (
-    <>
-      {item.badge ? (
-        <span className="chip-plate absolute z-20" style={{ top: pad, left: pad, width: chip, height: chip }}>
-          <img src={item.badge} alt="" className="h-[78%] w-[78%] object-contain" draggable={false} />
-        </span>
-      ) : null}
-
-      {item.roleIcon ? (
-        <span className="chip-plate absolute z-20" style={{ top: pad, right: pad, width: chip, height: chip }}>
-          <img src={item.roleIcon} alt="" className="h-[72%] w-[72%] object-contain" draggable={false} />
-        </span>
-      ) : null}
-
-      {item.label ? (
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10">
-          <div
-            className="bg-gradient-to-t from-black/90 via-black/50 to-transparent"
-            style={{ height: Math.round(size * 0.42) }}
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10">
+      <div
+        className="bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+        style={{ height: Math.round(size * 0.16) }}
+      />
+      <div
+        className="flex items-center bg-black/90"
+        style={{ gap, padding: `${Math.max(2, Math.round(size * 0.03))}px ${padX}px ${padY}px` }}
+      >
+        {item.badge ? (
+          <img
+            src={item.badge}
+            alt=""
+            className="team-mark shrink-0 object-contain"
+            style={{ width: mark, height: mark }}
+            draggable={false}
           />
-          <div className="bg-black/90" style={{ padding: `0 ${pad}px ${Math.max(3, Math.round(size * 0.04))}px` }}>
-            <div
-              className="mx-auto bg-white/35"
-              style={{ width: Math.round(size * 0.19), height: 1, marginBottom: Math.max(3, Math.round(size * 0.035)) }}
-            />
-            <p
-              className="truncate text-center font-semibold uppercase leading-none tracking-[0.075em] text-white"
-              style={{ fontSize: name }}
-            >
-              {item.label}
-            </p>
-          </div>
-        </div>
-      ) : null}
-    </>
+        ) : null}
+
+        <p
+          className="min-w-0 flex-1 truncate text-center font-semibold uppercase leading-none tracking-[0.03em] text-white"
+          style={{ fontSize: name }}
+        >
+          {item.label}
+        </p>
+
+        {item.roleIcon ? (
+          <img
+            src={item.roleIcon}
+            alt=""
+            className="shrink-0 object-contain opacity-90"
+            style={{ width: mark, height: mark }}
+            draggable={false}
+          />
+        ) : null}
+      </div>
+    </div>
   );
 }
 

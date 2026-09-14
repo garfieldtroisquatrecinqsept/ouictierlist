@@ -202,7 +202,7 @@ export function TierlistPage() {
         onChange={handleBoardChange}
         onRemoveItem={handleRemoveItem}
         tierColors={TIER_COLORS}
-        tileSize={84}
+        tileSize={96}
       />
 
       <PlayerPicker
