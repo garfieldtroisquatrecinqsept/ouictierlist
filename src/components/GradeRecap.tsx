@@ -5,7 +5,6 @@ import { exportNode, isDarkBackground, loadChoice, sheetStyle } from '../lib/exp
 import type { ExportChoice } from '../lib/exportImage'
 import { gradeColor } from '../lib/grades'
 import { asset, roleIcon, teamByShort } from '../lib/players'
-import { useTheme } from '../store/ThemeContext'
 import type { Tierlist } from '../types'
 import { rostersOf, teamKey } from './GradeBoard'
 
@@ -14,7 +13,6 @@ interface Props {
 }
 
 export function GradeRecap({ tierlist }: Props) {
-  const { theme } = useTheme()
   const sheetRef = useRef<HTMLDivElement>(null)
   const [exporting, setExporting] = useState(false)
   const [open, setOpen] = useState(false)
