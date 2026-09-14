@@ -17,6 +17,8 @@ export type TierItem = {
   label?: string;
   emoji?: string;
   image?: string;
+  roleIcon?: string;
+  badge?: string;
 };
 
 export type Tier = {
@@ -56,7 +58,7 @@ const TIER_COLORS = [
 ];
 
 const POOL = "pool";
-const CAPTION_H = 20;
+const TILE_RATIO = 1.18;
 
 function uid() {
   return typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -220,8 +222,7 @@ export function TierList({
   const renderTiles = (items: TierItem[], zoneId: string) => {
     const showIndicator = over?.zone === zoneId ? over.index : -1;
     const visible = items.filter((i) => i.id !== dragId);
-    const captioned = allItems.some((i) => (i.image || i.emoji) && i.label);
-    const indH = tileSize + (captioned ? CAPTION_H : 0);
+    const indH = Math.round(tileSize * TILE_RATIO);
     const out: React.ReactNode[] = [];
     visible.forEach((item, i) => {
       if (i === showIndicator) out.push(<Indicator key={`ind-${zoneId}`} size={tileSize} height={indH} />);
@@ -241,7 +242,7 @@ export function TierList({
     return out;
   };
 
-  const rowMinH = tileSize + CAPTION_H + 2;
+  const rowMinH = Math.round(tileSize * TILE_RATIO) + 2;
 
   return (
     <div className={"select-none " + (className ?? "")}>
@@ -364,7 +365,7 @@ export function TierList({
           onMouseMove={(e) => dockX.set(e.clientX)}
           onMouseLeave={() => dockX.set(Number.POSITIVE_INFINITY)}
           className="flex flex-wrap content-end gap-2"
-          style={{ minHeight: tileSize + CAPTION_H }}
+          style={{ minHeight: Math.round(tileSize * TILE_RATIO) }}
         >
           {value.pool.filter((i) => i.id !== dragId).length === 0 && over?.zone !== POOL && (
             <span className="px-1 py-3 text-[12px] text-zinc-400 dark:text-zinc-600">
@@ -466,34 +467,81 @@ function DockMagnify({ mouseX, children }: { mouseX: MotionValue<number>; childr
 }
 
 function TileFace({ item, size, dragging }: { item: TierItem; size: number; dragging?: boolean }) {
-  const hasMedia = Boolean(item.image || item.emoji);
   return (
     <div
       className={
-        "flex select-none flex-col overflow-hidden rounded-sm bg-white ring-1 ring-zinc-200/80 transition-colors duration-200 dark:bg-zinc-800 dark:ring-zinc-700 " +
+        "relative flex select-none overflow-hidden rounded-sm bg-white ring-1 ring-zinc-200/80 transition-colors duration-200 dark:bg-zinc-800 dark:ring-zinc-700 " +
         (dragging
           ? "shadow-[0_22px_38px_-12px_rgba(24,24,27,0.45)] ring-zinc-300 dark:ring-zinc-600"
           : "shadow-[0_1px_2px_rgba(24,24,27,0.06)]")
       }
-      style={{ width: size }}
+      style={{ width: size, height: Math.round(size * TILE_RATIO) }}
     >
-      <div className="flex items-center justify-center overflow-hidden" style={{ width: size, height: size }}>
-        {item.image ? (
-          <img src={item.image} alt={item.label ?? ""} className="h-full w-full object-cover" draggable={false} />
-        ) : item.emoji ? (
-          <span style={{ fontSize: size * 0.44, lineHeight: 1 }}>{item.emoji}</span>
-        ) : (
-          <span className="px-1 text-center text-[12px] font-semibold text-zinc-600 dark:text-zinc-300">
-            {item.label}
-          </span>
-        )}
-      </div>
-      {hasMedia && item.label && (
-        <div className="truncate border-t border-zinc-100 px-1 py-1 text-center text-[10.5px] font-semibold leading-none text-zinc-700 transition-colors duration-200 dark:border-zinc-700/70 dark:text-zinc-200">
+      {item.image ? (
+        <img
+          src={item.image}
+          alt={item.label ?? ""}
+          className="h-full w-full object-cover object-top"
+          draggable={false}
+        />
+      ) : item.emoji ? (
+        <span
+          className="grid h-full w-full place-items-center"
+          style={{ fontSize: size * 0.44, lineHeight: 1 }}
+        >
+          {item.emoji}
+        </span>
+      ) : (
+        <span className="grid h-full w-full place-items-center px-1 text-center text-[12px] font-semibold text-zinc-600 dark:text-zinc-300">
           {item.label}
-        </div>
+        </span>
       )}
+
+      {item.image ? <PlayerOverlay item={item} size={size} /> : null}
     </div>
+  );
+}
+
+function PlayerOverlay({ item, size }: { item: TierItem; size: number }) {
+  const pad = Math.max(3, Math.round(size * 0.05));
+  const chip = Math.max(15, Math.round(size * 0.21));
+  const name = Math.max(9, Math.round(size * 0.12));
+
+  return (
+    <>
+      {item.badge ? (
+        <span className="chip-plate absolute z-20" style={{ top: pad, left: pad, width: chip, height: chip }}>
+          <img src={item.badge} alt="" className="h-[78%] w-[78%] object-contain" draggable={false} />
+        </span>
+      ) : null}
+
+      {item.roleIcon ? (
+        <span className="chip-plate absolute z-20" style={{ top: pad, right: pad, width: chip, height: chip }}>
+          <img src={item.roleIcon} alt="" className="h-[72%] w-[72%] object-contain" draggable={false} />
+        </span>
+      ) : null}
+
+      {item.label ? (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10">
+          <div
+            className="bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+            style={{ height: Math.round(size * 0.42) }}
+          />
+          <div className="bg-black/90" style={{ padding: `0 ${pad}px ${Math.max(3, Math.round(size * 0.04))}px` }}>
+            <div
+              className="mx-auto bg-white/35"
+              style={{ width: Math.round(size * 0.19), height: 1, marginBottom: Math.max(3, Math.round(size * 0.035)) }}
+            />
+            <p
+              className="truncate text-center font-semibold uppercase leading-none tracking-[0.075em] text-white"
+              style={{ fontSize: name }}
+            >
+              {item.label}
+            </p>
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 

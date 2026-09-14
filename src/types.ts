@@ -6,10 +6,14 @@ export interface Category {
   fullName: string
 }
 
+export type RoleId = 'top' | 'jungle' | 'mid' | 'bot' | 'support'
+
 export interface TierItem {
   id: string
   label: string
   image: string | null
+  role: RoleId | null
+  teamLogo: string | null
 }
 
 export interface Tier {

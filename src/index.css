@@ -702,6 +702,14 @@ input:focus {
   box-shadow: none;
 }
 
+.chip-plate {
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(2px);
+}
+
 :where(.board) input {
   padding: 0;
   border: 0;

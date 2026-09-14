@@ -25,7 +25,14 @@ export function TierlistPage() {
     const byId = new Map(tierlist.items.map((item) => [item.id, item]))
     const toTile = (itemId: string) => {
       const item = byId.get(itemId)
-      return item ? { id: item.id, label: item.label, image: item.image ?? undefined } : null
+      if (!item) return null
+      return {
+        id: item.id,
+        label: item.label,
+        image: item.image ?? undefined,
+        badge: item.teamLogo ?? undefined,
+        roleIcon: item.role ? `${import.meta.env.BASE_URL}roles/${item.role}-dark.webp` : undefined,
+      }
     }
     return {
       tiers: tierlist.tiers.map((tier, index) => ({
@@ -81,6 +88,8 @@ export function TierlistPage() {
           id: tile.id,
           label: tile.label ?? existing?.label ?? '',
           image: tile.image ?? existing?.image ?? null,
+          role: existing?.role ?? null,
+          teamLogo: existing?.teamLogo ?? null,
         })
         return tile.id
       }
@@ -111,7 +120,7 @@ export function TierlistPage() {
     const trimmed = label.trim()
     if (!trimmed) return
     updateTierlist(id, (current) => {
-      const item = { id: createId(), label: trimmed, image: null }
+      const item = { id: createId(), label: trimmed, image: null, role: null, teamLogo: null }
       return {
         ...current,
         items: [...current.items, item],
