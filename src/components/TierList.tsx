@@ -1,16 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  type MotionValue,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
-const DockContext = React.createContext<MotionValue<number> | null>(null);
 
 export type TierItem = {
   id: string;
@@ -87,7 +80,6 @@ export function TierList({
   const [lifted, setLifted] = React.useState(false);
   const [pointer, setPointer] = React.useState({ x: 0, y: 0 });
   const [over, setOver] = React.useState<{ zone: string; index: number } | null>(null);
-  const dockX = useMotionValue(Number.POSITIVE_INFINITY);
 
   React.useEffect(() => setMounted(true), []);
 
@@ -383,8 +375,6 @@ export function TierList({
           ref={(el) => {
             zoneRefs.current[POOL] = el
           }}
-          onMouseMove={(e) => dockX.set(e.clientX)}
-          onMouseLeave={() => dockX.set(Number.POSITIVE_INFINITY)}
           className="flex flex-wrap content-end gap-2"
           style={{ minHeight: Math.round(tileSize * TILE_RATIO) }}
         >
@@ -393,9 +383,7 @@ export function TierList({
               Tout est classé — glisse une tuile ici pour la déclasser
             </span>
           )}
-          <DockContext.Provider value={readOnly || lifted ? null : dockX}>
-            {renderTiles(value.pool, POOL)}
-          </DockContext.Provider>
+          {renderTiles(value.pool, POOL)}
         </div>
       </div>
 
@@ -434,7 +422,6 @@ function Tile({
   onRemove?: () => void;
   onPointerDown: (e: React.PointerEvent) => void;
 }) {
-  const mouseX = React.useContext(DockContext);
   return (
     <motion.div
       layout
@@ -448,13 +435,7 @@ function Tile({
       }
       style={{ touchAction: "none" }}
     >
-      {mouseX ? (
-        <DockMagnify mouseX={mouseX}>
-          <TileFace item={item} size={size} />
-        </DockMagnify>
-      ) : (
-        <TileFace item={item} size={size} />
-      )}
+      <TileFace item={item} size={size} />
       {!readOnly && onRemove && (
         <button
           type="button"
@@ -472,30 +453,11 @@ function Tile({
   );
 }
 
-// macOS-dock magnification: tiles swell as the pointer nears, with a soft falloff to neighbors.
-function DockMagnify({ mouseX, children }: { mouseX: MotionValue<number>; children: React.ReactNode }) {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const distance = useTransform(mouseX, (val) => {
-    const b = ref.current?.getBoundingClientRect();
-    if (!b) return 9999;
-    return val - (b.x + b.width / 2);
-  });
-  // Narrow falloff so only the tile directly under the pointer grows; neighbours stay put.
-  const scaleSync = useTransform(distance, [-34, 0, 34], [1, 1.1, 1], { clamp: true });
-  const scale = useSpring(scaleSync, { stiffness: 320, damping: 32, mass: 0.5 });
-  const zIndex = useTransform(scale, (s) => (s > 1.02 ? 20 : 0));
-  return (
-    <motion.div ref={ref} style={{ scale, zIndex, transformOrigin: "bottom center", position: "relative" }}>
-      {children}
-    </motion.div>
-  );
-}
-
 function TileFace({ item, size, dragging }: { item: TierItem; size: number; dragging?: boolean }) {
   return (
     <div
       className={
-        "relative flex select-none overflow-hidden rounded-sm bg-white ring-1 ring-zinc-200/80 transition-colors duration-200 dark:bg-zinc-800 dark:ring-zinc-700 " +
+        "relative flex select-none overflow-hidden rounded-sm bg-white ring-1 ring-zinc-200/80 transition-[colors,transform] duration-200 group-hover/tile:scale-[1.06] dark:bg-zinc-800 dark:ring-zinc-700 " +
         (dragging
           ? "shadow-[0_22px_38px_-12px_rgba(24,24,27,0.45)] ring-zinc-300 dark:ring-zinc-600"
           : "shadow-[0_1px_2px_rgba(24,24,27,0.06)]")

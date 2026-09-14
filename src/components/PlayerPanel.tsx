@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Palmares } from './Palmares'
 import { StatRadar } from './StatRadar'
 import {
@@ -23,6 +24,8 @@ interface Props {
 }
 
 export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: Props) {
+  const [statsOpen, setStatsOpen] = useState(false)
+
   if (!player) {
     return (
       <aside className={`player-panel empty ${className}`.trim()}>
@@ -66,7 +69,16 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
           </div>
 
           <div className="panel-right">
-          <div className="panel-blocks">
+          <button
+            type="button"
+            className="ghost stats-toggle"
+            onClick={() => setStatsOpen((value) => !value)}
+            aria-expanded={statsOpen}
+          >
+            <span className={statsOpen ? 'recap-caret open' : 'recap-caret'}>▸</span>
+            Statistiques détaillées
+          </button>
+          <div className="panel-blocks" hidden={!statsOpen}>
           {STAT_BLOCKS.map((block) => (
             <section key={block.key as string} className="panel-block">
               <h3>{block.title}</h3>
