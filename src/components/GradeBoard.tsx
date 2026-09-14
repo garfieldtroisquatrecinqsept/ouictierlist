@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { GradeCell } from './GradeCell'
-import { Palmares } from './Palmares'
 import { PLAYERS, ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort } from '../lib/players'
 import type { Player } from '../lib/players'
 import type { Tierlist } from '../types'
@@ -122,7 +121,6 @@ export function GradeBoard({
                 label={player.name}
                 onPick={(grade) => onGrade(player.id, grade)}
               />
-              <Palmares playerId={player.id} compact />
             </div>
           ))}
 

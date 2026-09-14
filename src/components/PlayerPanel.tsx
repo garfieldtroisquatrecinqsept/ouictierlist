@@ -60,6 +60,7 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
 
       {stats ? (
         <>
+          <div className="panel-left">
           <div className="panel-scope">
             <button
               type="button"
@@ -85,7 +86,9 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
               <Palmares playerId={player.id} />
             </section>
           ) : null}
+          </div>
 
+          <div className="panel-right">
           <div className="panel-blocks">
           {STAT_BLOCKS.map((block) => (
             <section key={block.key as string} className="panel-block">
@@ -123,6 +126,7 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
           <p className="panel-source">
             Saison {STATS_SEASON} (2026), tous splits et tournois · gol.gg
           </p>
+          </div>
         </>
       ) : (
         <p className="hint">Aucune statistique pour ce joueur.</p>
