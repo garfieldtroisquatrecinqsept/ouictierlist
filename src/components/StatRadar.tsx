@@ -126,14 +126,16 @@ export function StatRadar({ players, scope = 'all', size = 260 }: Props) {
                 <tspan x={x} dy="1.25em">
                   {ranks.map((rank, ri) =>
                     rank ? (
-                      <tspan
-                        key={players[ri].id}
-                        className={
-                          single && rank.rank <= 3 ? `radar-rank top${rank.rank}` : 'radar-rank'
-                        }
-                        fill={single ? undefined : COLORS[ri % COLORS.length]}
-                      >
-                        {(ri > 0 ? ' · ' : '') + rankLabel(rank.rank)}
+                      <tspan key={players[ri].id}>
+                        {ri > 0 ? <tspan className="radar-rank-sep"> · </tspan> : null}
+                        <tspan
+                          className={
+                            single && rank.rank <= 3 ? `radar-rank top${rank.rank}` : 'radar-rank'
+                          }
+                          style={single ? undefined : { fill: COLORS[ri % COLORS.length] }}
+                        >
+                          {rankLabel(rank.rank)}
+                        </tspan>
                       </tspan>
                     ) : null,
                   )}

@@ -1583,8 +1583,13 @@ input:focus {
   text-transform: uppercase;
 }
 
-.radar-rank {
+.radar-rank-sep {
   font-size: 9px;
+  fill: var(--ink-faint);
+}
+
+.radar-rank {
+  font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: none;
