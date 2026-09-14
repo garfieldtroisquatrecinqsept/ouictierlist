@@ -24,7 +24,7 @@ interface Props {
 }
 
 export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: Props) {
-  const [statsOpen, setStatsOpen] = useState(false)
+  const [statsOpen, setStatsOpen] = useState(true)
 
   if (!player) {
     return (
