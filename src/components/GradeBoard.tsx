@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { GradeCell } from './GradeCell'
-import { PLAYERS, ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort } from '../lib/players'
+import { PLAYERS, ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort, trophies, trophyColor } from '../lib/players'
 import type { Player } from '../lib/players'
 import type { Tierlist } from '../types'
 
@@ -31,6 +31,26 @@ export function rostersOf(tierlist: Tierlist) {
       players: players.sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)),
     }))
     .sort((a, b) => a.short.localeCompare(b.short))
+}
+
+export function TrophyRow({ playerId }: { playerId: string }) {
+  const list = trophies(playerId).filter((t) => t.count > 0)
+  if (list.length === 0) return <span className="strip-trophies empty">—</span>
+  return (
+    <span className="strip-trophies">
+      {list.slice(0, 4).map((t) => (
+        <span
+          key={t.code}
+          data-kind={t.code}
+          style={{ color: trophyColor(t.code) }}
+          title={t.detail ? `${t.label} : ${t.detail}` : t.label}
+        >
+          {t.code === 'WORLDS' ? 'Worlds' : t.code === 'FS' ? 'First Stand' : t.code === 'CUP' ? 'Cup' : t.code}
+          <b>{t.count}</b>
+        </span>
+      ))}
+    </span>
+  )
 }
 
 export function GradeBoard({
@@ -92,23 +112,30 @@ export function GradeBoard({
             >
               <button
                 type="button"
-                className="strip-name"
+                className="strip-face-button"
                 onClick={() => onSelectPlayer(player.id)}
                 title={`${player.name} — ${ROLE_LABELS[player.role]} — voir les stats`}
               >
-                <img src={roleIcon(player.role, 'light')} alt="" />
-                {player.name}
+                <span className="strip-face">
+                  {player.image ? <img src={asset(player.image) ?? ''} alt={player.name} /> : null}
+                  <img className="strip-role" src={roleIcon(player.role)} alt="" />
+                </span>
+                <span className="strip-label">{player.name}</span>
               </button>
               <GradeCell
                 value={tierlist.grades[player.id]}
                 label={player.name}
                 onPick={(grade) => onGrade(player.id, grade)}
               />
+              <TrophyRow playerId={player.id} />
             </div>
           ))}
 
           <div className="strip-col strip-col-team">
-            <span className="strip-name">Team</span>
+            <span className="strip-face team">
+              {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
+            </span>
+            <span className="strip-label">Team</span>
             <GradeCell
               value={tierlist.grades[teamKey(active.short)]}
               label={team?.name ?? active.short}

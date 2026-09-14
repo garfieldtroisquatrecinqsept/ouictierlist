@@ -1,6 +1,6 @@
 {
-  "source": "https://lol.fandom.com/",
-  "note": "Titres (1res places). Un split ne compte que si les playoffs sont gagnes, ou s il n existe pas de playoffs pour ce split.",
+  "source": "https://gol.gg/ (finales gagnees) + Leaguepedia pour l'ere pre-2016",
+  "note": "Un titre = une finale gagnee. LCK CL et autres divisions secondaires comptees separement.",
   "players": {
     "AL-Breathe": {
       "worlds": [],
@@ -50,7 +50,7 @@
       "cup": 0,
       "leagues": {
         "LPL": 2,
-        "LCK": 1
+        "LCK CL": 1
       }
     },
     "BLG-Bin": {
@@ -62,7 +62,7 @@
       "firstStand": 1,
       "cup": 0,
       "leagues": {
-        "LPL": 7
+        "LPL": 6
       }
     },
     "BLG-Flandre": {
@@ -74,7 +74,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LPL": 3
+        "LPL": 2
       }
     },
     "BLG-Wenbo": {
@@ -83,9 +83,7 @@
       "ewc": 0,
       "firstStand": 0,
       "cup": 0,
-      "leagues": {
-        "LPL": 1
-      }
+      "leagues": {}
     },
     "BLG-Xun": {
       "worlds": [],
@@ -94,7 +92,7 @@
       "firstStand": 1,
       "cup": 0,
       "leagues": {
-        "LPL": 4
+        "LPL": 3
       }
     },
     "BLG-Knight": {
@@ -104,9 +102,9 @@
       ],
       "ewc": 0,
       "firstStand": 1,
-      "cup": 0,
+      "cup": 1,
       "leagues": {
-        "LPL": 9
+        "LPL": 8
       }
     },
     "BLG-Viper": {
@@ -116,9 +114,9 @@
       "msi": [],
       "ewc": 0,
       "firstStand": 2,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
-        "LPL": 4,
+        "LPL": 3,
         "LCK": 1
       }
     },
@@ -129,7 +127,7 @@
       "firstStand": 1,
       "cup": 0,
       "leagues": {
-        "LPL": 6
+        "LPL": 5
       }
     },
     "CFO-Rest": {
@@ -139,7 +137,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCP": 5,
+        "LCP": 3,
         "PCS": 1,
         "LMS": 1
       }
@@ -171,7 +169,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCP": 5
+        "LCP": 3
       }
     },
     "CFO-Kino": {
@@ -188,9 +186,7 @@
       "ewc": 1,
       "firstStand": 0,
       "cup": 0,
-      "leagues": {
-        "LCK": 1
-      }
+      "leagues": {}
     },
     "DK-Lucid": {
       "worlds": [],
@@ -199,7 +195,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCK": 2
+        "LCK CL": 2
       }
     },
     "DK-ShowMaker": {
@@ -220,9 +216,7 @@
       "ewc": 1,
       "firstStand": 0,
       "cup": 0,
-      "leagues": {
-        "LCK": 2
-      }
+      "leagues": {}
     },
     "DK-Career": {
       "worlds": [],
@@ -231,7 +225,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCK": 4
+        "LCK CL": 1
       }
     },
     "G2-BrokenBlade": {
@@ -241,7 +235,8 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LEC": 11
+        "LEC": 11,
+        "LCS": 1
       }
     },
     "G2-SkewMond": {
@@ -251,7 +246,9 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LEC": 3
+        "LEC": 3,
+        "EM": 1,
+        "LFL": 1
       }
     },
     "G2-Caps": {
@@ -263,8 +260,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LEC": 15,
-        "EU LCS": 2
+        "LEC": 17
       }
     },
     "G2-Hans Sama": {
@@ -285,7 +281,8 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LEC": 3
+        "LEC": 3,
+        "EM": 1
       }
     },
     "GEN-Kiin": {
@@ -296,7 +293,7 @@
       ],
       "ewc": 1,
       "firstStand": 0,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 3
       }
@@ -311,7 +308,7 @@
       ],
       "ewc": 1,
       "firstStand": 0,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 6
       }
@@ -324,7 +321,7 @@
       ],
       "ewc": 1,
       "firstStand": 0,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 6
       }
@@ -339,7 +336,7 @@
       ],
       "ewc": 1,
       "firstStand": 0,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 3,
         "LPL": 2
@@ -352,7 +349,7 @@
       ],
       "ewc": 1,
       "firstStand": 0,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 2
       }
@@ -367,9 +364,9 @@
       ],
       "ewc": 1,
       "firstStand": 1,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
-        "LCK": 2
+        "LCK": 1
       }
     },
     "HLE-Kanavi": {
@@ -382,7 +379,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LPL": 6
+        "LPL": 5
       }
     },
     "HLE-Zeka": {
@@ -394,7 +391,7 @@
       ],
       "ewc": 0,
       "firstStand": 1,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 1
       }
@@ -422,7 +419,7 @@
       ],
       "ewc": 0,
       "firstStand": 1,
-      "cup": 2,
+      "cup": 1,
       "leagues": {
         "LCK": 3
       }
@@ -445,7 +442,9 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LEC": 8
+        "LEC": 8,
+        "LFL": 2,
+        "LFL2": 1
       }
     },
     "KC-kyeahoo": {
@@ -454,9 +453,7 @@
       "ewc": 0,
       "firstStand": 0,
       "cup": 0,
-      "leagues": {
-        "LCK": 3
-      }
+      "leagues": {}
     },
     "KC-Caliste": {
       "worlds": [],
@@ -465,7 +462,9 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LEC": 1
+        "LFL": 2,
+        "LEC": 1,
+        "EM": 1
       }
     },
     "KC-Busio": {
@@ -475,6 +474,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
+        "LTA": 3,
         "LCS": 1
       }
     },
@@ -500,9 +500,7 @@
       "ewc": 0,
       "firstStand": 0,
       "cup": 0,
-      "leagues": {
-        "VCS": 1
-      }
+      "leagues": {}
     },
     "MVK-SofM": {
       "worlds": [],
@@ -519,8 +517,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "VCS": 1,
-        "LCK": 2
+        "VCS": 1
       }
     },
     "MVK-Harky": {
@@ -566,7 +563,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCK": 3
+        "LCK": 1
       }
     },
     "T1-Faker": {
@@ -598,7 +595,7 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCK": 5
+        "LCK": 3
       }
     },
     "T1-Keria": {
@@ -663,8 +660,8 @@
       "firstStand": 0,
       "cup": 0,
       "leagues": {
-        "LCP": 3,
-        "VCS": 6
+        "VCS": 6,
+        "LCP": 3
       }
     }
   }

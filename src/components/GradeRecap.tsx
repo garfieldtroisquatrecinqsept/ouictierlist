@@ -1,26 +1,11 @@
 import { useMemo, useRef, useState } from 'react'
 import { gradeColor } from '../lib/grades'
-import { asset, teamByShort, trophies } from '../lib/players'
+import { asset, teamByShort } from '../lib/players'
 import type { Tierlist } from '../types'
 import { rostersOf, teamKey } from './GradeBoard'
 
 interface Props {
   tierlist: Tierlist
-}
-
-function TrophyRow({ playerId }: { playerId: string }) {
-  const list = trophies(playerId).filter((t) => ['WORLDS', 'MSI', 'EWC'].includes(t.code) || t.count >= 3)
-  if (list.length === 0) return <span className="strip-trophies empty">—</span>
-  return (
-    <span className="strip-trophies">
-      {list.slice(0, 3).map((t) => (
-        <span key={t.code} title={t.detail ? `${t.label} : ${t.detail}` : t.label}>
-          {t.code === 'WORLDS' ? 'W' : t.code === 'MSI' ? 'MSI' : t.code}
-          <b>{t.count}</b>
-        </span>
-      ))}
-    </span>
-  )
 }
 
 export function GradeRecap({ tierlist }: Props) {
@@ -101,21 +86,18 @@ export function GradeRecap({ tierlist }: Props) {
                     const grade = tierlist.grades[player.id]
                     return (
                       <div key={player.id} className="strip-col">
-                        <span className="strip-face" title={player.name}>
-                          {player.image ? <img src={asset(player.image) ?? ''} alt={player.name} /> : null}
-                        </span>
+                        <span className="strip-label">{player.name}</span>
                         <span
                           className="gcell-box filled"
                           style={{ color: gradeColor(grade ?? ''), borderColor: gradeColor(grade ?? '') }}
                         >
                           {grade ?? '—'}
                         </span>
-                        <TrophyRow playerId={player.id} />
                       </div>
                     )
                   })}
                   <div className="strip-col strip-col-team">
-                    <span className="strip-name">Team</span>
+                    <span className="strip-label">Team</span>
                     <span
                       className="gcell-box filled"
                       style={{

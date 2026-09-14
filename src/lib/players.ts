@@ -177,6 +177,26 @@ export interface Trophy {
   detail?: string
 }
 
+const TROPHY_COLORS: Record<string, string> = {
+  WORLDS: '#c9a227',
+  MSI: '#4a8fd0',
+  EWC: '#2a9d8f',
+  FS: '#8a6fd1',
+  CUP: '#dd8c3c',
+  LCK: '#d1495b',
+  LPL: '#dd8c3c',
+  LEC: '#4a8fd0',
+  LCS: '#57a05a',
+  LCP: '#8a6fd1',
+  PCS: '#8a6fd1',
+  VCS: '#2a9d8f',
+  LTA: '#57a05a',
+}
+
+export function trophyColor(code: string): string {
+  return TROPHY_COLORS[code] ?? '#8a8a92'
+}
+
 export function trophies(playerId: string): Trophy[] {
   const a = achievementsFor(playerId)
   if (!a) return []

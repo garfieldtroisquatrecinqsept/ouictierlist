@@ -36,17 +36,18 @@ en PNG, une carte par equipe avec ses joueurs en colonnes.
 
 ## Palmares
 
-`src/data/achievements.json` compte les titres de chaque joueur : Worlds et MSI avec les
-annees, Esports World Cup, First Stand, coupes de ligue et titres par ligue.
+`src/data/achievements.json` compte les titres de chaque joueur : Worlds, MSI, Esports World
+Cup, First Stand, coupes de ligue et titres par ligue.
 
-Source : les tables Cargo `TournamentPlayers` et `TournamentResults` de Leaguepedia, jointes
-sur `PageAndTeam`, filtrees sur les premieres places.
+Source principale : la page **career history** de gol.gg, qui liste les finales disputees avec
+leur resultat. Un titre = une finale gagnee, sans ambiguite. Les divisions secondaires (LCK CL,
+LFL, EMEA Masters, LTA North) sont comptees separement des divisions majeures.
 
-Regle importante : Leaguepedia enregistre separement la saison reguliere et les playoffs, et
-une premiere place de saison reguliere n'est pas un titre. Un split ne compte donc que si les
-playoffs sont gagnes, ou s'il n'existe pas de page playoffs pour ce split (cas des anciennes
-saisons Champions). Sans cette regle Faker affichait 11 titres LCK au lieu de 10, parce que T1
-a fini premier de la saison reguliere LCK 2023 Spring avant de perdre la finale.
+gol.gg previent que ses donnees anciennes sont incompletes : l'ere Champions (2013-2015) y
+manque. Elle est completee depuis Leaguepedia, ce qui ne concerne que Faker parmi les joueurs
+qualifies (3 titres) et lui donne bien 10 titres LCK.
+
+Les deux sources ont ete croisees sur les 59 joueurs : Worlds et MSI concordent partout.
 
 ## Base de joueurs
 
