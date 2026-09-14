@@ -8,6 +8,7 @@ import type { TierListValue } from '../components/TierList'
 import { getCategory } from '../lib/categories'
 import {
   LEAGUES,
+  LEAGUE_LABELS,
   PLAYERS,
   ROLE_LABELS,
   ROLE_ORDER,
@@ -138,6 +139,13 @@ export function TierlistPage() {
   }
 
   const category = getCategory(tierlist.category)
+  const activeFilters = benchRoles.length + benchTeams.length + benchLeagues.length
+
+  function resetBench() {
+    setBenchRoles([])
+    setBenchTeams([])
+    setBenchLeagues([])
+  }
 
   function handleBoardChange(next: TierListValue) {
     updateTierlist(id, (current) => {
@@ -255,99 +263,108 @@ export function TierlistPage() {
         </form>
       </div>
 
-      <div className="bench-filter">
-        <span className="bench-filter-label">Banc</span>
-
-        <div className="picker-roles">
-          {ROLE_ORDER.map((role) => (
-            <button
-              key={role}
-              type="button"
-              className={benchRoles.includes(role) ? 'role-toggle on' : 'role-toggle'}
-              onClick={() =>
-                setBenchRoles((current) =>
-                  current.includes(role)
-                    ? current.filter((value) => value !== role)
-                    : [...current, role],
-                )
-              }
-              aria-pressed={benchRoles.includes(role)}
-              title={ROLE_LABELS[role]}
-            >
-              <img src={roleIcon(role, theme === 'dark' ? 'dark' : 'light')} alt={ROLE_LABELS[role]} />
-            </button>
-          ))}
-        </div>
-
-        {benchLeagueOptions.length > 1 ? (
-          <div className="bench-chips">
-            {benchLeagueOptions.map((league) => (
-              <button
-                key={league}
-                type="button"
-                className={benchLeagues.includes(league) ? 'league-tab on' : 'league-tab'}
-                onClick={() =>
-                  setBenchLeagues((current) =>
-                    current.includes(league)
-                      ? current.filter((value) => value !== league)
-                      : [...current, league],
-                  )
-                }
-                aria-pressed={benchLeagues.includes(league)}
-              >
-                {league}
+      <section className="bench-filter">
+        <header className="bench-filter-head">
+          <h2>Filtrer le banc</h2>
+          {activeFilters > 0 ? (
+            <>
+              <span className="bench-badge">{hiddenPoolIds.size} masqué{hiddenPoolIds.size > 1 ? 's' : ''}</span>
+              <button type="button" className="link" onClick={resetBench}>
+                Tout afficher
               </button>
-            ))}
-          </div>
-        ) : null}
+            </>
+          ) : (
+            <span className="hint">aucun filtre actif</span>
+          )}
+        </header>
 
-        {benchTeamOptions.length > 1 ? (
-          <div className="bench-chips">
-            {benchTeamOptions.map((short) => {
-              const team = teamByShort(short)
-              const on = benchTeams.includes(short)
-              return (
+        <div className="bench-groups">
+          <div className="bench-group">
+            <span className="bench-group-label">Poste</span>
+            <div className="picker-roles">
+              {ROLE_ORDER.map((role) => (
                 <button
-                  key={short}
+                  key={role}
                   type="button"
-                  className={on ? 'team-tab on' : 'team-tab'}
+                  className={benchRoles.includes(role) ? 'role-toggle on' : 'role-toggle'}
                   onClick={() =>
-                    setBenchTeams((current) =>
-                      current.includes(short)
-                        ? current.filter((value) => value !== short)
-                        : [...current, short],
+                    setBenchRoles((current) =>
+                      current.includes(role)
+                        ? current.filter((value) => value !== role)
+                        : [...current, role],
                     )
                   }
-                  aria-pressed={on}
-                  title={team?.name ?? short}
+                  aria-pressed={benchRoles.includes(role)}
+                  title={ROLE_LABELS[role]}
                 >
-                  {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
-                  {short}
+                  <img
+                    src={roleIcon(role, theme === 'dark' ? 'dark' : 'light')}
+                    alt={ROLE_LABELS[role]}
+                  />
                 </button>
-              )
-            })}
+              ))}
+            </div>
           </div>
-        ) : null}
 
-        {hiddenPoolIds.size > 0 ? (
-          <>
-            <span className="hint">{hiddenPoolIds.size} masqué{hiddenPoolIds.size > 1 ? 's' : ''}</span>
-            <button
-              type="button"
-              className="link"
-              onClick={() => {
-                setBenchRoles([])
-                setBenchTeams([])
-                setBenchLeagues([])
-              }}
-            >
-              Tout afficher
-            </button>
-          </>
-        ) : (
-          <span className="hint">aucun filtre</span>
-        )}
-      </div>
+          {benchLeagueOptions.length > 1 ? (
+            <div className="bench-group">
+              <span className="bench-group-label">Région</span>
+              <div className="bench-chips">
+                {benchLeagueOptions.map((league) => (
+                  <button
+                    key={league}
+                    type="button"
+                    className={benchLeagues.includes(league) ? 'league-tab on' : 'league-tab'}
+                    onClick={() =>
+                      setBenchLeagues((current) =>
+                        current.includes(league)
+                          ? current.filter((value) => value !== league)
+                          : [...current, league],
+                      )
+                    }
+                    aria-pressed={benchLeagues.includes(league)}
+                    title={league}
+                  >
+                    {LEAGUE_LABELS[league]}
+                    <small>{league}</small>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {benchTeamOptions.length > 1 ? (
+            <div className="bench-group bench-group-wide">
+              <span className="bench-group-label">Équipe</span>
+              <div className="bench-chips">
+                {benchTeamOptions.map((short) => {
+                  const team = teamByShort(short)
+                  const on = benchTeams.includes(short)
+                  return (
+                    <button
+                      key={short}
+                      type="button"
+                      className={on ? 'team-tab on' : 'team-tab'}
+                      onClick={() =>
+                        setBenchTeams((current) =>
+                          current.includes(short)
+                            ? current.filter((value) => value !== short)
+                            : [...current, short],
+                        )
+                      }
+                      aria-pressed={on}
+                      title={team?.name ?? short}
+                    >
+                      {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
+                      {short}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </section>
 
       <TierList
         className="board"
