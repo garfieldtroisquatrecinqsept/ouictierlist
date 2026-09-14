@@ -505,7 +505,7 @@ function TileFace({ item, size, dragging }: { item: TierItem; size: number; drag
 function PlayerOverlay({ item, size }: { item: TierItem; size: number }) {
   const pad = Math.max(3, Math.round(size * 0.05));
   const chip = Math.max(15, Math.round(size * 0.21));
-  const name = Math.max(9, Math.round(size * 0.12));
+  const name = Math.max(9, Math.round(size * 0.108));
 
   return (
     <>
