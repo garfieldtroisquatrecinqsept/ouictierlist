@@ -265,6 +265,7 @@ export function TierlistPage() {
       <PlayerPicker
         open={pickerOpen}
         alreadyIn={tierlist.items.map((item) => item.playerId).filter((v): v is string => !!v)}
+        category={tierlist.category}
         onClose={() => setPickerOpen(false)}
         onAdd={handleAddPlayers}
       />

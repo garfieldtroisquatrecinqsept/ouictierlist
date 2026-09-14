@@ -9,13 +9,37 @@ export interface PlayerTeam {
   logo: string | null
 }
 
+export type LeagueId = 'LCK' | 'LPL' | 'LEC' | 'LCP'
+
 export interface Player {
   id: string
   name: string
   team: string
+  league: LeagueId
+  region: string
   role: RoleId
   country: string
   image: string | null
+}
+
+export const LEAGUES: LeagueId[] = ['LCK', 'LPL', 'LEC', 'LCP']
+
+export const LEAGUE_LABELS: Record<LeagueId, string> = {
+  LCK: 'Corée',
+  LPL: 'Chine',
+  LEC: 'EMEA',
+  LCP: 'Asie-Pacifique',
+}
+
+const CATEGORY_LEAGUE: Record<string, LeagueId> = {
+  lck: 'LCK',
+  lpl: 'LPL',
+  lec: 'LEC',
+  lcp: 'LCP',
+}
+
+export function leagueForCategory(category: string): LeagueId | null {
+  return CATEGORY_LEAGUE[category] ?? null
 }
 
 export const TOURNAMENT: string = data.tournament

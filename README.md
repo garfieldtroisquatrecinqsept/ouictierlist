@@ -25,8 +25,14 @@ Si un fichier est absent, le site retombe sur le texte « RaphCorp » sans rien 
 
 ## Base de joueurs
 
-`src/data/players.json` contient les equipes qualifiees pour Worlds 2026 et leurs joueurs
-(nom, equipe, role, pays, chemin de la photo). Les visuels sont dans `public/` :
+`src/data/players.json` contient les equipes qualifiees pour Worlds 2026 et leurs joueurs.
+Chaque joueur porte son equipe, sa **ligue** (LCK, LPL, LEC, LCP), sa region, son **poste**
+(top, jungle, mid, bot, support), son pays et le chemin de sa photo.
+
+Repartition a la collecte : LCK 20, LCP 17, LPL 12, LEC 12 joueurs ;
+top 14, jungle 13, bot 12, mid 11, support 11.
+
+Les visuels sont dans `public/` :
 
 | Dossier | Contenu |
 | --- | --- |

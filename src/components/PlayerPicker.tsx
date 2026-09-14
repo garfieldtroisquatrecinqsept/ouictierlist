@@ -1,14 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
 import {
+  LEAGUES,
+  LEAGUE_LABELS,
   PLAYERS,
   ROLE_LABELS,
   ROLE_ORDER,
   TEAMS,
   TOURNAMENT,
   asset,
+  leagueForCategory,
   roleIcon,
   teamByShort,
 } from '../lib/players'
+import type { LeagueId } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
 import type { Player } from '../lib/players'
 import type { RoleId } from '../types'
@@ -16,16 +20,18 @@ import type { RoleId } from '../types'
 interface Props {
   open: boolean
   alreadyIn: string[]
+  category: string
   onClose: () => void
   onAdd: (players: Player[]) => void
 }
 
-export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
+export function PlayerPicker({ open, alreadyIn, category, onClose, onAdd }: Props) {
   const { theme } = useTheme()
   const uiVariant = theme === 'dark' ? 'dark' : 'light'
   const [search, setSearch] = useState('')
   const [roles, setRoles] = useState<RoleId[]>([])
   const [team, setTeam] = useState<string | 'all'>('all')
+  const [league, setLeague] = useState<LeagueId | 'all'>('all')
   const [selected, setSelected] = useState<string[]>([])
 
   useEffect(() => {
@@ -33,8 +39,9 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
     setSearch('')
     setRoles([])
     setTeam('all')
+    setLeague(leagueForCategory(category) ?? 'all')
     setSelected([])
-  }, [open])
+  }, [open, category])
 
   useEffect(() => {
     if (!open) return
@@ -50,6 +57,7 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
   const visible = useMemo(() => {
     const needle = search.trim().toLowerCase()
     return PLAYERS.filter((player) => {
+      if (league !== 'all' && player.league !== league) return false
       if (team !== 'all' && player.team !== team) return false
       if (roles.length > 0 && !roles.includes(player.role)) return false
       if (!needle) return true
@@ -60,7 +68,7 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
         teamName.toLowerCase().includes(needle)
       )
     })
-  }, [search, roles, team])
+  }, [search, roles, team, league])
 
   if (!open) return null
 
@@ -82,6 +90,7 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
     onAdd(chosen)
   }
 
+  const teamTabs = league === 'all' ? TEAMS : TEAMS.filter((item) => item.league === league)
   const selectableVisible = visible.filter((player) => !present.has(player.id))
   const allVisibleSelected =
     selectableVisible.length > 0 && selectableVisible.every((p) => selected.includes(p.id))
@@ -124,6 +133,34 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
           </div>
         </div>
 
+        <div className="picker-leagues">
+          <button
+            type="button"
+            className={league === 'all' ? 'league-tab on' : 'league-tab'}
+            onClick={() => {
+              setLeague('all')
+              setTeam('all')
+            }}
+          >
+            Toutes les ligues
+          </button>
+          {LEAGUES.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={league === item ? 'league-tab on' : 'league-tab'}
+              onClick={() => {
+                setLeague(item)
+                setTeam('all')
+              }}
+              title={LEAGUE_LABELS[item]}
+            >
+              {item}
+              <small>{PLAYERS.filter((p) => p.league === item).length}</small>
+            </button>
+          ))}
+        </div>
+
         <div className="picker-teams">
           <button
             type="button"
@@ -132,7 +169,7 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
           >
             Toutes
           </button>
-          {TEAMS.map((item) => (
+          {teamTabs.map((item) => (
             <button
               key={item.short}
               type="button"
@@ -165,7 +202,11 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
                   className={className}
                   onClick={() => toggle(player.id)}
                   disabled={inList}
-                  title={inList ? 'Déjà dans la tierlist' : player.name}
+                  title={
+                    inList
+                      ? 'Déjà dans la tierlist'
+                      : `${player.name} — ${teamByShort(player.team)?.name ?? player.team}, ${ROLE_LABELS[player.role]}, ${player.league}`
+                  }
                 >
                   <span className="player-photo">
                     {photo ? (
@@ -177,6 +218,9 @@ export function PlayerPicker({ open, alreadyIn, onClose, onAdd }: Props) {
                     <img className="player-role" src={roleIcon(player.role)} alt="" />
                   </span>
                   <span className="player-name">{player.name}</span>
+                  <span className="player-meta">
+                    {ROLE_LABELS[player.role]} · {player.league}
+                  </span>
                 </button>
               )
             })

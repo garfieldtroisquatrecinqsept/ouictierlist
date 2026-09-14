@@ -769,6 +769,44 @@ input:focus {
   opacity: 1;
 }
 
+.picker-leagues {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.league-tab {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink-soft);
+  box-shadow: none;
+}
+
+.league-tab small {
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--ink-faint);
+}
+
+.league-tab.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.league-tab.on small {
+  color: var(--on-accent);
+  opacity: 0.7;
+}
+
 .picker-teams {
   display: flex;
   gap: 0.3rem;
@@ -886,6 +924,19 @@ input:focus {
 
 .player-card.used {
   opacity: 0.32;
+}
+
+.player-meta {
+  font-size: 0.64rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-card {
+  gap: 0.25rem;
 }
 
 .player-name {
