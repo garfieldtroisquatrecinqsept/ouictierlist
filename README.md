@@ -32,6 +32,10 @@ Chaque joueur porte son equipe, sa **ligue** (LCK, LPL, LEC, LCP), sa region, so
 Repartition a la collecte : LCK 20, LCP 17, LPL 12, LEC 12 joueurs ;
 top 14, jungle 13, bot 12, mid 11, support 11.
 
+A la creation d'une tierlist, le banc est pre-rempli avec les joueurs de la categorie
+choisie : la ligue correspondante pour LCK, LPL, LEC et LCP, la totalite des joueurs
+qualifies pour Worlds et MSI. Ils sont ranges par poste.
+
 Les visuels sont dans `public/` :
 
 | Dossier | Contenu |

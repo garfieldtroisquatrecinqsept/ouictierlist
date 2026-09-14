@@ -1,4 +1,5 @@
-import type { CategoryId, Tier, Tierlist } from '../types'
+import type { CategoryId, Tier, TierItem, Tierlist } from '../types'
+import { PLAYERS, ROLE_ORDER, asset, leagueForCategory, teamByShort } from './players'
 
 const STORAGE_KEY = 'tierlists.v1'
 
@@ -16,15 +17,39 @@ function createDefaultTiers(): Tier[] {
   }))
 }
 
+export function playersForCategory(category: CategoryId) {
+  const league = leagueForCategory(category)
+  const selection = league ? PLAYERS.filter((player) => player.league === league) : PLAYERS
+  return [...selection].sort((a, b) => {
+    const byRole = ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)
+    if (byRole !== 0) return byRole
+    if (a.league !== b.league) return a.league.localeCompare(b.league)
+    if (a.team !== b.team) return a.team.localeCompare(b.team)
+    return a.name.localeCompare(b.name)
+  })
+}
+
+function createRoster(category: CategoryId): TierItem[] {
+  return playersForCategory(category).map((player) => ({
+    id: createId(),
+    label: player.name,
+    image: asset(player.image),
+    role: player.role,
+    teamLogo: asset(teamByShort(player.team)?.logo ?? null),
+    playerId: player.id,
+  }))
+}
+
 export function createTierlist(name: string, category: CategoryId): Tierlist {
   const now = Date.now()
+  const items = createRoster(category)
   return {
     id: createId(),
     name,
     category,
     tiers: createDefaultTiers(),
-    items: [],
-    poolItemIds: [],
+    items,
+    poolItemIds: items.map((item) => item.id),
     createdAt: now,
     updatedAt: now,
   }

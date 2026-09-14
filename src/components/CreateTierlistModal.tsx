@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { CATEGORIES } from '../lib/categories'
+import { playersForCategory } from '../lib/storage'
 import type { CategoryId } from '../types'
 
 interface Props {
@@ -83,6 +84,12 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
               ))}
             </div>
           </fieldset>
+
+          {category ? (
+            <p className="create-note">
+              {playersForCategory(category).length} joueurs seront ajoutés au banc, prêts à classer.
+            </p>
+          ) : null}
 
           {error ? <p className="error">{error}</p> : null}
 
