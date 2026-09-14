@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   color-scheme: light;
 
@@ -436,106 +439,41 @@ input:focus {
   margin: 0.75rem 0 0.6rem;
 }
 
-.tiers {
-  margin-top: 2.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.tier-row {
-  display: flex;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--paper-raised);
-  box-shadow: var(--shadow-sm);
-  animation: rise-in 0.5s ease both;
-}
-
-.tier-label {
-  width: 78px;
-  flex: none;
-  display: grid;
-  place-items: center;
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-size: 1.6rem;
-  color: #fdfcfa;
-  background: var(--tier-5);
-}
-
-.tier-row:nth-child(1) .tier-label {
-  background: var(--tier-1);
-}
-
-.tier-row:nth-child(2) .tier-label {
-  background: var(--tier-2);
-}
-
-.tier-row:nth-child(3) .tier-label {
-  background: var(--tier-3);
-}
-
-.tier-row:nth-child(4) .tier-label {
-  background: var(--tier-4);
-}
-
-.tier-drop,
-.pool-drop {
-  flex: 1;
-  min-height: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 0.45rem;
-  padding: 0.7rem;
-  transition: background-color 0.2s ease;
-}
-
-.tier-drop.over,
-.pool-drop.over {
-  background: var(--accent-soft);
-}
-
-.pool {
-  margin-top: 2.5rem;
-}
-
 .pool-form {
   display: flex;
   gap: 0.6rem;
-  margin-bottom: 0.75rem;
+  margin: 2rem 0 1.1rem;
 }
 
-.pool-drop {
-  border: 1px dashed var(--line-strong);
-  border-radius: 12px;
-  align-items: flex-start;
-  background: rgba(255, 255, 255, 0.5);
+:where(.board) button {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  transition: none;
 }
 
-.item {
-  padding: 0.42rem 0.8rem;
-  border-radius: 8px;
-  background: var(--paper);
-  border: 1px solid var(--line-strong);
-  cursor: grab;
-  user-select: none;
-  font-size: 0.9rem;
-  box-shadow: var(--shadow-sm);
-  animation: pop-in 0.34s var(--overshoot) both;
-  transition:
-    transform 0.28s var(--overshoot),
-    box-shadow 0.24s ease;
+:where(.board) button:hover:not(:disabled),
+:where(.board) button:active:not(:disabled) {
+  transform: none;
+  box-shadow: none;
 }
 
-.item:hover {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: var(--shadow-md);
+:where(.board) input {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-family: 'Instrument Serif', Georgia, serif;
+  letter-spacing: 0.02em;
 }
 
-.item:active {
-  cursor: grabbing;
+:where(.board) input:focus {
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .skeleton-grid {
