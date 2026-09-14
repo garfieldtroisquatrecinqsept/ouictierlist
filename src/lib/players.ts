@@ -60,7 +60,9 @@ export const ROLE_LABELS: Record<RoleId, string> = {
 export const ROLE_ORDER: RoleId[] = ['top', 'jungle', 'mid', 'bot', 'support']
 
 export function asset(path: string | null | undefined): string | null {
-  return path ? `${import.meta.env.BASE_URL}${path}` : null
+  if (!path) return null
+  if (/^(data:|blob:|https?:)/.test(path)) return path
+  return `${import.meta.env.BASE_URL}${path}`
 }
 
 export function roleIcon(role: RoleId, variant: 'light' | 'dark' = 'dark'): string {
@@ -78,6 +80,7 @@ export interface ChampionStat {
   games: number
   winrate: string
   kda: string
+  icon?: string
 }
 
 export interface PlayerStats {
@@ -97,8 +100,8 @@ export function statsFor(playerId: string): PlayerStats | undefined {
   return STATS[playerId]
 }
 
-export function championIcon(slug: string): string {
-  return `${import.meta.env.BASE_URL}champions/${slug}.png`
+export function championIcon(slug: string, fallback?: string): string {
+  return fallback ?? `${import.meta.env.BASE_URL}champions/${slug}.png`
 }
 
 export const STAT_BLOCKS: { key: keyof PlayerStats; title: string; fields: [string, string][] }[] = [
@@ -263,3 +266,65 @@ export function statRank(
 export function rankLabel(rank: number): string {
   return rank === 1 ? '1er' : `${rank}e`
 }
+
+const CUSTOM_KEY = 'players.custom.v1'
+
+export interface CustomPlayer extends Player {
+  custom: true
+  teamName?: string | null
+  teamLogo?: string | null
+  golgg?: string | null
+  stats?: PlayerStats | null
+}
+
+function readCustom(): CustomPlayer[] {
+  try {
+    const raw = localStorage.getItem(CUSTOM_KEY)
+    const parsed = raw ? JSON.parse(raw) : []
+    return Array.isArray(parsed) ? (parsed as CustomPlayer[]) : []
+  } catch {
+    return []
+  }
+}
+
+function applyCustom(entry: CustomPlayer) {
+  const { stats, teamName, teamLogo, ...player } = entry
+  const index = PLAYERS.findIndex((existing) => existing.id === entry.id)
+  if (index >= 0) PLAYERS[index] = player as Player
+  else PLAYERS.push(player as Player)
+
+  if (!TEAMS.some((team) => team.short === entry.team)) {
+    TEAMS.push({
+      short: entry.team,
+      name: teamName || entry.team,
+      region: entry.region,
+      league: entry.league,
+      logo: teamLogo ?? null,
+    })
+  }
+  if (stats) STATS[entry.id] = stats
+}
+
+export function customPlayers(): CustomPlayer[] {
+  return readCustom()
+}
+
+export function addCustomPlayer(entry: CustomPlayer) {
+  const all = readCustom().filter((existing) => existing.id !== entry.id)
+  all.push(entry)
+  localStorage.setItem(CUSTOM_KEY, JSON.stringify(all))
+  applyCustom(entry)
+}
+
+export function removeCustomPlayer(id: string) {
+  localStorage.setItem(CUSTOM_KEY, JSON.stringify(readCustom().filter((e) => e.id !== id)))
+  const index = PLAYERS.findIndex((player) => player.id === id)
+  if (index >= 0) PLAYERS.splice(index, 1)
+  delete STATS[id]
+}
+
+export function isCustomPlayer(id: string): boolean {
+  return readCustom().some((entry) => entry.id === id)
+}
+
+readCustom().forEach(applyCustom)

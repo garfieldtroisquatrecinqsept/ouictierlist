@@ -478,13 +478,20 @@ function TileFace({ item, size, dragging }: { item: TierItem; size: number; drag
         >
           {item.emoji}
         </span>
+      ) : item.roleIcon || item.badge ? (
+        <span
+          className="grid h-full w-full place-items-center bg-zinc-100 font-semibold text-zinc-400 dark:bg-zinc-700/40 dark:text-zinc-500"
+          style={{ fontSize: size * 0.34, lineHeight: 1 }}
+        >
+          {(item.label ?? "?").slice(0, 1).toUpperCase()}
+        </span>
       ) : (
         <span className="grid h-full w-full place-items-center px-1 text-center text-[12px] font-semibold text-zinc-600 dark:text-zinc-300">
           {item.label}
         </span>
       )}
 
-      {item.image ? <PlayerOverlay item={item} size={size} /> : null}
+      {item.image || item.roleIcon || item.badge ? <PlayerOverlay item={item} size={size} /> : null}
     </div>
   );
 }

@@ -317,6 +317,95 @@ input:focus {
   margin-bottom: 1rem;
 }
 
+.db-notice {
+  margin: 0 0 0.9rem;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.82rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  background: var(--paper-raised);
+}
+
+.db-remove {
+  margin-left: 0.45rem;
+  padding: 0 0.3rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--ink-faint);
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.db-remove:hover:not(:disabled) {
+  color: #d1495b;
+  transform: none;
+}
+
+.modal-add {
+  width: min(680px, 100%);
+  max-height: min(88vh, 900px);
+  overflow-y: auto;
+}
+
+.add-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0 1rem;
+}
+
+.add-roles {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.add-leagues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.add-file {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.add-file input {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.78rem;
+}
+
+.add-preview {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 62px;
+  flex: none;
+  overflow: hidden;
+  border: 1px dashed var(--line-strong);
+  border-radius: 3px;
+  font-size: 0.64rem;
+  color: var(--ink-faint);
+}
+
+.add-preview.logo {
+  height: 54px;
+}
+
+.add-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.add-preview.logo img {
+  object-fit: contain;
+}
+
 .db-table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);

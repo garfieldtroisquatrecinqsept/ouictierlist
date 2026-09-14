@@ -115,7 +115,7 @@ export function ComparePage() {
       <ul className="champ-list">
         {stats.champions.map((champ) => (
           <li key={champ.slug}>
-            <img src={championIcon(champ.slug)} alt="" />
+            <img src={championIcon(champ.slug, champ.icon)} alt="" />
             <span className="champ-name">{champ.name}</span>
             <span className="champ-meta">
               {champ.games} parties · {champ.winrate} · KDA {champ.kda}

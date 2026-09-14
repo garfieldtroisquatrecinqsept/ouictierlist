@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { AddPlayerModal } from '../components/AddPlayerModal'
 import { TopNav } from '../components/TopNav'
 import {
   LEAGUES,
@@ -7,6 +8,8 @@ import {
   ROLE_ORDER,
   TEAMS,
   asset,
+  isCustomPlayer,
+  removeCustomPlayer,
   roleIcon,
   statsFor,
   teamByShort,
@@ -21,6 +24,9 @@ export function PlayersPage() {
   const [search, setSearch] = useState('')
   const [league, setLeague] = useState<LeagueId | 'all'>('all')
   const [role, setRole] = useState<RoleId | 'all'>('all')
+  const [addOpen, setAddOpen] = useState(false)
+  const [notice, setNotice] = useState('')
+  const [revision, setRevision] = useState(0)
 
   const rows = useMemo(() => {
     const needle = search.trim().toLowerCase()
@@ -41,7 +47,7 @@ export function PlayersPage() {
       if (a.team !== b.team) return a.team.localeCompare(b.team)
       return a.name.localeCompare(b.name)
     })
-  }, [search, league, role])
+  }, [search, league, role, revision])
 
   return (
     <div className="page">
@@ -56,7 +62,14 @@ export function PlayersPage() {
             {PLAYERS.length} joueurs · {TEAMS.length} équipes qualifiées pour Worlds 2026
           </p>
         </div>
+        <div className="masthead-actions">
+          <button type="button" className="primary" onClick={() => setAddOpen(true)}>
+            Ajouter un joueur
+          </button>
+        </div>
       </header>
+
+      {notice ? <p className="db-notice">{notice}</p> : null}
 
       <div className="db-filters">
         <input
@@ -124,7 +137,23 @@ export function PlayersPage() {
                   <td className="db-photo">
                     {player.image ? <img src={asset(player.image) ?? ''} alt="" /> : null}
                   </td>
-                  <td className="db-name">{player.name}</td>
+                  <td className="db-name">
+                    {player.name}
+                    {isCustomPlayer(player.id) ? (
+                      <button
+                        type="button"
+                        className="db-remove"
+                        title="Retirer ce joueur ajouté à la main"
+                        onClick={() => {
+                          removeCustomPlayer(player.id)
+                          setNotice(`${player.name} a été retiré de la base.`)
+                          setRevision((value) => value + 1)
+                        }}
+                      >
+                        ×
+                      </button>
+                    ) : null}
+                  </td>
                   <td>
                     <span className="db-role">
                       <img src={roleIcon(player.role, uiVariant)} alt="" />
@@ -148,6 +177,16 @@ export function PlayersPage() {
           </tbody>
         </table>
       </div>
+
+      <AddPlayerModal
+        open={addOpen}
+        onClose={() => setAddOpen(false)}
+        onAdded={(player, warning) => {
+          setAddOpen(false)
+          setNotice(warning ?? `${player.name} a été ajouté à la base et aux tierlists ${player.league}.`)
+          setRevision((value) => value + 1)
+        }}
+      />
     </div>
   )
 }
