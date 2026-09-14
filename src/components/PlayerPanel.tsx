@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { Palmares } from './Palmares'
 import { StatRadar } from './StatRadar'
 import {
   ROLE_LABELS,
-  trophies,
+  palmaresFor,
   STATS_SEASON,
   STAT_BLOCKS,
   asset,
@@ -78,18 +79,10 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
 
           <StatRadar players={[player]} scope={scope} size={240} />
 
-          {trophies(player.id).length > 0 ? (
+          {palmaresFor(player.id).length > 0 ? (
             <section className="panel-block">
               <h3>Palmarès</h3>
-              <ul className="trophy-list">
-                {trophies(player.id).map((t) => (
-                  <li key={t.code} title={t.detail ? `${t.label} : ${t.detail}` : t.label}>
-                    <span className="trophy-count">{t.count}</span>
-                    <span className="trophy-label">{t.label}</span>
-                    {t.detail ? <small>{t.detail}</small> : null}
-                  </li>
-                ))}
-              </ul>
+              <Palmares playerId={player.id} />
             </section>
           ) : null}
 

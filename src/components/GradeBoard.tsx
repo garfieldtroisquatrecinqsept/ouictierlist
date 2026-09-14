@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { GradeCell } from './GradeCell'
-import { PLAYERS, ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort, trophies, trophyColor } from '../lib/players'
+import { Palmares } from './Palmares'
+import { PLAYERS, ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort } from '../lib/players'
 import type { Player } from '../lib/players'
 import type { Tierlist } from '../types'
 
@@ -31,26 +32,6 @@ export function rostersOf(tierlist: Tierlist) {
       players: players.sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)),
     }))
     .sort((a, b) => a.short.localeCompare(b.short))
-}
-
-export function TrophyRow({ playerId }: { playerId: string }) {
-  const list = trophies(playerId).filter((t) => t.count > 0)
-  if (list.length === 0) return <span className="strip-trophies empty">—</span>
-  return (
-    <span className="strip-trophies">
-      {list.slice(0, 4).map((t) => (
-        <span
-          key={t.code}
-          data-kind={t.code}
-          style={{ color: trophyColor(t.code) }}
-          title={t.detail ? `${t.label} : ${t.detail}` : t.label}
-        >
-          {t.code === 'WORLDS' ? 'Worlds' : t.code === 'FS' ? 'First Stand' : t.code === 'CUP' ? 'Cup' : t.code}
-          <b>{t.count}</b>
-        </span>
-      ))}
-    </span>
-  )
 }
 
 export function GradeBoard({
@@ -96,6 +77,20 @@ export function GradeBoard({
         <span className="grade-progress">
           {done}/{rosters.length} validées
         </span>
+        <button
+          type="button"
+          className="primary strip-validate"
+          disabled={!complete}
+          onClick={() => {
+            onValidate(active.short)
+            const next = rosters.find(
+              (r) => r.short !== active.short && !tierlist.validatedTeams.includes(r.short),
+            )
+            if (next) setCurrent(next.short)
+          }}
+        >
+          {tierlist.validatedTeams.includes(active.short) ? 'Mettre à jour' : 'Valider'}
+        </button>
       </nav>
 
       <section className="grade-strip">
@@ -127,7 +122,7 @@ export function GradeBoard({
                 label={player.name}
                 onPick={(grade) => onGrade(player.id, grade)}
               />
-              <TrophyRow playerId={player.id} />
+              <Palmares playerId={player.id} compact />
             </div>
           ))}
 
@@ -144,20 +139,6 @@ export function GradeBoard({
           </div>
         </div>
 
-        <button
-          type="button"
-          className="primary strip-validate"
-          disabled={!complete}
-          onClick={() => {
-            onValidate(active.short)
-            const next = rosters.find(
-              (r) => r.short !== active.short && !tierlist.validatedTeams.includes(r.short),
-            )
-            if (next) setCurrent(next.short)
-          }}
-        >
-          {tierlist.validatedTeams.includes(active.short) ? 'Mettre à jour' : 'Valider'}
-        </button>
       </section>
     </div>
   )

@@ -1,7 +1,7 @@
 import data from '../data/players.json'
 import type { RoleId } from '../types'
 import statsData from '../data/stats.json'
-import achievementsData from '../data/achievements.json'
+import palmaresData from '../data/palmares.json'
 
 export interface PlayerTeam {
   short: string
@@ -155,61 +155,55 @@ export const STAT_BLOCKS: { key: keyof PlayerStats; title: string; fields: [stri
 }))
 
 
-export interface Achievements {
-  worlds: string[]
-  msi: string[]
-  ewc: number
-  firstStand: number
-  cup: number
-  leagues: Record<string, number>
-}
-
-const ACHIEVEMENTS = achievementsData.players as unknown as Record<string, Achievements>
-
-export function achievementsFor(playerId: string): Achievements | undefined {
-  return ACHIEVEMENTS[playerId]
-}
-
-export interface Trophy {
-  code: string
-  label: string
-  count: number
-  detail?: string
-}
-
 const TROPHY_COLORS: Record<string, string> = {
   WORLDS: '#c9a227',
   MSI: '#4a8fd0',
   EWC: '#2a9d8f',
   FS: '#8a6fd1',
   CUP: '#dd8c3c',
+  DC: '#dd8c3c',
+  AG: '#c9a227',
   LCK: '#d1495b',
   LPL: '#dd8c3c',
   LEC: '#4a8fd0',
   LCS: '#57a05a',
   LCP: '#8a6fd1',
   PCS: '#8a6fd1',
+  LMS: '#8a6fd1',
   VCS: '#2a9d8f',
   LTA: '#57a05a',
+  TCL: '#57a05a',
+  GPL: '#2a9d8f',
+}
+
+export interface PalmaresLine {
+  y: string
+  t: string
+  w: number
+}
+
+export interface PalmaresSection {
+  code: string
+  label: string
+  lines: PalmaresLine[]
+}
+
+const PALMARES = palmaresData.players as unknown as Record<string, PalmaresSection[]>
+
+export const PALMARES_SOURCE = palmaresData.source as string
+
+export function palmaresFor(playerId: string): PalmaresSection[] {
+  return PALMARES[playerId] ?? []
+}
+
+export function titleCount(playerId: string): number {
+  return palmaresFor(playerId).reduce(
+    (total, section) => total + section.lines.filter((line) => line.w === 1).length,
+    0,
+  )
 }
 
 export function trophyColor(code: string): string {
   return TROPHY_COLORS[code] ?? '#8a8a92'
 }
 
-export function trophies(playerId: string): Trophy[] {
-  const a = achievementsFor(playerId)
-  if (!a) return []
-  const out: Trophy[] = []
-  if (a.worlds.length)
-    out.push({ code: 'WORLDS', label: 'Worlds', count: a.worlds.length, detail: a.worlds.join(', ') })
-  if (a.msi.length)
-    out.push({ code: 'MSI', label: 'MSI', count: a.msi.length, detail: a.msi.join(', ') })
-  if (a.ewc) out.push({ code: 'EWC', label: 'Esports World Cup', count: a.ewc })
-  if (a.firstStand) out.push({ code: 'FS', label: 'First Stand', count: a.firstStand })
-  if (a.cup) out.push({ code: 'CUP', label: 'Coupe de ligue', count: a.cup })
-  Object.entries(a.leagues)
-    .sort((x, y) => y[1] - x[1])
-    .forEach(([league, count]) => out.push({ code: league, label: `Titres ${league}`, count }))
-  return out
-}

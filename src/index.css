@@ -1464,11 +1464,11 @@ input:focus {
 }
 
 .grade-strip {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  padding: 1rem 1.2rem 1.1rem;
+  gap: 1.5rem;
+  padding: 1.4rem 1.6rem 1.5rem;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--paper-raised);
@@ -1477,18 +1477,21 @@ input:focus {
 
 .strip-team {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  min-width: 195px;
+  gap: 0.4rem;
+  width: 132px;
+  text-align: center;
 }
 
 .strip-team span {
-  font-size: 1.15rem;
+  font-size: 0.98rem;
+  line-height: 1.15;
 }
 
 .strip-team img {
-  width: 62px;
-  height: 62px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
   flex: none;
 }
@@ -1501,19 +1504,23 @@ input:focus {
 }
 
 .strip-cells {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  width: 100%;
+  gap: 0.45rem;
+  align-items: start;
+  justify-items: stretch;
 }
 
 .strip-col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.3rem 0.3rem 0.35rem;
+  gap: 0.45rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.45rem 0.25rem 0.5rem;
   border-radius: 3px;
 }
 
@@ -1546,8 +1553,8 @@ input:focus {
 .strip-face {
   position: relative;
   display: block;
-  width: 64px;
-  height: 56px;
+  width: 78px;
+  height: 68px;
   overflow: hidden;
   border-radius: 3px;
   background: transparent;
@@ -1574,20 +1581,20 @@ input:focus {
 
 .strip-role {
   position: absolute;
-  right: 2px;
-  bottom: 2px;
-  width: 13px;
-  height: 13px;
+  right: 3px;
+  bottom: 3px;
+  width: 16px;
+  height: 16px;
   padding: 1px;
   border-radius: 2px;
   background: rgba(0, 0, 0, 0.62);
 }
 
 .strip-label {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--ink-soft);
-  max-width: 82px;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1598,53 +1605,99 @@ button.strip-face-button:hover .strip-label {
   color: var(--ink);
 }
 
-.strip-trophies {
+.palmares {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.15rem;
-  max-width: 88px;
-  font-size: 0.55rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.palmares.compact {
+  max-height: 220px;
+  padding: 0.45rem 0.15rem 0.5rem;
+  overflow-y: auto;
+  border-top: 1px solid var(--line);
+  scrollbar-width: thin;
+}
+
+.palmares.empty {
+  align-items: center;
+  padding: 0.4rem;
+  font-size: 0.64rem;
   color: var(--ink-faint);
 }
 
-.strip-trophies span {
-  display: inline-flex;
-  align-items: center;
+.palmares-sec {
+  display: flex;
+  flex-direction: column;
   gap: 0.1rem;
-  padding: 0.03rem 0.2rem;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  white-space: nowrap;
 }
 
-.strip-trophies b {
-  font-size: 0.6rem;
+.palmares-sec h4 {
+  margin: 0 0 0.1rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.strip-trophies span[data-kind] {
-  border-color: currentColor;
+.palmares-line {
+  margin: 0;
+  font-size: 0.66rem;
+  line-height: 1.3;
+  text-wrap: balance;
+  color: var(--ink-faint);
 }
 
-.strip-trophies.empty {
-  opacity: 0.3;
+.palmares-line strong {
+  font-weight: 500;
+}
+
+.palmares-line.win {
+  color: var(--ink);
+}
+
+.palmares-line.win strong {
+  font-weight: 700;
+}
+
+.pl-when {
+  font-variant-numeric: tabular-nums;
+}
+
+.panel-block .palmares {
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.panel-block .palmares-line {
+  font-size: 0.74rem;
+}
+
+.panel-block .palmares-sec h4 {
+  font-size: 0.8rem;
 }
 
 .strip-validate {
-  align-self: center;
+  margin-left: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
 }
 
 .gcell {
   position: relative;
+  width: 100%;
 }
 
 .gcell-box {
   display: grid;
   place-items: center;
-  width: 78px;
-  height: 50px;
+  width: 100%;
+  min-width: 68px;
+  height: 58px;
   padding: 0;
   font-family: var(--font-display);
   font-weight: 700;
@@ -1744,42 +1797,6 @@ span.gcell-box {
   gap: 0 1.5rem;
 }
 
-
-.trophy-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.trophy-list li {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  align-items: baseline;
-  column-gap: 0.5rem;
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.trophy-count {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  text-align: right;
-}
-
-.trophy-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.trophy-list small {
-  grid-column: 2;
-  font-size: 0.68rem;
-  color: var(--ink-faint);
-}
 
 .recap-strip {
   box-shadow: none;

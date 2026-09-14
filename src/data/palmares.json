@@ -1,0 +1,4306 @@
+{
+ "source": "https://lol.fandom.com/ (Cargo : TournamentPlayers + TournamentResults)",
+ "updated": "2026-09-14",
+ "note": "Uniquement les finales : 1 = titre, 2 = finaliste.",
+ "players": {
+  "AL-Breathe": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "AL-Tarzan": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CK",
+    "label": "CK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "AL-Shanks": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "AL-Hope": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "19",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "AL-Kael": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "BLG-Bin": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "BLG-Flandre": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "BLG-Wenbo": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 2 Round 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2 Round 2",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "BLG-Xun": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "23",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "BLG-Knight": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LSPL",
+    "label": "LSPL",
+    "lines": [
+     {
+      "y": "17",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "17",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "BLG-Viper": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CK",
+    "label": "CK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "BLG-ON": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "23",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "CFO-Rest": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Mid Season",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season Kickoff",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LMS",
+    "label": "LMS",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "PCS",
+    "label": "PCS",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "CFO-Shad0w": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "CFO-Pout": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "CFO-Doggo": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Mid Season",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season Kickoff",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "PCS",
+    "label": "PCS",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "CFO-Kino": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "PCS",
+    "label": "PCS",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "DK-Siwoo": [
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "DK-Lucid": [
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Rounds 1-2",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "DK-ShowMaker": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "CK",
+    "label": "CK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "DK-Smash": [
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Kickoff",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "DK-Career": [
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "G2-BrokenBlade": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "G2-SkewMond": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EM",
+    "label": "EM",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Summer Main Event",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LFL",
+    "label": "LFL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "G2-Caps": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "TCL",
+    "label": "TCL",
+    "lines": [
+     {
+      "y": "16",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "19",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "G2-Hans Sama": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Lock In",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "17",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EU CS",
+    "label": "EU CS",
+    "lines": [
+     {
+      "y": "16",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "G2-Labrov": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EM",
+    "label": "EM",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Summer Main Event",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "GEN-Kiin": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "19",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "AG",
+    "label": "Asian Games",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "GEN-Canyon": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "GEN-Chovy": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CK",
+    "label": "CK",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "GEN-Ruler": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "16",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "17",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "23",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "AG",
+    "label": "Asian Games",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "GEN-Duro": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "HLE-Zeus": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "HLE-Kanavi": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "HLE-Zeka": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "HLE-Gumayusi": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "HLE-Delight": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Cup",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Season",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Season",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "KC-Canna": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "KC-Yike": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Season Finals",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EM",
+    "label": "EM",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring Main Event",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LFL",
+    "label": "LFL",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "KC-kyeahoo": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Rounds 1-2",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "KC-Caliste": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "FS",
+    "label": "First Stand",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EM",
+    "label": "EM",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer Main Event",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LFL",
+    "label": "LFL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "KC-Busio": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Championship",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Versus",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Championship",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "26",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "NACL",
+    "label": "NACL",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MVK-Kratos": [],
+  "MVK-Gury": [
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MVK-SanSan": [
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "MVK-SofM": [
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MVK-Chika": [
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "MVK-Harky": [
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "MVK-SiuLoong": [
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "T1-Doran": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "T1-Oner": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "T1-Faker": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "13",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "14",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "15",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "15",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "16",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "17",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "17",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "13",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "15",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "16",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "17",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "15",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "16",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "17",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "AG",
+    "label": "Asian Games",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "T1-Peyz": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "T1-Keria": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Road to MSI",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Road to MSI",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "22",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TSW-Pun": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Season Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Winter",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "TSW-Hizto": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Mid Season",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Season Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TSW-Dire": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Mid Season",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Season Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TSW-Eddie": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Mid Season",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Season Finals",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TSW-Bie": [
+   {
+    "code": "LCP",
+    "label": "LCP",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "VCS",
+    "label": "VCS",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Finals",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ]
+ }
+}
