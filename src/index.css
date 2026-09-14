@@ -2566,6 +2566,18 @@ span.gcell-box {
   filter: drop-shadow(0 0 0.9px rgba(255, 255, 255, 0.5));
 }
 
+/* Les logos tres sombres se perdent sur le fond du mode notation. */
+:root[data-theme='dark'] .strip-team img,
+:root[data-theme='dark'] .strip-face.team img,
+:root[data-theme='dark'] .grade-step img {
+  filter: drop-shadow(0 0 1.6px rgba(255, 255, 255, 0.55));
+}
+
+.on-dark .strip-team img,
+.on-dark .strip-face.team img {
+  filter: drop-shadow(0 0 1.6px rgba(255, 255, 255, 0.55));
+}
+
 .modal-wide {
   width: min(880px, 100%);
   max-height: min(86vh, 860px);
