@@ -258,13 +258,13 @@ input:focus {
 
 .logo img {
   display: block;
-  height: 58px;
+  height: 78px;
   width: auto;
   object-fit: contain;
 }
 
 .logo-compact img {
-  height: 46px;
+  height: 64px;
 }
 
 .logo-fallback {

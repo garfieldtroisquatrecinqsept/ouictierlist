@@ -11,15 +11,17 @@ Les tierlists sont stockées dans le `localStorage` du navigateur.
 
 ## Logo RaphCorp
 
-Deux fichiers à déposer dans `public/` :
+| Fichier | Contenu | Affiché |
+| --- | --- | --- |
+| `public/raphcorp-light.png` | panda noir, fond transparent | mode jour |
+| `public/raphcorp-dark.png` | même dessin en luminance inversée | mode nuit |
 
-| Fichier | Contenu attendu |
-| --- | --- |
-| `public/raphcorp-light.png` | logo **sombre** (panda noir), affiché en mode jour |
-| `public/raphcorp-dark.png` | logo **clair** (panda blanc), affiché en mode nuit |
+La version nuit est générée depuis la version jour : chaque pixel non transparent voit son RVB
+inversé, ce qui retourne le panda en blanc et ses marques faciales en sombre, sans toucher au
+canal alpha. Pour régénérer après un changement de logo, repartir du PNG source et appliquer
+la même inversion.
 
-Fond transparent de préférence. Tant qu'un fichier manque, le site retombe automatiquement
-sur le texte « RaphCorp » à sa place, sans rien casser.
+Si un fichier est absent, le site retombe sur le texte « RaphCorp » sans rien casser.
 
 ## Développement
 
