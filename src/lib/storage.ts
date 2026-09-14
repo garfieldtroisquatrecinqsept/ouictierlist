@@ -1,4 +1,4 @@
-import type { CategoryId, Tier, TierItem, Tierlist } from '../types'
+import type { CategoryId, Tier, TierItem, Tierlist, TierlistMode } from '../types'
 import { PLAYERS, ROLE_ORDER, asset, leagueForCategory, teamByShort } from './players'
 
 const STORAGE_KEY = 'tierlists.v1'
@@ -40,13 +40,20 @@ function createRoster(category: CategoryId): TierItem[] {
   }))
 }
 
-export function createTierlist(name: string, category: CategoryId): Tierlist {
+export function createTierlist(
+  name: string,
+  category: CategoryId,
+  mode: TierlistMode = 'tiers',
+): Tierlist {
   const now = Date.now()
   const items = createRoster(category)
   return {
     id: createId(),
     name,
     category,
+    mode,
+    grades: {},
+    validatedTeams: [],
     tiers: createDefaultTiers(),
     items,
     poolItemIds: items.map((item) => item.id),

@@ -23,10 +23,15 @@ export interface Tier {
   itemIds: string[]
 }
 
+export type TierlistMode = 'tiers' | 'grades'
+
 export interface Tierlist {
   id: string
   name: string
   category: CategoryId
+  mode: TierlistMode
+  grades: Record<string, string>
+  validatedTeams: string[]
   tiers: Tier[]
   items: TierItem[]
   poolItemIds: string[]

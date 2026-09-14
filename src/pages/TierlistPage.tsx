@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { TopNav } from '../components/TopNav'
+import { GradeBoard } from '../components/GradeBoard'
+import { GradeRecap } from '../components/GradeRecap'
 import { PlayerPanel } from '../components/PlayerPanel'
 import { PlayerPicker } from '../components/PlayerPicker'
 import { TierList } from '../components/TierList'
@@ -145,6 +147,25 @@ export function TierlistPage() {
   const selectedPlayer = selectedItem?.playerId
     ? PLAYERS.find((p) => p.id === selectedItem.playerId) ?? null
     : null
+  const gradeMode = tierlist.mode === 'grades'
+  const gradePlayer = gradeMode ? PLAYERS.find((p) => p.id === selectedItemId) ?? null : null
+
+  function handleGrade(key: string, grade: string | null) {
+    updateTierlist(id, (current) => {
+      const grades = { ...current.grades }
+      if (grade) grades[key] = grade
+      else delete grades[key]
+      return { ...current, grades }
+    })
+  }
+
+  function handleValidate(teamShort: string) {
+    updateTierlist(id, (current) =>
+      current.validatedTeams.includes(teamShort)
+        ? current
+        : { ...current, validatedTeams: [...current.validatedTeams, teamShort] },
+    )
+  }
   const activeFilters = benchRoles.length + benchTeams.length + benchLeagues.length
 
   function resetBench() {
@@ -256,6 +277,7 @@ export function TierlistPage() {
         </div>
       </header>
 
+      {gradeMode ? null : (
       <div className="pool-form">
         <button type="button" className="primary" onClick={() => setPickerOpen(true)}>
           Ajouter des joueurs
@@ -269,7 +291,9 @@ export function TierlistPage() {
           <button type="submit">Ajouter</button>
         </form>
       </div>
+      )}
 
+      {gradeMode ? null : (
       <section className="bench-filter">
         <header className="bench-filter-head">
           <h2>Filtrer le banc</h2>
@@ -372,27 +396,53 @@ export function TierlistPage() {
           ) : null}
         </div>
       </section>
+      )}
 
-      <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
-        <TierList
-          className="board"
-          value={board}
-          onChange={handleBoardChange}
-          onRemoveItem={handleRemoveItem}
-          onSelectItem={setSelectedItemId}
-          selectedItemId={selectedItemId}
-          tierColors={TIER_COLORS}
-          tileSize={96}
-        />
+      {gradeMode ? (
+        <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
+          <div>
+            <GradeBoard
+              tierlist={tierlist}
+              onGrade={handleGrade}
+              onValidate={handleValidate}
+              onSelectPlayer={(playerId) =>
+                setSelectedItemId((current) => (current === playerId ? null : playerId))
+              }
+              selectedPlayerId={selectedItemId}
+            />
+            <GradeRecap tierlist={tierlist} />
+          </div>
 
-        {selectedItemId ? (
-          <PlayerPanel
-            player={selectedPlayer}
-            fallbackLabel={selectedItem?.label ?? null}
-            onClose={() => setSelectedItemId(null)}
+          {selectedItemId ? (
+            <PlayerPanel
+              player={gradePlayer}
+              fallbackLabel={null}
+              onClose={() => setSelectedItemId(null)}
+            />
+          ) : null}
+        </div>
+      ) : (
+        <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
+          <TierList
+            className="board"
+            value={board}
+            onChange={handleBoardChange}
+            onRemoveItem={handleRemoveItem}
+            onSelectItem={setSelectedItemId}
+            selectedItemId={selectedItemId}
+            tierColors={TIER_COLORS}
+            tileSize={96}
           />
-        ) : null}
-      </div>
+
+          {selectedItemId ? (
+            <PlayerPanel
+              player={selectedPlayer}
+              fallbackLabel={selectedItem?.label ?? null}
+              onClose={() => setSelectedItemId(null)}
+            />
+          ) : null}
+        </div>
+      )}
 
       <PlayerPicker
         open={pickerOpen}

@@ -8,7 +8,7 @@ import type { SortId } from '../components/FilterMenu'
 import { SkeletonGrid } from '../components/SkeletonGrid'
 import { getCategory } from '../lib/categories'
 import { useTierlists } from '../store/TierlistsContext'
-import type { CategoryId } from '../types'
+import type { CategoryId, TierlistMode } from '../types'
 
 export function HomePage() {
   const { tierlists, loading, addTierlist, deleteTierlists } = useTierlists()
@@ -53,8 +53,8 @@ export function HomePage() {
     navigate(`/tierlist/${id}`)
   }
 
-  function handleCreate(name: string, category: CategoryId) {
-    const created = addTierlist(name, category)
+  function handleCreate(name: string, category: CategoryId, mode: TierlistMode) {
+    const created = addTierlist(name, category, mode)
     setCreateOpen(false)
     navigate(`/tierlist/${created.id}`)
   }
@@ -182,6 +182,7 @@ export function HomePage() {
                     />
                   ) : null}
                   <span className="badge">{category ? category.label : tierlist.category}</span>
+                  {tierlist.mode === 'grades' ? <span className="badge">Notation</span> : null}
                   <h2>{tierlist.name}</h2>
                   <p className="meta">
                     {tierlist.items.length} élément{tierlist.items.length > 1 ? 's' : ''} ·{' '}

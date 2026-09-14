@@ -23,6 +23,17 @@ la même inversion.
 
 Si un fichier est absent, le site retombe sur le texte « RaphCorp » sans rien casser.
 
+## Deux modes de tierlist
+
+Le mode se choisit a la creation et ne change plus ensuite.
+
+**Plateau** : le mode historique, on glisse les joueurs dans des tiers S, A, B, C, D.
+
+**Notation** : on note equipe par equipe sur un bareme de 15 crans (G, S+ a S-, A+ a A-,
+B+ a B-, C+ a C-, F+ et F), chaque joueur plus une note d'equipe. Valider une equipe passe a
+la suivante. Toutes les notes de la session alimentent un tableau recapitulatif exportable
+en PNG, une carte par equipe avec ses joueurs en colonnes.
+
 ## Base de joueurs
 
 `src/data/players.json` contient les equipes qualifiees pour Worlds 2026 et leurs joueurs.

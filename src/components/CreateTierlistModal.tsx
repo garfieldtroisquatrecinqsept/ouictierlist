@@ -2,17 +2,18 @@ import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { CATEGORIES } from '../lib/categories'
 import { playersForCategory } from '../lib/storage'
-import type { CategoryId } from '../types'
+import type { CategoryId, TierlistMode } from '../types'
 
 interface Props {
   open: boolean
   onClose: () => void
-  onCreate: (name: string, category: CategoryId) => void
+  onCreate: (name: string, category: CategoryId, mode: TierlistMode) => void
 }
 
 export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
   const [name, setName] = useState('')
   const [category, setCategory] = useState<CategoryId | null>(null)
+  const [mode, setMode] = useState<TierlistMode>('tiers')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
@@ -20,6 +21,7 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
     if (!open) return
     setName('')
     setCategory(null)
+    setMode('tiers')
     setError('')
     setSubmitting(false)
   }, [open])
@@ -48,7 +50,7 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
     }
     setError('')
     setSubmitting(true)
-    window.setTimeout(() => onCreate(trimmed, category), 420)
+    window.setTimeout(() => onCreate(trimmed, category, mode), 420)
   }
 
   return (
@@ -66,6 +68,30 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
               placeholder="Top laners 2026"
             />
           </label>
+
+          <fieldset className="field">
+            <legend>Mode</legend>
+            <div className="mode-grid">
+              <button
+                type="button"
+                disabled={submitting}
+                className={mode === 'tiers' ? 'category-option selected' : 'category-option'}
+                onClick={() => setMode('tiers')}
+              >
+                <strong>Plateau</strong>
+                <span>Glisser les joueurs dans des tiers S, A, B…</span>
+              </button>
+              <button
+                type="button"
+                disabled={submitting}
+                className={mode === 'grades' ? 'category-option selected' : 'category-option'}
+                onClick={() => setMode('grades')}
+              >
+                <strong>Notation</strong>
+                <span>Noter équipe par équipe, avec tableau récapitulatif</span>
+              </button>
+            </div>
+          </fieldset>
 
           <fieldset className="field">
             <legend>Catégorie</legend>
