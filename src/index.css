@@ -1535,6 +1535,7 @@ input:focus {
 }
 
 .strip-face-button {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1553,8 +1554,8 @@ input:focus {
 .strip-face {
   position: relative;
   display: block;
-  width: 78px;
-  height: 68px;
+  width: 100%;
+  aspect-ratio: 1.12 / 1;
   overflow: hidden;
   border-radius: 3px;
   background: transparent;
@@ -1581,10 +1582,10 @@ input:focus {
 
 .strip-role {
   position: absolute;
-  right: 3px;
-  bottom: 3px;
-  width: 16px;
-  height: 16px;
+  right: 4px;
+  bottom: 4px;
+  width: 18px;
+  height: 18px;
   padding: 1px;
   border-radius: 2px;
   background: rgba(0, 0, 0, 0.62);
