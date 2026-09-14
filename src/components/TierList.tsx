@@ -84,6 +84,7 @@ export function TierList({
   const dragRef = React.useRef<{ id: string; offX: number; offY: number; startX: number; startY: number; moved: boolean } | null>(null);
   const overRef = React.useRef<{ zone: string; index: number } | null>(null);
   const [dragId, setDragId] = React.useState<string | null>(null);
+  const [lifted, setLifted] = React.useState(false);
   const [pointer, setPointer] = React.useState({ x: 0, y: 0 });
   const [over, setOver] = React.useState<{ zone: string; index: number } | null>(null);
   const dockX = useMotionValue(Number.POSITIVE_INFINITY);
@@ -94,7 +95,7 @@ export function TierList({
     () => [...value.tiers.flatMap((t) => t.items), ...value.pool],
     [value],
   );
-  const draggingItem = dragId ? allItems.find((i) => i.id === dragId) ?? null : null;
+  const draggingItem = lifted && dragId ? allItems.find((i) => i.id === dragId) ?? null : null;
 
   const zoneOrder = React.useMemo(() => [...value.tiers.map((t) => t.id), POOL], [value.tiers]);
 
@@ -172,6 +173,7 @@ export function TierList({
       moved: false,
     };
     setDragId(itemId);
+    setLifted(false);
     setPointer({ x: e.clientX, y: e.clientY });
     setOverBoth(null);
   };
@@ -182,7 +184,11 @@ export function TierList({
       const d = dragRef.current;
       if (!d) return;
       setPointer({ x: e.clientX, y: e.clientY });
-      if (Math.hypot(e.clientX - d.startX, e.clientY - d.startY) > 4) d.moved = true;
+      if (!d.moved && Math.hypot(e.clientX - d.startX, e.clientY - d.startY) > 4) {
+        d.moved = true;
+        setLifted(true);
+      }
+      if (!d.moved) return;
       const zone = hitZone(e.clientX, e.clientY);
       setOverBoth(zone ? { zone, index: indexIn(zone, e.clientX, e.clientY, d.id) } : null);
     };
@@ -193,6 +199,7 @@ export function TierList({
       else if (d && target) moveItem(d.id, target.zone, target.index);
       dragRef.current = null;
       setDragId(null);
+      setLifted(false);
       setOverBoth(null);
     };
     window.addEventListener("pointermove", move);
@@ -234,7 +241,7 @@ export function TierList({
 
   const renderTiles = (items: TierItem[], zoneId: string) => {
     const showIndicator = over?.zone === zoneId ? over.index : -1;
-    const visible = items.filter((i) => i.id !== dragId);
+    const visible = lifted ? items.filter((i) => i.id !== dragId) : items;
     const indH = Math.round(tileSize * TILE_RATIO);
     const out: React.ReactNode[] = [];
     visible.forEach((item, i) => {
@@ -381,12 +388,12 @@ export function TierList({
           className="flex flex-wrap content-end gap-2"
           style={{ minHeight: Math.round(tileSize * TILE_RATIO) }}
         >
-          {value.pool.filter((i) => i.id !== dragId).length === 0 && over?.zone !== POOL && (
+          {value.pool.filter((i) => !lifted || i.id !== dragId).length === 0 && over?.zone !== POOL && (
             <span className="px-1 py-3 text-[12px] text-zinc-400 dark:text-zinc-600">
               Tout est classé — glisse une tuile ici pour la déclasser
             </span>
           )}
-          <DockContext.Provider value={readOnly || dragId ? null : dockX}>
+          <DockContext.Provider value={readOnly || lifted ? null : dockX}>
             {renderTiles(value.pool, POOL)}
           </DockContext.Provider>
         </div>

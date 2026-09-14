@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { gradeColor } from '../lib/grades'
 import { asset, teamByShort } from '../lib/players'
+import { useTheme } from '../store/ThemeContext'
 import type { Tierlist } from '../types'
 import { rostersOf, teamKey } from './GradeBoard'
 
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function GradeRecap({ tierlist }: Props) {
+  const { theme } = useTheme()
   const sheetRef = useRef<HTMLDivElement>(null)
   const [exporting, setExporting] = useState(false)
   const [error, setError] = useState('')
@@ -71,7 +73,14 @@ export function GradeRecap({ tierlist }: Props) {
       <div className="recap-sheet" ref={sheetRef}>
         <div className="recap-title">
           <strong>{tierlist.name}</strong>
-          <span>OuicTierlist</span>
+          <span className="recap-brand">
+            <img
+              src={`${import.meta.env.BASE_URL}raphcorp-${theme}.png`}
+              alt="RaphCorp"
+              crossOrigin="anonymous"
+            />
+            OuicTierlist
+          </span>
         </div>
 
         <div className={`recap-grid cols-${columns}`}>

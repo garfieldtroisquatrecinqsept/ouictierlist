@@ -1,9 +1,10 @@
-import { useState } from 'react'
 import { Palmares } from './Palmares'
 import { StatRadar } from './StatRadar'
 import {
   ROLE_LABELS,
   palmaresFor,
+  rankLabel,
+  statRank,
   STATS_SEASON,
   STAT_BLOCKS,
   asset,
@@ -22,8 +23,6 @@ interface Props {
 }
 
 export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: Props) {
-  const [scope, setScope] = useState<'all' | 'role'>('all')
-
   if (!player) {
     return (
       <aside className={`player-panel empty ${className}`.trim()}>
@@ -61,24 +60,8 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
       {stats ? (
         <>
           <div className="panel-left">
-          <div className="panel-scope">
-            <button
-              type="button"
-              className={scope === 'all' ? 'scope-tab on' : 'scope-tab'}
-              onClick={() => setScope('all')}
-            >
-              vs tous
-            </button>
-            <button
-              type="button"
-              className={scope === 'role' ? 'scope-tab on' : 'scope-tab'}
-              onClick={() => setScope('role')}
-            >
-              vs {ROLE_LABELS[player.role]}
-            </button>
-          </div>
-
-          <StatRadar players={[player]} scope={scope} size={240} />
+          <StatRadar players={[player]} scope="role" size={240} />
+          <p className="panel-scope-note">Classement parmi les {ROLE_LABELS[player.role]}</p>
 
           {palmaresFor(player.id).length > 0 ? (
             <section className="panel-block">
@@ -96,10 +79,18 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
               <dl className="panel-stats">
                 {block.fields.map(([field, label]) => {
                   const value = (stats[block.key] as Record<string, string | null>)?.[field]
+                  const rank = value ? statRank(player.id, block.key, field) : null
                   return (
                     <div key={field}>
                       <dt>{label}</dt>
-                      <dd>{value ?? '—'}</dd>
+                      <dd>
+                        {value ?? '—'}
+                        {rank ? (
+                          <span className={`stat-rank${rank.rank <= 3 ? ` top${rank.rank}` : ''}`}>
+                            {rankLabel(rank.rank)}
+                          </span>
+                        ) : null}
+                      </dd>
                     </div>
                   )
                 })}

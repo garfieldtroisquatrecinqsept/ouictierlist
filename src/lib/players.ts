@@ -207,3 +207,59 @@ export function trophyColor(code: string): string {
   return TROPHY_COLORS[code] ?? '#8a8a92'
 }
 
+
+const LOWER_IS_BETTER = new Set(['firstBloodVictim'])
+const UNRANKED = new Set(['record'])
+
+export function parseStat(value: string | null | undefined): number | null {
+  if (!value) return null
+  const cleaned = value.replace(/\s/g, '').replace('%', '').replace(',', '.')
+  return /^[+-]?\d+(\.\d+)?$/.test(cleaned) ? Number(cleaned) : null
+}
+
+export interface StatRank {
+  rank: number
+  total: number
+}
+
+const RANK_CACHE = new Map<string, Map<string, StatRank>>()
+
+function rankTable(role: RoleId, block: keyof PlayerStats, field: string) {
+  const key = `${role}|${String(block)}|${field}`
+  const cached = RANK_CACHE.get(key)
+  if (cached) return cached
+
+  const scored: { id: string; value: number }[] = []
+  PLAYERS.filter((player) => player.role === role).forEach((player) => {
+    const stats = statsFor(player.id)
+    if (!stats) return
+    const value = parseStat((stats[block] as Record<string, string | null>)?.[field])
+    if (value !== null) scored.push({ id: player.id, value })
+  })
+  scored.sort((a, b) =>
+    LOWER_IS_BETTER.has(field) ? a.value - b.value : b.value - a.value,
+  )
+
+  const table = new Map<string, StatRank>()
+  scored.forEach((entry) => {
+    const tie = scored.findIndex((other) => other.value === entry.value)
+    table.set(entry.id, { rank: tie + 1, total: scored.length })
+  })
+  RANK_CACHE.set(key, table)
+  return table
+}
+
+export function statRank(
+  playerId: string,
+  block: keyof PlayerStats,
+  field: string,
+): StatRank | null {
+  if (UNRANKED.has(field)) return null
+  const player = PLAYERS.find((entry) => entry.id === playerId)
+  if (!player) return null
+  return rankTable(player.role, block, field).get(playerId) ?? null
+}
+
+export function rankLabel(rank: number): string {
+  return rank === 1 ? '1er' : `${rank}e`
+}

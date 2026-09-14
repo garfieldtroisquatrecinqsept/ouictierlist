@@ -1454,9 +1454,42 @@ input:focus {
 
 .panel-stats dd {
   margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
   font-weight: 600;
   font-size: 0.84rem;
   font-variant-numeric: tabular-nums;
+}
+
+.stat-rank {
+  min-width: 2.1em;
+  text-align: right;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+}
+
+.stat-rank.top1 {
+  color: #c9a227;
+}
+
+.stat-rank.top2 {
+  color: #8f9298;
+}
+
+.stat-rank.top3 {
+  color: #b2703c;
+}
+
+.panel-scope-note {
+  margin: 0.1rem 0 0;
+  text-align: center;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
 }
 
 .panel-source {
@@ -2007,6 +2040,19 @@ span.gcell-box {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-faint);
+}
+
+.recap-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: none;
+}
+
+.recap-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .recap-grid {
