@@ -2344,12 +2344,19 @@ span.gcell-box {
 
 .recap-title {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding-bottom: 0.8rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--line);
+}
+
+.recap-worlds {
+  height: 30px;
+  width: auto;
+  flex: none;
+  object-fit: contain;
 }
 
 .recap-title strong {
@@ -2866,25 +2873,47 @@ span.gcell-box {
   color: var(--ink);
 }
 
-.bg-custom {
+.bg-import {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  width: 100%;
   margin-top: 0.6rem;
-  padding-top: 0.6rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.74rem;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.76rem;
+  font-weight: 500;
   color: var(--ink-soft);
+  background: transparent;
+  border-color: var(--line);
+  box-shadow: none;
 }
 
-.bg-custom input {
-  width: 46px;
-  height: 26px;
-  padding: 0;
+.bg-import:hover:not(:disabled) {
+  color: var(--ink);
+  border-color: var(--line-strong);
+  transform: none;
+}
+
+.bg-import-thumb {
+  width: 26px;
+  height: 18px;
+  flex: none;
+  border-radius: 2px;
   border: 1px solid var(--line-strong);
-  border-radius: 3px;
-  background: none;
+}
+
+.board-sheet {
+  transition: background 0.25s ease, padding 0.25s ease;
+}
+
+.on-dark > .recap-title strong,
+.on-dark > .recap-title .recap-brand {
+  color: #f4f4f2;
+}
+
+.on-dark > .recap-title {
+  border-bottom-color: rgba(255, 255, 255, 0.22);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
 .board-sheet.exporting {

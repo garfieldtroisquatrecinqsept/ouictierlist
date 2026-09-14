@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { ExportControls } from './ExportControls'
-import { exportNode } from '../lib/exportImage'
+import { SheetHeader } from './SheetHeader'
+import { exportNode, isDarkBackground, loadChoice, sheetStyle } from '../lib/exportImage'
 import type { ExportChoice } from '../lib/exportImage'
 import { gradeColor } from '../lib/grades'
 import { asset, roleIcon, teamByShort } from '../lib/players'
@@ -17,6 +18,7 @@ export function GradeRecap({ tierlist }: Props) {
   const sheetRef = useRef<HTMLDivElement>(null)
   const [exporting, setExporting] = useState(false)
   const [open, setOpen] = useState(false)
+  const [background, setBackground] = useState<ExportChoice>(() => loadChoice())
   const [error, setError] = useState('')
 
   const rosters = useMemo(
@@ -30,12 +32,12 @@ export function GradeRecap({ tierlist }: Props) {
     [tierlist],
   )
 
-  async function exportImage(choice: ExportChoice) {
+  async function exportImage() {
     if (!sheetRef.current) return
     setExporting(true)
     setError('')
     try {
-      await exportNode(sheetRef.current, tierlist.name, choice)
+      await exportNode(sheetRef.current, tierlist.name)
     } catch {
       setError("L'export a échoué. Fais une capture d'écran du tableau ci-dessous.")
     } finally {
@@ -61,24 +63,23 @@ export function GradeRecap({ tierlist }: Props) {
           Récapitulatif
         </button>
         <span className="meta">{rosters.length} équipes notées</span>
-        <ExportControls onExport={exportImage} busy={exporting} />
+        <ExportControls
+          choice={background}
+          onChoose={setBackground}
+          onExport={exportImage}
+          busy={exporting}
+        />
       </header>
 
       {error ? <p className="error">{error}</p> : null}
 
       <div className={open ? 'recap-clip open' : 'recap-clip'}>
-      <div className="recap-sheet" ref={sheetRef}>
-        <div className="recap-title">
-          <strong>{tierlist.name}</strong>
-          <span className="recap-brand">
-            <img
-              src={`${import.meta.env.BASE_URL}raphcorp-${theme}.png`}
-              alt="RaphCorp"
-              crossOrigin="anonymous"
-            />
-            OuicTierlist
-          </span>
-        </div>
+      <div
+        className={isDarkBackground(background) ? 'recap-sheet on-dark' : 'recap-sheet'}
+        ref={sheetRef}
+        style={sheetStyle(background)}
+      >
+        <SheetHeader title={tierlist.name} onDark={isDarkBackground(background)} />
 
         <div className={`recap-grid cols-${columns}`}>
           {rosters.map((roster) => {

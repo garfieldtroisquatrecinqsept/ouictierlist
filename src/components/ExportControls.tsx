@@ -1,27 +1,30 @@
 import { useEffect, useRef, useState } from 'react'
-import {
-  EXPORT_BACKGROUNDS,
-  backgroundCss,
-  loadChoice,
-  saveChoice,
-} from '../lib/exportImage'
+import { EXPORT_BACKGROUNDS, backgroundCss, saveChoice } from '../lib/exportImage'
 import type { ExportChoice } from '../lib/exportImage'
 
 interface Props {
-  onExport: (choice: ExportChoice) => void
+  choice: ExportChoice
+  onChoose: (choice: ExportChoice) => void
+  onExport: () => void
   busy?: boolean
   label?: string
 }
 
-export function ExportControls({ onExport, busy = false, label = 'Exporter en image' }: Props) {
-  const [choice, setChoice] = useState<ExportChoice>(() => loadChoice())
+export function ExportControls({
+  choice,
+  onChoose,
+  onExport,
+  busy = false,
+  label = 'Exporter en image',
+}: Props) {
   const [open, setOpen] = useState(false)
   const rootRef = useRef<HTMLDivElement>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => {
-    saveChoice(choice)
-  }, [choice])
+  function setChoice(next: ExportChoice) {
+    saveChoice(next)
+    onChoose(next)
+  }
 
   useEffect(() => {
     if (!open) return
@@ -55,7 +58,7 @@ export function ExportControls({ onExport, busy = false, label = 'Exporter en im
         className="bg-trigger"
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
-        title="Fond de l'image exportée"
+        title="Fond du plateau et de l'image exportée"
       >
         <span className="bg-dot" style={preview ? { background: preview } : undefined} />
         Fond
@@ -76,31 +79,14 @@ export function ExportControls({ onExport, busy = false, label = 'Exporter en im
                 {entry.label}
               </button>
             ))}
-            <button
-              type="button"
-              className={choice.id === 'custom' ? 'bg-swatch on' : 'bg-swatch'}
-              onClick={() => fileRef.current?.click()}
-              title="Image personnalisée"
-            >
-              <span
-                style={
-                  choice.id === 'custom' && preview ? { background: preview } : undefined
-                }
-              />
-              Image
-            </button>
           </div>
 
-          <label className="bg-custom">
-            <span>Couleur perso</span>
-            <input
-              type="color"
-              value={
-                choice.id === 'custom' && choice.custom?.startsWith('#') ? choice.custom : '#1d3a63'
-              }
-              onChange={(event) => setChoice({ id: 'custom', custom: event.target.value })}
-            />
-          </label>
+          <button type="button" className="bg-import" onClick={() => fileRef.current?.click()}>
+            {choice.id === 'custom' && preview ? (
+              <span className="bg-import-thumb" style={{ background: preview }} />
+            ) : null}
+            {choice.id === 'custom' ? 'Changer mon image de fond' : 'Ouvrir une image de mon PC'}
+          </button>
 
           <input
             ref={fileRef}
@@ -112,7 +98,7 @@ export function ExportControls({ onExport, busy = false, label = 'Exporter en im
         </div>
       ) : null}
 
-      <button type="button" onClick={() => onExport(choice)} disabled={busy}>
+      <button type="button" onClick={onExport} disabled={busy}>
         {busy ? <span className="spinner" /> : null}
         {busy ? 'Export…' : label}
       </button>

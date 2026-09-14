@@ -1,3 +1,5 @@
+import type React from 'react'
+
 export interface ExportBackground {
   id: string
   label: string
@@ -41,10 +43,20 @@ export function saveChoice(choice: ExportChoice) {
 
 export function backgroundCss(choice: ExportChoice): string | null {
   if (choice.id === 'custom') {
-    if (!choice.custom) return null
-    return choice.custom.startsWith('data:') ? `url(${choice.custom}) center / cover` : choice.custom
+    return choice.custom ? `url(${choice.custom}) center / cover no-repeat` : null
   }
   return EXPORT_BACKGROUNDS.find((entry) => entry.id === choice.id)?.css ?? null
+}
+
+export function isDarkBackground(choice: ExportChoice): boolean {
+  if (choice.id === 'custom') return Boolean(choice.custom)
+  return EXPORT_BACKGROUNDS.find((entry) => entry.id === choice.id)?.dark ?? false
+}
+
+/** Style applique en direct au plateau : le fond choisi sert aussi de cadre a l'export. */
+export function sheetStyle(choice: ExportChoice): React.CSSProperties | undefined {
+  const css = backgroundCss(choice)
+  return css ? { background: css, padding: '28px', borderRadius: 0 } : undefined
 }
 
 export function fileName(name: string): string {
@@ -52,32 +64,16 @@ export function fileName(name: string): string {
   return `${slug || 'tierlist'}.png`
 }
 
-/** Applique le fond choisi au noeud, capture en PNG puis rend le noeud a son etat initial. */
-export async function exportNode(
-  node: HTMLElement,
-  name: string,
-  choice: ExportChoice,
-): Promise<void> {
+export async function exportNode(node: HTMLElement, name: string): Promise<void> {
   const { toPng } = await import('html-to-image')
-  const css = backgroundCss(choice)
-  const previous = node.style.cssText
-
-  if (css) {
-    node.style.background = css
-    node.style.padding = '28px'
-    node.style.borderRadius = '0'
-  }
-
-  try {
-    const url = await toPng(node, {
-      pixelRatio: 2,
-      backgroundColor: css ? undefined : getComputedStyle(document.body).backgroundColor,
-    })
-    const link = document.createElement('a')
-    link.download = fileName(name)
-    link.href = url
-    link.click()
-  } finally {
-    node.style.cssText = previous
-  }
+  const own = getComputedStyle(node).backgroundColor
+  const transparent = own === 'rgba(0, 0, 0, 0)' || own === 'transparent'
+  const url = await toPng(node, {
+    pixelRatio: 2,
+    backgroundColor: transparent ? getComputedStyle(document.body).backgroundColor : undefined,
+  })
+  const link = document.createElement('a')
+  link.download = fileName(name)
+  link.href = url
+  link.click()
 }

@@ -5,6 +5,7 @@ import { TopNav } from '../components/TopNav'
 import { GradeBoard } from '../components/GradeBoard'
 import { GradeRecap } from '../components/GradeRecap'
 import { ExportControls } from '../components/ExportControls'
+import { SheetHeader } from '../components/SheetHeader'
 import { PlayerPanel } from '../components/PlayerPanel'
 import { PlayerPicker } from '../components/PlayerPicker'
 import { TierList } from '../components/TierList'
@@ -22,7 +23,7 @@ import {
 } from '../lib/players'
 import type { LeagueId, Player } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
-import { exportNode } from '../lib/exportImage'
+import { exportNode, isDarkBackground, loadChoice, sheetStyle } from '../lib/exportImage'
 import type { ExportChoice } from '../lib/exportImage'
 import { createId } from '../lib/storage'
 import { useTierlists } from '../store/TierlistsContext'
@@ -46,6 +47,7 @@ export function TierlistPage() {
   const boardSheet = useRef<HTMLDivElement>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [freeEntry, setFreeEntry] = useState(false)
+  const [background, setBackground] = useState<ExportChoice>(() => loadChoice())
 
   const tierlist = getTierlist(id)
 
@@ -176,13 +178,13 @@ export function TierlistPage() {
   }
   const activeFilters = benchRoles.length + benchTeams.length + benchLeagues.length
 
-  async function exportBoard(choice: ExportChoice) {
+  async function exportBoard() {
     if (!boardSheet.current || !tierlist) return
     setExporting(true)
     setExportError('')
     await new Promise((resolve) => window.setTimeout(resolve, 80))
     try {
-      await exportNode(boardSheet.current, tierlist.name, choice)
+      await exportNode(boardSheet.current, tierlist.name)
     } catch {
       setExportError("L'export a échoué. Fais une capture d'écran du plateau.")
     } finally {
@@ -335,7 +337,12 @@ export function TierlistPage() {
         ) : null}
 
         <div className="toolbar-end">
-          <ExportControls onExport={exportBoard} busy={exporting} />
+          <ExportControls
+            choice={background}
+            onChoose={setBackground}
+            onExport={exportBoard}
+            busy={exporting}
+          />
         </div>
       </div>
       )}
@@ -473,20 +480,18 @@ export function TierlistPage() {
       ) : (
         <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
           <div
-            className={exporting ? 'board-sheet exporting' : 'board-sheet'}
+            className={[
+              'board-sheet',
+              exporting ? 'exporting' : '',
+              isDarkBackground(background) ? 'on-dark' : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
             ref={boardSheet}
+            style={sheetStyle(background)}
           >
-            {exporting ? (
-              <div className="recap-title">
-                <strong>{tierlist.name}</strong>
-                <span className="recap-brand">
-                  <img
-                    src={`${import.meta.env.BASE_URL}raphcorp-${theme}.png`}
-                    alt="RaphCorp"
-                  />
-                  OuicTierlist
-                </span>
-              </div>
+            {exporting || sheetStyle(background) ? (
+              <SheetHeader title={tierlist.name} onDark={isDarkBackground(background)} />
             ) : null}
             <TierList
               className="board"
