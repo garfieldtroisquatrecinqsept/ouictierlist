@@ -1,4 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BootScreen } from './components/BootScreen'
 import { ComparePage } from './pages/ComparePage'
 import { HomePage } from './pages/HomePage'
 import { PlayersPage } from './pages/PlayersPage'
@@ -10,6 +11,7 @@ import { TierlistsProvider } from './store/TierlistsContext'
 export default function App() {
   return (
     <ThemeProvider>
+      <BootScreen />
       <TierlistsProvider>
         <HashRouter>
           <Routes>
