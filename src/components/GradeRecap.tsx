@@ -13,6 +13,7 @@ export function GradeRecap({ tierlist }: Props) {
   const { theme } = useTheme()
   const sheetRef = useRef<HTMLDivElement>(null)
   const [exporting, setExporting] = useState(false)
+  const [open, setOpen] = useState(false)
   const [error, setError] = useState('')
 
   const rosters = useMemo(
@@ -60,7 +61,10 @@ export function GradeRecap({ tierlist }: Props) {
   return (
     <section className="recap">
       <header className="recap-head">
-        <h2>Récapitulatif</h2>
+        <button type="button" className="ghost recap-toggle" onClick={() => setOpen((v) => !v)}>
+          <span className={open ? 'recap-caret open' : 'recap-caret'}>▸</span>
+          Récapitulatif
+        </button>
         <span className="meta">{rosters.length} équipes notées</span>
         <button type="button" onClick={exportImage} disabled={exporting}>
           {exporting ? <span className="spinner" /> : null}
@@ -70,6 +74,7 @@ export function GradeRecap({ tierlist }: Props) {
 
       {error ? <p className="error">{error}</p> : null}
 
+      <div className={open ? 'recap-clip open' : 'recap-clip'}>
       <div className="recap-sheet" ref={sheetRef}>
         <div className="recap-title">
           <strong>{tierlist.name}</strong>
@@ -124,6 +129,7 @@ export function GradeRecap({ tierlist }: Props) {
             )
           })}
         </div>
+      </div>
       </div>
     </section>
   )

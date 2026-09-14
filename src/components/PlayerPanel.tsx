@@ -99,6 +99,9 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
           ))}
           </div>
 
+          </div>
+
+          <div className="panel-side">
           <section className="panel-block">
             <h3>Champions les plus joués</h3>
             <ul className="champ-list">
