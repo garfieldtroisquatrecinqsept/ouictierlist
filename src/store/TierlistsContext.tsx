@@ -3,8 +3,11 @@ import type { ReactNode } from 'react'
 import type { CategoryId, Tierlist } from '../types'
 import { createTierlist, loadTierlists, saveTierlists } from '../lib/storage'
 
+const MIN_LOADING_MS = 550
+
 interface TierlistsContextValue {
   tierlists: Tierlist[]
+  loading: boolean
   addTierlist: (name: string, category: CategoryId) => Tierlist
   updateTierlist: (id: string, updater: (tierlist: Tierlist) => Tierlist) => void
   deleteTierlists: (ids: string[]) => void
@@ -14,11 +17,24 @@ interface TierlistsContextValue {
 const TierlistsContext = createContext<TierlistsContextValue | null>(null)
 
 export function TierlistsProvider({ children }: { children: ReactNode }) {
-  const [tierlists, setTierlists] = useState<Tierlist[]>(() => loadTierlists())
+  const [tierlists, setTierlists] = useState<Tierlist[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const startedAt = performance.now()
+    const stored = loadTierlists()
+    const remaining = Math.max(0, MIN_LOADING_MS - (performance.now() - startedAt))
+    const timer = setTimeout(() => {
+      setTierlists(stored)
+      setLoading(false)
+    }, remaining)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    if (loading) return
     saveTierlists(tierlists)
-  }, [tierlists])
+  }, [tierlists, loading])
 
   const addTierlist = useCallback((name: string, category: CategoryId) => {
     const tierlist = createTierlist(name, category)
@@ -45,8 +61,8 @@ export function TierlistsProvider({ children }: { children: ReactNode }) {
   )
 
   const value = useMemo(
-    () => ({ tierlists, addTierlist, updateTierlist, deleteTierlists, getTierlist }),
-    [tierlists, addTierlist, updateTierlist, deleteTierlists, getTierlist],
+    () => ({ tierlists, loading, addTierlist, updateTierlist, deleteTierlists, getTierlist }),
+    [tierlists, loading, addTierlist, updateTierlist, deleteTierlists, getTierlist],
   )
 
   return <TierlistsContext.Provider value={value}>{children}</TierlistsContext.Provider>

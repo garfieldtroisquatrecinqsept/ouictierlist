@@ -11,16 +11,32 @@ const POOL_ID = 'pool'
 export function TierlistPage() {
   const { id = '' } = useParams()
   const navigate = useNavigate()
-  const { getTierlist, updateTierlist } = useTierlists()
+  const { getTierlist, updateTierlist, loading } = useTierlists()
   const [label, setLabel] = useState('')
+  const [overId, setOverId] = useState<string | null>(null)
 
   const tierlist = getTierlist(id)
+
+  if (loading) {
+    return (
+      <div className="page">
+        <div className="page-loader">
+          <span />
+          <span />
+          <span />
+        </div>
+      </div>
+    )
+  }
 
   if (!tierlist) {
     return (
       <div className="page">
-        <p>Tierlist introuvable.</p>
-        <Link to="/">Retour à l'accueil</Link>
+        <h1 className="sheet-title">Introuvable</h1>
+        <p className="tagline">Cette tierlist n'existe plus.</p>
+        <p>
+          <Link to="/">Retour à l'accueil</Link>
+        </p>
       </div>
     )
   }
@@ -37,7 +53,11 @@ export function TierlistPage() {
     if (!trimmed) return
     updateTierlist(id, (current) => {
       const item = { id: createId(), label: trimmed, image: null }
-      return { ...current, items: [...current.items, item], poolItemIds: [...current.poolItemIds, item.id] }
+      return {
+        ...current,
+        items: [...current.items, item],
+        poolItemIds: [...current.poolItemIds, item.id],
+      }
     })
     setLabel('')
   }
@@ -93,11 +113,20 @@ export function TierlistPage() {
     )
   }
 
+  function dropZoneClass(base: string, targetId: string) {
+    return overId === targetId ? `${base} over` : base
+  }
+
   function dropHandlers(targetId: string) {
     return {
-      onDragOver: (event: DragEvent) => event.preventDefault(),
+      onDragOver: (event: DragEvent) => {
+        event.preventDefault()
+        setOverId(targetId)
+      },
+      onDragLeave: () => setOverId((current) => (current === targetId ? null : current)),
       onDrop: (event: DragEvent) => {
         event.preventDefault()
+        setOverId(null)
         const itemId = event.dataTransfer.getData('text/plain')
         if (itemId) moveItem(itemId, targetId)
       },
@@ -106,21 +135,25 @@ export function TierlistPage() {
 
   return (
     <div className="page">
-      <header className="page-header">
+      <header className="sheet-header">
         <div>
-          <button type="button" onClick={() => navigate('/')}>
-            ← Retour
+          <button type="button" className="ghost" onClick={() => navigate('/')}>
+            ← Toutes les tierlists
           </button>
-          <h1>{tierlist.name}</h1>
-          <p className="subtitle">{category ? category.fullName : tierlist.category}</p>
+          <h1 className="sheet-title">{tierlist.name}</h1>
+          <p className="tagline">{category ? category.fullName : tierlist.category}</p>
         </div>
       </header>
 
       <section className="tiers">
-        {tierlist.tiers.map((tier) => (
-          <div key={tier.id} className="tier-row">
+        {tierlist.tiers.map((tier, index) => (
+          <div
+            key={tier.id}
+            className="tier-row"
+            style={{ animationDelay: `${index * 60}ms` }}
+          >
             <div className="tier-label">{tier.label}</div>
-            <div className="tier-drop" {...dropHandlers(tier.id)}>
+            <div className={dropZoneClass('tier-drop', tier.id)} {...dropHandlers(tier.id)}>
               {tier.itemIds.map(renderItem)}
             </div>
           </div>
@@ -132,13 +165,13 @@ export function TierlistPage() {
           <input
             value={label}
             onChange={(event) => setLabel(event.target.value)}
-            placeholder="Ajouter un joueur / une équipe"
+            placeholder="Ajouter un joueur ou une équipe"
           />
           <button type="submit" className="primary">
             Ajouter
           </button>
         </form>
-        <div className="pool-drop" {...dropHandlers(POOL_ID)}>
+        <div className={dropZoneClass('pool-drop', POOL_ID)} {...dropHandlers(POOL_ID)}>
           {tierlist.poolItemIds.length === 0 ? (
             <p className="hint">Glisse un élément ici pour le retirer des tiers.</p>
           ) : (

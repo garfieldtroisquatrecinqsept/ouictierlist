@@ -2,18 +2,20 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CreateTierlistModal } from '../components/CreateTierlistModal'
 import { ConfirmDialog } from '../components/ConfirmDialog'
+import { SkeletonGrid } from '../components/SkeletonGrid'
 import { CATEGORIES, getCategory } from '../lib/categories'
 import { useTierlists } from '../store/TierlistsContext'
 import type { CategoryId } from '../types'
 
 export function HomePage() {
-  const { tierlists, addTierlist, deleteTierlists } = useTierlists()
+  const { tierlists, loading, addTierlist, deleteTierlists } = useTierlists()
   const navigate = useNavigate()
 
   const [createOpen, setCreateOpen] = useState(false)
   const [selectionMode, setSelectionMode] = useState(false)
   const [selected, setSelected] = useState<string[]>([])
   const [confirmOpen, setConfirmOpen] = useState(false)
+  const [deleting, setDeleting] = useState(false)
   const [filter, setFilter] = useState<CategoryId | 'all'>('all')
 
   const visible = useMemo(
@@ -47,21 +49,32 @@ export function HomePage() {
   }
 
   function handleDelete() {
-    deleteTierlists(selected)
-    setConfirmOpen(false)
-    exitSelection()
+    setDeleting(true)
+    window.setTimeout(() => {
+      deleteTierlists(selected)
+      setDeleting(false)
+      setConfirmOpen(false)
+      exitSelection()
+    }, 420)
   }
 
-  const allVisibleSelected = visible.length > 0 && visible.every((item) => selected.includes(item.id))
+  const allVisibleSelected =
+    visible.length > 0 && visible.every((item) => selected.includes(item.id))
 
   return (
     <div className="page">
-      <header className="page-header">
+      <header className="masthead">
         <div>
-          <h1>Tierlists</h1>
-          <p className="subtitle">{tierlists.length} tierlist(s) enregistrée(s)</p>
+          <h1 className="wordmark">
+            Tier<em>lists</em>
+          </h1>
+          <p className="tagline">
+            {loading
+              ? 'Chargement de la collection…'
+              : `${tierlists.length} tierlist${tierlists.length > 1 ? 's' : ''} · LCK, LEC, LPL, LCP, Worlds, MSI`}
+          </p>
         </div>
-        <div className="header-actions">
+        <div className="masthead-actions">
           {selectionMode ? (
             <>
               <button
@@ -80,7 +93,7 @@ export function HomePage() {
               >
                 Supprimer ({selected.length})
               </button>
-              <button type="button" onClick={exitSelection}>
+              <button type="button" className="ghost" onClick={exitSelection}>
                 Annuler
               </button>
             </>
@@ -88,12 +101,17 @@ export function HomePage() {
             <>
               <button
                 type="button"
-                disabled={tierlists.length === 0}
+                disabled={loading || tierlists.length === 0}
                 onClick={() => setSelectionMode(true)}
               >
                 Sélectionner
               </button>
-              <button type="button" className="primary" onClick={() => setCreateOpen(true)}>
+              <button
+                type="button"
+                className="primary"
+                disabled={loading}
+                onClick={() => setCreateOpen(true)}
+              >
                 Créer une tierlist
               </button>
             </>
@@ -121,20 +139,26 @@ export function HomePage() {
         ))}
       </nav>
 
-      {visible.length === 0 ? (
-        <div className="empty">
-          <p>Aucune tierlist ici.</p>
+      {loading ? (
+        <SkeletonGrid />
+      ) : visible.length === 0 ? (
+        <div className="empty reveal">
+          <p>Rien à classer pour l'instant.</p>
           <button type="button" className="primary" onClick={() => setCreateOpen(true)}>
             Créer la première
           </button>
         </div>
       ) : (
         <ul className="tierlist-grid">
-          {visible.map((tierlist) => {
+          {visible.map((tierlist, index) => {
             const category = getCategory(tierlist.category)
             const isSelected = selected.includes(tierlist.id)
             return (
-              <li key={tierlist.id}>
+              <li
+                key={tierlist.id}
+                className="reveal"
+                style={{ animationDelay: `${Math.min(index, 8) * 55}ms` }}
+              >
                 <article
                   className={isSelected ? 'tierlist-card selected' : 'tierlist-card'}
                   onClick={() => handleCardClick(tierlist.id)}
@@ -151,7 +175,7 @@ export function HomePage() {
                   <span className="badge">{category ? category.label : tierlist.category}</span>
                   <h2>{tierlist.name}</h2>
                   <p className="meta">
-                    {tierlist.items.length} élément(s) ·{' '}
+                    {tierlist.items.length} élément{tierlist.items.length > 1 ? 's' : ''} ·{' '}
                     {new Date(tierlist.updatedAt).toLocaleDateString('fr-FR')}
                   </p>
                 </article>
@@ -169,8 +193,9 @@ export function HomePage() {
 
       <ConfirmDialog
         open={confirmOpen}
-        title="Supprimer les tierlists"
-        message={`${selected.length} tierlist(s) vont être supprimées définitivement.`}
+        busy={deleting}
+        title="Supprimer la sélection"
+        message={`${selected.length} tierlist${selected.length > 1 ? 's seront supprimées' : ' sera supprimée'} définitivement.`}
         confirmLabel="Supprimer"
         onConfirm={handleDelete}
         onCancel={() => setConfirmOpen(false)}

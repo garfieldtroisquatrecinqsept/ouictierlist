@@ -13,12 +13,14 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
   const [name, setName] = useState('')
   const [category, setCategory] = useState<CategoryId | null>(null)
   const [error, setError] = useState('')
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     if (!open) return
     setName('')
     setCategory(null)
     setError('')
+    setSubmitting(false)
   }, [open])
 
   useEffect(() => {
@@ -43,11 +45,13 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
       setError('Choisis une catégorie.')
       return
     }
-    onCreate(trimmed, category)
+    setError('')
+    setSubmitting(true)
+    window.setTimeout(() => onCreate(trimmed, category), 420)
   }
 
   return (
-    <div className="modal-backdrop" onMouseDown={onClose}>
+    <div className="modal-backdrop" onMouseDown={submitting ? undefined : onClose}>
       <div className="modal" onMouseDown={(event) => event.stopPropagation()}>
         <h2>Nouvelle tierlist</h2>
         <form onSubmit={handleSubmit}>
@@ -56,6 +60,7 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
             <input
               autoFocus
               value={name}
+              disabled={submitting}
               onChange={(event) => setName(event.target.value)}
               placeholder="Top laners 2026"
             />
@@ -68,6 +73,7 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
                 <button
                   key={item.id}
                   type="button"
+                  disabled={submitting}
                   className={category === item.id ? 'category-option selected' : 'category-option'}
                   onClick={() => setCategory(item.id)}
                 >
@@ -81,11 +87,12 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
           {error ? <p className="error">{error}</p> : null}
 
           <div className="modal-actions">
-            <button type="button" onClick={onClose}>
+            <button type="button" className="ghost" disabled={submitting} onClick={onClose}>
               Annuler
             </button>
-            <button type="submit" className="primary">
-              Créer
+            <button type="submit" className="primary" disabled={submitting}>
+              {submitting ? <span className="spinner" /> : null}
+              {submitting ? 'Création…' : 'Créer'}
             </button>
           </div>
         </form>
