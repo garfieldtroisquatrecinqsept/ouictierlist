@@ -78,7 +78,7 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
                 className={mode === 'tiers' ? 'category-option selected' : 'category-option'}
                 onClick={() => setMode('tiers')}
               >
-                <strong>Plateau</strong>
+                <strong>Classique</strong>
                 <span>Glisser les joueurs dans des tiers S, A, B…</span>
               </button>
               <button

@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import { gradeColor } from '../lib/grades'
-import { asset, teamByShort } from '../lib/players'
+import { asset, roleIcon, teamByShort } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
 import type { Tierlist } from '../types'
 import { rostersOf, teamKey } from './GradeBoard'
@@ -102,6 +102,12 @@ export function GradeRecap({ tierlist }: Props) {
                     const grade = tierlist.grades[player.id]
                     return (
                       <div key={player.id} className="strip-col">
+                        <span className="strip-face">
+                          {player.image ? (
+                            <img src={asset(player.image) ?? ''} alt={player.name} />
+                          ) : null}
+                          <img className="strip-role" src={roleIcon(player.role)} alt="" />
+                        </span>
                         <span className="strip-label">{player.name}</span>
                         <span
                           className="gcell-box filled"
@@ -113,6 +119,9 @@ export function GradeRecap({ tierlist }: Props) {
                     )
                   })}
                   <div className="strip-col strip-col-team">
+                    <span className="strip-face team">
+                      {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
+                    </span>
                     <span className="strip-label">Team</span>
                     <span
                       className="gcell-box filled"

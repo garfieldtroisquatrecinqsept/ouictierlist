@@ -63,12 +63,6 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
           <StatRadar players={[player]} scope="role" size={240} />
           <p className="panel-scope-note">Classement parmi les {ROLE_LABELS[player.role]}</p>
 
-          {palmaresFor(player.id).length > 0 ? (
-            <section className="panel-block">
-              <h3>Palmarès</h3>
-              <Palmares playerId={player.id} />
-            </section>
-          ) : null}
           </div>
 
           <div className="panel-right">
@@ -99,6 +93,15 @@ export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: 
           ))}
           </div>
 
+          </div>
+
+          <div className="panel-palmares">
+          {palmaresFor(player.id).length > 0 ? (
+            <section className="panel-block">
+              <h3>Palmarès</h3>
+              <Palmares playerId={player.id} />
+            </section>
+          ) : null}
           </div>
 
           <div className="panel-side">

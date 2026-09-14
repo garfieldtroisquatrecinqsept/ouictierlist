@@ -29,7 +29,6 @@ function numeric(value: string | null | undefined): number | null {
 
 export function ComparePage() {
   const [picked, setPicked] = useState<Record<Slot, string>>({ left: '', right: '' })
-  const [radarScope, setRadarScope] = useState<'all' | 'role'>('all')
 
   const left = PLAYERS.find((p) => p.id === picked.left) ?? null
   const right = PLAYERS.find((p) => p.id === picked.right) ?? null
@@ -89,9 +88,11 @@ export function ComparePage() {
     )
   }
 
-  function champColumn(stats: PlayerStats | undefined) {
+  function champColumn(stats: PlayerStats | undefined, name: string) {
     if (!stats) return null
     return (
+      <div className="champ-column">
+      <h4 className="champ-owner">{name}</h4>
       <ul className="champ-list">
         {stats.champions.map((champ) => (
           <li key={champ.slug}>
@@ -103,6 +104,7 @@ export function ComparePage() {
           </li>
         ))}
       </ul>
+      </div>
     )
   }
 
@@ -133,23 +135,8 @@ export function ComparePage() {
           <section className="compare-block">
             <h3>Profil comparé</h3>
             <div className="compare-radar">
-              <StatRadar players={[left, right]} scope={radarScope} size={420} />
-              <div className="panel-scope">
-                <button
-                  type="button"
-                  className={radarScope === 'all' ? 'scope-tab on' : 'scope-tab'}
-                  onClick={() => setRadarScope('all')}
-                >
-                  vs tous les joueurs
-                </button>
-                <button
-                  type="button"
-                  className={radarScope === 'role' ? 'scope-tab on' : 'scope-tab'}
-                  onClick={() => setRadarScope('role')}
-                >
-                  vs leur poste
-                </button>
-              </div>
+              <StatRadar players={[left, right]} scope="role" size={420} />
+              <p className="panel-scope-note">Pondéré par le meilleur de chaque poste</p>
             </div>
           </section>
           {STAT_BLOCKS.map((block) => (
@@ -166,8 +153,8 @@ export function ComparePage() {
           <section className="compare-block">
             <h3>Champions les plus joués</h3>
             <div className="champ-grid">
-              {champColumn(leftStats)}
-              {champColumn(rightStats)}
+              {champColumn(leftStats, left.name)}
+              {champColumn(rightStats, right.name)}
             </div>
           </section>
         </div>
