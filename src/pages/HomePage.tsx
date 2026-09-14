@@ -1,12 +1,11 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { TopNav } from '../components/TopNav'
 import { CreateTierlistModal } from '../components/CreateTierlistModal'
 import { ConfirmDialog } from '../components/ConfirmDialog'
 import { FilterMenu } from '../components/FilterMenu'
 import type { SortId } from '../components/FilterMenu'
-import { Logo } from '../components/Logo'
 import { SkeletonGrid } from '../components/SkeletonGrid'
-import { ThemeToggle } from '../components/ThemeToggle'
 import { getCategory } from '../lib/categories'
 import { useTierlists } from '../store/TierlistsContext'
 import type { CategoryId } from '../types'
@@ -75,10 +74,7 @@ export function HomePage() {
 
   return (
     <div className="page">
-      <div className="topbar">
-        <Logo compact />
-        <ThemeToggle />
-      </div>
+      <TopNav />
 
       <header className="masthead">
         <div>
