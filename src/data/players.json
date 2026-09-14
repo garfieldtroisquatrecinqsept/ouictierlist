@@ -314,16 +314,6 @@
       "image": "players/g2-brokenblade.webp"
     },
     {
-      "id": "G2-Send0o",
-      "name": "Send0o",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "top",
-      "country": "Spain",
-      "image": "players/g2-send0o.webp"
-    },
-    {
       "id": "G2-SkewMond",
       "name": "SkewMond",
       "team": "G2",
@@ -352,16 +342,6 @@
       "role": "bot",
       "country": "France",
       "image": "players/g2-hans-sama.webp"
-    },
-    {
-      "id": "G2-Sola",
-      "name": "Sola",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "bot",
-      "country": "Germany",
-      "image": null
     },
     {
       "id": "G2-Labrov",
@@ -501,7 +481,7 @@
       "region": "EMEA",
       "role": "mid",
       "country": "South Korea",
-      "image": null
+      "image": "players/kc-kyeahoo.webp"
     },
     {
       "id": "KC-Caliste",

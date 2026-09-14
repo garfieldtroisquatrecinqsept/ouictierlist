@@ -29,8 +29,8 @@ Si un fichier est absent, le site retombe sur le texte « RaphCorp » sans rien 
 Chaque joueur porte son equipe, sa **ligue** (LCK, LPL, LEC, LCP), sa region, son **poste**
 (top, jungle, mid, bot, support), son pays et le chemin de sa photo.
 
-Repartition a la collecte : LCK 20, LCP 17, LPL 12, LEC 12 joueurs ;
-top 14, jungle 13, bot 12, mid 11, support 11.
+59 joueurs, tous avec une photo. Repartition : LCK 20, LCP 17, LPL 12, LEC 10 ;
+top 13, jungle 13, mid 11, bot 11, support 11.
 
 A la creation d'une tierlist, le banc est pre-rempli avec les joueurs de la categorie
 choisie : la ligue correspondante pour LCK, LPL, LEC et LCP, la totalite des joueurs
