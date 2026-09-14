@@ -2,8 +2,12 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CreateTierlistModal } from '../components/CreateTierlistModal'
 import { ConfirmDialog } from '../components/ConfirmDialog'
+import { FilterMenu } from '../components/FilterMenu'
+import type { SortId } from '../components/FilterMenu'
+import { Logo } from '../components/Logo'
 import { SkeletonGrid } from '../components/SkeletonGrid'
-import { CATEGORIES, getCategory } from '../lib/categories'
+import { ThemeToggle } from '../components/ThemeToggle'
+import { getCategory } from '../lib/categories'
 import { useTierlists } from '../store/TierlistsContext'
 import type { CategoryId } from '../types'
 
@@ -16,12 +20,20 @@ export function HomePage() {
   const [selected, setSelected] = useState<string[]>([])
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [deleting, setDeleting] = useState(false)
-  const [filter, setFilter] = useState<CategoryId | 'all'>('all')
+  const [categories, setCategories] = useState<CategoryId[]>([])
+  const [sort, setSort] = useState<SortId>('recent')
 
-  const visible = useMemo(
-    () => (filter === 'all' ? tierlists : tierlists.filter((item) => item.category === filter)),
-    [tierlists, filter],
-  )
+  const visible = useMemo(() => {
+    const filtered =
+      categories.length === 0
+        ? tierlists
+        : tierlists.filter((item) => categories.includes(item.category))
+    const sorted = [...filtered]
+    if (sort === 'name') sorted.sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+    else if (sort === 'size') sorted.sort((a, b) => b.items.length - a.items.length)
+    else sorted.sort((a, b) => b.updatedAt - a.updatedAt)
+    return sorted
+  }, [tierlists, categories, sort])
 
   function toggleSelection(id: string) {
     setSelected((current) =>
@@ -63,6 +75,11 @@ export function HomePage() {
 
   return (
     <div className="page">
+      <div className="topbar">
+        <Logo compact />
+        <ThemeToggle />
+      </div>
+
       <header className="masthead">
         <div>
           <h1 className="wordmark">
@@ -99,6 +116,12 @@ export function HomePage() {
             </>
           ) : (
             <>
+              <FilterMenu
+                categories={categories}
+                sort={sort}
+                onCategoriesChange={setCategories}
+                onSortChange={setSort}
+              />
               <button
                 type="button"
                 disabled={loading || tierlists.length === 0}
@@ -119,34 +142,24 @@ export function HomePage() {
         </div>
       </header>
 
-      <nav className="filters">
-        <button
-          type="button"
-          className={filter === 'all' ? 'chip selected' : 'chip'}
-          onClick={() => setFilter('all')}
-        >
-          Toutes
-        </button>
-        {CATEGORIES.map((category) => (
-          <button
-            key={category.id}
-            type="button"
-            className={filter === category.id ? 'chip selected' : 'chip'}
-            onClick={() => setFilter(category.id)}
-          >
-            {category.label}
-          </button>
-        ))}
-      </nav>
-
       {loading ? (
         <SkeletonGrid />
       ) : visible.length === 0 ? (
         <div className="empty reveal">
-          <p>Rien à classer pour l'instant.</p>
-          <button type="button" className="primary" onClick={() => setCreateOpen(true)}>
-            Créer la première
-          </button>
+          <p>
+            {tierlists.length === 0
+              ? "Rien à classer pour l'instant."
+              : 'Aucune tierlist ne correspond à ces filtres.'}
+          </p>
+          {tierlists.length === 0 ? (
+            <button type="button" className="primary" onClick={() => setCreateOpen(true)}>
+              Créer la première
+            </button>
+          ) : (
+            <button type="button" onClick={() => setCategories([])}>
+              Effacer les filtres
+            </button>
+          )}
         </div>
       ) : (
         <ul className="tierlist-grid">

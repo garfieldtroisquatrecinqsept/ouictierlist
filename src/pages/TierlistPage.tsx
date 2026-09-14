@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Logo } from '../components/Logo'
+import { ThemeToggle } from '../components/ThemeToggle'
 import { TierList } from '../components/TierList'
 import type { TierListValue } from '../components/TierList'
 import { getCategory } from '../lib/categories'
@@ -39,6 +41,10 @@ export function TierlistPage() {
   if (loading) {
     return (
       <div className="page">
+        <div className="topbar">
+          <Logo compact />
+          <ThemeToggle />
+        </div>
         <div className="page-loader">
           <span />
           <span />
@@ -51,6 +57,10 @@ export function TierlistPage() {
   if (!tierlist || !board) {
     return (
       <div className="page">
+        <div className="topbar">
+          <Logo compact />
+          <ThemeToggle />
+        </div>
         <h1 className="sheet-title">Introuvable</h1>
         <p className="tagline">Cette tierlist n'existe plus.</p>
         <p>
@@ -113,6 +123,11 @@ export function TierlistPage() {
 
   return (
     <div className="page">
+      <div className="topbar">
+        <Logo compact />
+        <ThemeToggle />
+      </div>
+
       <header className="sheet-header">
         <div>
           <button type="button" className="ghost" onClick={() => navigate('/')}>

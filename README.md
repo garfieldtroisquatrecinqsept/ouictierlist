@@ -9,6 +9,18 @@ pour le plateau de tierlist. Le reste de l'habillage est en CSS maison dans `src
 
 Les tierlists sont stockées dans le `localStorage` du navigateur.
 
+## Logo RaphCorp
+
+Deux fichiers à déposer dans `public/` :
+
+| Fichier | Contenu attendu |
+| --- | --- |
+| `public/raphcorp-light.png` | logo **sombre** (panda noir), affiché en mode jour |
+| `public/raphcorp-dark.png` | logo **clair** (panda blanc), affiché en mode nuit |
+
+Fond transparent de préférence. Tant qu'un fichier manque, le site retombe automatiquement
+sur le texte « RaphCorp » à sa place, sans rien casser.
+
 ## Développement
 
 ```bash
