@@ -1,4 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
+import { ExportControls } from './ExportControls'
+import { exportNode } from '../lib/exportImage'
+import type { ExportChoice } from '../lib/exportImage'
 import { gradeColor } from '../lib/grades'
 import { asset, roleIcon, teamByShort } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
@@ -27,20 +30,12 @@ export function GradeRecap({ tierlist }: Props) {
     [tierlist],
   )
 
-  async function exportImage() {
+  async function exportImage(choice: ExportChoice) {
     if (!sheetRef.current) return
     setExporting(true)
     setError('')
     try {
-      const { toPng } = await import('html-to-image')
-      const url = await toPng(sheetRef.current, {
-        pixelRatio: 2,
-        backgroundColor: getComputedStyle(document.body).backgroundColor,
-      })
-      const link = document.createElement('a')
-      link.download = `${tierlist.name.replace(/[^\w-]+/g, '-').toLowerCase()}.png`
-      link.href = url
-      link.click()
+      await exportNode(sheetRef.current, tierlist.name, choice)
     } catch {
       setError("L'export a échoué. Fais une capture d'écran du tableau ci-dessous.")
     } finally {
@@ -66,10 +61,7 @@ export function GradeRecap({ tierlist }: Props) {
           Récapitulatif
         </button>
         <span className="meta">{rosters.length} équipes notées</span>
-        <button type="button" onClick={exportImage} disabled={exporting}>
-          {exporting ? <span className="spinner" /> : null}
-          {exporting ? 'Export…' : 'Exporter en image'}
-        </button>
+        <ExportControls onExport={exportImage} busy={exporting} />
       </header>
 
       {error ? <p className="error">{error}</p> : null}

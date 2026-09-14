@@ -35,6 +35,7 @@ export type TierListProps = {
   tierColors?: string[];
   tileSize?: number;
   readOnly?: boolean;
+  hidePool?: boolean;
   className?: string;
 };
 
@@ -70,6 +71,7 @@ export function TierList({
   tierColors = TIER_COLORS,
   tileSize = 56,
   readOnly,
+  hidePool = false,
   className,
 }: TierListProps) {
   const [mounted, setMounted] = React.useState(false);
@@ -351,6 +353,7 @@ export function TierList({
         </div>
       )}
 
+      {hidePool ? null : (
       <div
         className={
           "mt-3 rounded-sm border p-3 transition-colors duration-200 " +
@@ -386,6 +389,7 @@ export function TierList({
           {renderTiles(value.pool, POOL)}
         </div>
       </div>
+      )}
 
       {mounted &&
         draggingItem &&

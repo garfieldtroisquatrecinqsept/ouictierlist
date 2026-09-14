@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { TopNav } from '../components/TopNav'
 import { GradeBoard } from '../components/GradeBoard'
 import { GradeRecap } from '../components/GradeRecap'
+import { ExportControls } from '../components/ExportControls'
 import { PlayerPanel } from '../components/PlayerPanel'
 import { PlayerPicker } from '../components/PlayerPicker'
 import { TierList } from '../components/TierList'
@@ -21,6 +22,8 @@ import {
 } from '../lib/players'
 import type { LeagueId, Player } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
+import { exportNode } from '../lib/exportImage'
+import type { ExportChoice } from '../lib/exportImage'
 import { createId } from '../lib/storage'
 import { useTierlists } from '../store/TierlistsContext'
 import type { RoleId, TierItem } from '../types'
@@ -38,6 +41,11 @@ export function TierlistPage() {
   const [benchRoles, setBenchRoles] = useState<RoleId[]>([])
   const [benchTeams, setBenchTeams] = useState<string[]>([])
   const [benchLeagues, setBenchLeagues] = useState<LeagueId[]>([])
+  const [exporting, setExporting] = useState(false)
+  const [exportError, setExportError] = useState('')
+  const boardSheet = useRef<HTMLDivElement>(null)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const [freeEntry, setFreeEntry] = useState(false)
 
   const tierlist = getTierlist(id)
 
@@ -168,6 +176,20 @@ export function TierlistPage() {
   }
   const activeFilters = benchRoles.length + benchTeams.length + benchLeagues.length
 
+  async function exportBoard(choice: ExportChoice) {
+    if (!boardSheet.current || !tierlist) return
+    setExporting(true)
+    setExportError('')
+    await new Promise((resolve) => window.setTimeout(resolve, 80))
+    try {
+      await exportNode(boardSheet.current, tierlist.name, choice)
+    } catch {
+      setExportError("L'export a échoué. Fais une capture d'écran du plateau.")
+    } finally {
+      setExporting(false)
+    }
+  }
+
   function resetBench() {
     setBenchRoles([])
     setBenchTeams([])
@@ -278,22 +300,49 @@ export function TierlistPage() {
       </header>
 
       {gradeMode ? null : (
-      <div className="pool-form">
+      <div className="board-toolbar">
         <button type="button" className="primary" onClick={() => setPickerOpen(true)}>
           Ajouter des joueurs
         </button>
-        <form onSubmit={handleAddItem} className="pool-custom">
-          <input
-            value={label}
-            onChange={(event) => setLabel(event.target.value)}
-            placeholder="ou une entrée libre"
-          />
-          <button type="submit">Ajouter</button>
-        </form>
+        <button
+          type="button"
+          className={filtersOpen ? 'toolbar-toggle on' : 'toolbar-toggle'}
+          onClick={() => setFiltersOpen((value) => !value)}
+          aria-expanded={filtersOpen}
+        >
+          Filtrer le banc
+          {activeFilters > 0 ? <span className="bench-badge">{activeFilters}</span> : null}
+        </button>
+        <button
+          type="button"
+          className={freeEntry ? 'toolbar-toggle on' : 'toolbar-toggle'}
+          onClick={() => setFreeEntry((value) => !value)}
+          aria-expanded={freeEntry}
+        >
+          Entrée libre
+        </button>
+
+        {freeEntry ? (
+          <form onSubmit={handleAddItem} className="pool-custom">
+            <input
+              autoFocus
+              value={label}
+              onChange={(event) => setLabel(event.target.value)}
+              placeholder="Nom à ajouter au banc"
+            />
+            <button type="submit">Ajouter</button>
+          </form>
+        ) : null}
+
+        <div className="toolbar-end">
+          <ExportControls onExport={exportBoard} busy={exporting} />
+        </div>
       </div>
       )}
 
-      {gradeMode ? null : (
+      {exportError ? <p className="error">{exportError}</p> : null}
+
+      {gradeMode || !filtersOpen ? null : (
       <section className="bench-filter">
         <header className="bench-filter-head">
           <h2>Filtrer le banc</h2>
@@ -423,16 +472,35 @@ export function TierlistPage() {
         </>
       ) : (
         <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
-          <TierList
-            className="board"
-            value={board}
-            onChange={handleBoardChange}
-            onRemoveItem={handleRemoveItem}
-            onSelectItem={setSelectedItemId}
-            selectedItemId={selectedItemId}
-            tierColors={TIER_COLORS}
-            tileSize={96}
-          />
+          <div
+            className={exporting ? 'board-sheet exporting' : 'board-sheet'}
+            ref={boardSheet}
+          >
+            {exporting ? (
+              <div className="recap-title">
+                <strong>{tierlist.name}</strong>
+                <span className="recap-brand">
+                  <img
+                    src={`${import.meta.env.BASE_URL}raphcorp-${theme}.png`}
+                    alt="RaphCorp"
+                  />
+                  OuicTierlist
+                </span>
+              </div>
+            ) : null}
+            <TierList
+              className="board"
+              value={board}
+              onChange={handleBoardChange}
+              onRemoveItem={handleRemoveItem}
+              onSelectItem={setSelectedItemId}
+              selectedItemId={selectedItemId}
+              tierColors={TIER_COLORS}
+              tileSize={96}
+              readOnly={exporting}
+              hidePool={exporting}
+            />
+          </div>
 
           {selectedItemId ? (
             <PlayerPanel
