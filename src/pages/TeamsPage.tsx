@@ -30,6 +30,7 @@ export function TeamsPage() {
         </div>
       </header>
 
+      <div className="league-columns">
       {LEAGUES.map((league) => {
         const teams = TEAMS.filter((team) => team.league === league)
         if (teams.length === 0) return null
@@ -77,6 +78,7 @@ export function TeamsPage() {
           </section>
         )
       })}
+      </div>
     </div>
   )
 }
