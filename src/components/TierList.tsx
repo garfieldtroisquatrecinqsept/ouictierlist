@@ -37,6 +37,8 @@ export type TierListProps = {
   value: TierListValue;
   onChange: (next: TierListValue) => void;
   onRemoveItem?: (itemId: string) => void;
+  onSelectItem?: (itemId: string) => void;
+  selectedItemId?: string | null;
   tierColors?: string[];
   tileSize?: number;
   readOnly?: boolean;
@@ -70,6 +72,8 @@ export function TierList({
   value,
   onChange,
   onRemoveItem,
+  onSelectItem,
+  selectedItemId,
   tierColors = TIER_COLORS,
   tileSize = 56,
   readOnly,
@@ -77,7 +81,7 @@ export function TierList({
 }: TierListProps) {
   const [mounted, setMounted] = React.useState(false);
   const zoneRefs = React.useRef<Record<string, HTMLDivElement | null>>({});
-  const dragRef = React.useRef<{ id: string; offX: number; offY: number } | null>(null);
+  const dragRef = React.useRef<{ id: string; offX: number; offY: number; startX: number; startY: number; moved: boolean } | null>(null);
   const overRef = React.useRef<{ zone: string; index: number } | null>(null);
   const [dragId, setDragId] = React.useState<string | null>(null);
   const [pointer, setPointer] = React.useState({ x: 0, y: 0 });
@@ -159,7 +163,14 @@ export function TierList({
     if (readOnly || e.button !== 0) return;
     e.preventDefault();
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    dragRef.current = { id: itemId, offX: e.clientX - rect.left, offY: e.clientY - rect.top };
+    dragRef.current = {
+      id: itemId,
+      offX: e.clientX - rect.left,
+      offY: e.clientY - rect.top,
+      startX: e.clientX,
+      startY: e.clientY,
+      moved: false,
+    };
     setDragId(itemId);
     setPointer({ x: e.clientX, y: e.clientY });
     setOverBoth(null);
@@ -171,13 +182,15 @@ export function TierList({
       const d = dragRef.current;
       if (!d) return;
       setPointer({ x: e.clientX, y: e.clientY });
+      if (Math.hypot(e.clientX - d.startX, e.clientY - d.startY) > 4) d.moved = true;
       const zone = hitZone(e.clientX, e.clientY);
       setOverBoth(zone ? { zone, index: indexIn(zone, e.clientX, e.clientY, d.id) } : null);
     };
     const up = () => {
       const d = dragRef.current;
       const target = overRef.current;
-      if (d && target) moveItem(d.id, target.zone, target.index);
+      if (d && !d.moved) onSelectItem?.(d.id);
+      else if (d && target) moveItem(d.id, target.zone, target.index);
       dragRef.current = null;
       setDragId(null);
       setOverBoth(null);
@@ -232,6 +245,7 @@ export function TierList({
           item={item}
           size={tileSize}
           readOnly={readOnly}
+          selected={item.id === selectedItemId}
           onRemove={onRemoveItem ? () => onRemoveItem(item.id) : undefined}
           onPointerDown={(e) => onTilePointerDown(e, item.id)}
         />,
@@ -402,12 +416,14 @@ function Tile({
   item,
   size,
   readOnly,
+  selected,
   onRemove,
   onPointerDown,
 }: {
   item: TierItem;
   size: number;
   readOnly?: boolean;
+  selected?: boolean;
   onRemove?: () => void;
   onPointerDown: (e: React.PointerEvent) => void;
 }) {
@@ -419,7 +435,9 @@ function Tile({
       transition={SPRING}
       onPointerDown={readOnly ? undefined : onPointerDown}
       className={
-        "group/tile relative " + (readOnly ? "" : "cursor-grab active:cursor-grabbing")
+        "group/tile relative " +
+        (selected ? "tile-selected " : "") +
+        (readOnly ? "" : "cursor-grab active:cursor-grabbing")
       }
       style={{ touchAction: "none" }}
     >

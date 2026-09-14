@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { TopNav } from '../components/TopNav'
+import { PlayerPanel } from '../components/PlayerPanel'
 import { PlayerPicker } from '../components/PlayerPicker'
 import { TierList } from '../components/TierList'
 import type { TierListValue } from '../components/TierList'
@@ -31,6 +32,7 @@ export function TierlistPage() {
   const { theme } = useTheme()
   const [label, setLabel] = useState('')
   const [pickerOpen, setPickerOpen] = useState(false)
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null)
   const [benchRoles, setBenchRoles] = useState<RoleId[]>([])
   const [benchTeams, setBenchTeams] = useState<string[]>([])
   const [benchLeagues, setBenchLeagues] = useState<LeagueId[]>([])
@@ -139,6 +141,10 @@ export function TierlistPage() {
   }
 
   const category = getCategory(tierlist.category)
+  const selectedItem = tierlist.items.find((item) => item.id === selectedItemId) ?? null
+  const selectedPlayer = selectedItem?.playerId
+    ? PLAYERS.find((p) => p.id === selectedItem.playerId) ?? null
+    : null
   const activeFilters = benchRoles.length + benchTeams.length + benchLeagues.length
 
   function resetBench() {
@@ -179,6 +185,7 @@ export function TierlistPage() {
   }
 
   function handleRemoveItem(itemId: string) {
+    setSelectedItemId((current) => (current === itemId ? null : current))
     updateTierlist(id, (current) => ({
       ...current,
       items: current.items.filter((item) => item.id !== itemId),
@@ -366,14 +373,26 @@ export function TierlistPage() {
         </div>
       </section>
 
-      <TierList
-        className="board"
-        value={board}
-        onChange={handleBoardChange}
-        onRemoveItem={handleRemoveItem}
-        tierColors={TIER_COLORS}
-        tileSize={96}
-      />
+      <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
+        <TierList
+          className="board"
+          value={board}
+          onChange={handleBoardChange}
+          onRemoveItem={handleRemoveItem}
+          onSelectItem={setSelectedItemId}
+          selectedItemId={selectedItemId}
+          tierColors={TIER_COLORS}
+          tileSize={96}
+        />
+
+        {selectedItemId ? (
+          <PlayerPanel
+            player={selectedPlayer}
+            fallbackLabel={selectedItem?.label ?? null}
+            onClose={() => setSelectedItemId(null)}
+          />
+        ) : null}
+      </div>
 
       <PlayerPicker
         open={pickerOpen}

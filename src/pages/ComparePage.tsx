@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PlayerSelect } from '../components/PlayerSelect'
+import { StatRadar } from '../components/StatRadar'
 import { TopNav } from '../components/TopNav'
 import {
   PLAYERS,
@@ -28,6 +29,7 @@ function numeric(value: string | null | undefined): number | null {
 
 export function ComparePage() {
   const [picked, setPicked] = useState<Record<Slot, string>>({ left: '', right: '' })
+  const [radarScope, setRadarScope] = useState<'all' | 'role'>('all')
 
   const left = PLAYERS.find((p) => p.id === picked.left) ?? null
   const right = PLAYERS.find((p) => p.id === picked.right) ?? null
@@ -128,6 +130,28 @@ export function ComparePage() {
 
       {both ? (
         <div className="compare-table-wrap">
+          <section className="compare-block">
+            <h3>Profil comparé</h3>
+            <div className="compare-radar">
+              <StatRadar players={[left, right]} scope={radarScope} size={420} />
+              <div className="panel-scope">
+                <button
+                  type="button"
+                  className={radarScope === 'all' ? 'scope-tab on' : 'scope-tab'}
+                  onClick={() => setRadarScope('all')}
+                >
+                  vs tous les joueurs
+                </button>
+                <button
+                  type="button"
+                  className={radarScope === 'role' ? 'scope-tab on' : 'scope-tab'}
+                  onClick={() => setRadarScope('role')}
+                >
+                  vs leur poste
+                </button>
+              </div>
+            </div>
+          </section>
           {STAT_BLOCKS.map((block) => (
             <section key={block.key as string} className="compare-block">
               <h3>{block.title}</h3>
