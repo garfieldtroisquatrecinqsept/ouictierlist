@@ -1,4 +1,4 @@
 export const SOCIAL = {
-  discord: '',
-  twitter: '',
+  twitch: 'https://www.twitch.tv/ouicraph',
+  twitter: 'https://x.com/ouicraph',
 }

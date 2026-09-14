@@ -38,9 +38,10 @@ const ICONS = {
       <path d="M9.4 12.1l1.9 1.9 3.5-3.7" />
     </svg>
   ),
-  discord: (
-    <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
-      <path d="M19.27 5.33A16.4 16.4 0 0 0 15.2 4l-.25.46c1.35.32 2.6.87 3.76 1.64a13.1 13.1 0 0 0-11.4 0A12.5 12.5 0 0 1 11.08 4.5L10.82 4a16.4 16.4 0 0 0-4.09 1.33C4.14 9.24 3.44 13.05 3.79 16.8a16.6 16.6 0 0 0 5.03 2.55l.65-1.1a10.7 10.7 0 0 1-1.7-.82l.42-.32a11.8 11.8 0 0 0 10.05 0l.42.32c-.54.32-1.11.6-1.7.82l.65 1.1c1.8-.55 3.5-1.42 5.03-2.55.4-4.34-.71-8.12-2.37-11.47zM9.68 14.62c-.98 0-1.79-.9-1.79-2s.79-2.01 1.79-2.01 1.8.9 1.79 2.01c0 1.1-.8 2-1.79 2zm4.64 0c-.98 0-1.79-.9-1.79-2s.79-2.01 1.79-2.01 1.8.9 1.79 2.01c0 1.1-.79 2-1.79 2z" />
+  twitch: (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <path d="M4.3 3 3 6.4v13.1h4.5V22h2.5l2.5-2.5h3.7L21 15V3H4.3zm14.9 11.2-2.9 2.9h-4.5l-2.5 2.5v-2.5H5.7V4.7h13.5v9.5z" />
+      <path d="M10.8 8h1.7v5h-1.7zM15.4 8h1.7v5h-1.7z" />
     </svg>
   ),
   twitter: (
@@ -85,16 +86,16 @@ export function TopNav() {
 
         <span className="topnav-sep" aria-hidden />
 
-        {SOCIAL.discord ? (
+        {SOCIAL.twitch ? (
           <a
             className="nav-icon"
-            href={SOCIAL.discord}
+            href={SOCIAL.twitch}
             target="_blank"
             rel="noreferrer noopener"
-            title="Discord"
-            aria-label="Discord"
+            title="Twitch"
+            aria-label="Twitch"
           >
-            {ICONS.discord}
+            {ICONS.twitch}
           </a>
         ) : null}
 

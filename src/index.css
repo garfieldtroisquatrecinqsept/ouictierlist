@@ -502,9 +502,17 @@ input:focus {
 
 .compare-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin: 1.75rem 0 1.5rem;
+  width: 100%;
+  max-width: 860px;
+  margin: 2rem auto 1.5rem;
+}
+
+.compare-table-wrap {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .compare-slot {
@@ -597,7 +605,7 @@ input:focus {
 }
 
 .compare-table th {
-  width: 150px;
+  width: 34%;
   text-align: center;
   font-size: 0.68rem;
   font-weight: 600;
@@ -621,6 +629,7 @@ input:focus {
 }
 
 .compare-value {
+  width: 33%;
   text-align: center;
   font-weight: 500;
 }
@@ -634,12 +643,15 @@ input:focus {
 }
 
 .compare-note {
-  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.75rem;
   padding: 0.8rem 1rem;
   border-left: 2px solid var(--line-strong);
   font-size: 0.85rem;
   color: var(--ink-soft);
-  max-width: 70ch;
 }
 
 .logo {
@@ -1386,6 +1398,165 @@ input:focus {
   margin: 0 0 1.1rem;
   padding-bottom: 1.1rem;
   border-bottom: 1px solid var(--line);
+}
+
+.bench-chips {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.pselect {
+  position: relative;
+}
+
+.pselect-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+
+.pselect-trigger.open {
+  border-color: var(--accent);
+}
+
+.pselect-trigger svg {
+  margin-left: auto;
+  flex: none;
+  color: var(--ink-faint);
+}
+
+.pselect-face {
+  display: block;
+  width: 34px;
+  height: 40px;
+  flex: none;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--wash);
+}
+
+.pselect-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.pselect-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.pselect-text strong {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.pselect-text small {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pselect-panel {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper-raised);
+  box-shadow: var(--shadow-lg);
+  animation: modal-in 0.28s var(--overshoot) both;
+}
+
+.pselect-grid {
+  margin-top: 0.7rem;
+  max-height: 320px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.5rem;
+}
+
+.pselect-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  text-align: center;
+}
+
+.pselect-option:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: none;
+}
+
+.pselect-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1.18;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  background: var(--wash);
+}
+
+.pselect-thumb img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.pselect-badge,
+.pselect-role {
+  position: absolute;
+  top: 2px;
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  object-fit: contain;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.pselect-badge {
+  left: 2px;
+  filter: drop-shadow(0 0 0.9px rgba(255, 255, 255, 0.5));
+}
+
+.pselect-role {
+  right: 2px;
+}
+
+.pselect-option.on .pselect-thumb {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.pselect-name {
+  font-size: 0.72rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bench-filter-label {

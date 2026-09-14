@@ -6,8 +6,16 @@ import { PlayerPicker } from '../components/PlayerPicker'
 import { TierList } from '../components/TierList'
 import type { TierListValue } from '../components/TierList'
 import { getCategory } from '../lib/categories'
-import { ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort } from '../lib/players'
-import type { Player } from '../lib/players'
+import {
+  LEAGUES,
+  PLAYERS,
+  ROLE_LABELS,
+  ROLE_ORDER,
+  asset,
+  roleIcon,
+  teamByShort,
+} from '../lib/players'
+import type { LeagueId, Player } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
 import { createId } from '../lib/storage'
 import { useTierlists } from '../store/TierlistsContext'
@@ -23,19 +31,57 @@ export function TierlistPage() {
   const [label, setLabel] = useState('')
   const [pickerOpen, setPickerOpen] = useState(false)
   const [benchRoles, setBenchRoles] = useState<RoleId[]>([])
+  const [benchTeams, setBenchTeams] = useState<string[]>([])
+  const [benchLeagues, setBenchLeagues] = useState<LeagueId[]>([])
 
   const tierlist = getTierlist(id)
 
+  const benchIndex = useMemo(() => {
+    const byPlayerId = new Map(PLAYERS.map((player) => [player.id, player]))
+    const map = new Map<string, { team: string | null; league: LeagueId | null }>()
+    tierlist?.items.forEach((item) => {
+      const player = item.playerId ? byPlayerId.get(item.playerId) : undefined
+      map.set(item.id, { team: player?.team ?? null, league: player?.league ?? null })
+    })
+    return map
+  }, [tierlist])
+
+  const benchTeamOptions = useMemo(() => {
+    if (!tierlist) return []
+    const shorts = new Set<string>()
+    tierlist.poolItemIds.forEach((itemId) => {
+      const team = benchIndex.get(itemId)?.team
+      if (team) shorts.add(team)
+    })
+    return [...shorts].sort()
+  }, [tierlist, benchIndex])
+
+  const benchLeagueOptions = useMemo(() => {
+    if (!tierlist) return []
+    const found = new Set<LeagueId>()
+    tierlist.poolItemIds.forEach((itemId) => {
+      const league = benchIndex.get(itemId)?.league
+      if (league) found.add(league)
+    })
+    return LEAGUES.filter((league) => found.has(league))
+  }, [tierlist, benchIndex])
+
   const hiddenPoolIds = useMemo(() => {
-    if (!tierlist || benchRoles.length === 0) return new Set<string>()
+    const active = benchRoles.length > 0 || benchTeams.length > 0 || benchLeagues.length > 0
+    if (!tierlist || !active) return new Set<string>()
     const byId = new Map(tierlist.items.map((item) => [item.id, item]))
     return new Set(
       tierlist.poolItemIds.filter((itemId) => {
-        const role = byId.get(itemId)?.role
-        return !role || !benchRoles.includes(role)
+        const item = byId.get(itemId)
+        const meta = benchIndex.get(itemId)
+        if (benchRoles.length > 0 && (!item?.role || !benchRoles.includes(item.role))) return true
+        if (benchTeams.length > 0 && (!meta?.team || !benchTeams.includes(meta.team))) return true
+        if (benchLeagues.length > 0 && (!meta?.league || !benchLeagues.includes(meta.league)))
+          return true
+        return false
       }),
     )
-  }, [tierlist, benchRoles])
+  }, [tierlist, benchRoles, benchTeams, benchLeagues, benchIndex])
 
   const board = useMemo<TierListValue | null>(() => {
     if (!tierlist) return null
@@ -211,6 +257,7 @@ export function TierlistPage() {
 
       <div className="bench-filter">
         <span className="bench-filter-label">Banc</span>
+
         <div className="picker-roles">
           {ROLE_ORDER.map((role) => (
             <button
@@ -231,15 +278,74 @@ export function TierlistPage() {
             </button>
           ))}
         </div>
-        {benchRoles.length > 0 ? (
+
+        {benchLeagueOptions.length > 1 ? (
+          <div className="bench-chips">
+            {benchLeagueOptions.map((league) => (
+              <button
+                key={league}
+                type="button"
+                className={benchLeagues.includes(league) ? 'league-tab on' : 'league-tab'}
+                onClick={() =>
+                  setBenchLeagues((current) =>
+                    current.includes(league)
+                      ? current.filter((value) => value !== league)
+                      : [...current, league],
+                  )
+                }
+                aria-pressed={benchLeagues.includes(league)}
+              >
+                {league}
+              </button>
+            ))}
+          </div>
+        ) : null}
+
+        {benchTeamOptions.length > 1 ? (
+          <div className="bench-chips">
+            {benchTeamOptions.map((short) => {
+              const team = teamByShort(short)
+              const on = benchTeams.includes(short)
+              return (
+                <button
+                  key={short}
+                  type="button"
+                  className={on ? 'team-tab on' : 'team-tab'}
+                  onClick={() =>
+                    setBenchTeams((current) =>
+                      current.includes(short)
+                        ? current.filter((value) => value !== short)
+                        : [...current, short],
+                    )
+                  }
+                  aria-pressed={on}
+                  title={team?.name ?? short}
+                >
+                  {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
+                  {short}
+                </button>
+              )
+            })}
+          </div>
+        ) : null}
+
+        {hiddenPoolIds.size > 0 ? (
           <>
             <span className="hint">{hiddenPoolIds.size} masqué{hiddenPoolIds.size > 1 ? 's' : ''}</span>
-            <button type="button" className="link" onClick={() => setBenchRoles([])}>
+            <button
+              type="button"
+              className="link"
+              onClick={() => {
+                setBenchRoles([])
+                setBenchTeams([])
+                setBenchLeagues([])
+              }}
+            >
               Tout afficher
             </button>
           </>
         ) : (
-          <span className="hint">tous les rôles</span>
+          <span className="hint">aucun filtre</span>
         )}
       </div>
 

@@ -1,13 +1,7 @@
 import { useState } from 'react'
+import { PlayerSelect } from '../components/PlayerSelect'
 import { TopNav } from '../components/TopNav'
-import {
-  PLAYERS,
-  ROLE_LABELS,
-  ROLE_ORDER,
-  asset,
-  roleIcon,
-  teamByShort,
-} from '../lib/players'
+import { PLAYERS, ROLE_LABELS, asset, roleIcon, teamByShort } from '../lib/players'
 import { useTheme } from '../store/ThemeContext'
 import type { Player } from '../lib/players'
 
@@ -18,12 +12,6 @@ export function ComparePage() {
   const { theme } = useTheme()
   const uiVariant = theme === 'dark' ? 'dark' : 'light'
   const [picked, setPicked] = useState<Record<Slot, string>>({ left: '', right: '' })
-
-  const sorted = [...PLAYERS].sort((a, b) => {
-    const byRole = ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)
-    if (byRole !== 0) return byRole
-    return a.name.localeCompare(b.name)
-  })
 
   const left = PLAYERS.find((p) => p.id === picked.left) ?? null
   const right = PLAYERS.find((p) => p.id === picked.right) ?? null
@@ -38,19 +26,14 @@ export function ComparePage() {
 
   function slot(side: Slot, player: Player | null) {
     const team = player ? teamByShort(player.team) : null
+    const other = side === 'left' ? picked.right : picked.left
     return (
       <div className="compare-slot">
-        <select
+        <PlayerSelect
           value={picked[side]}
-          onChange={(event) => setPicked((c) => ({ ...c, [side]: event.target.value }))}
-        >
-          <option value="">Choisir un joueur…</option>
-          {sorted.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.name} — {p.team} · {ROLE_LABELS[p.role]}
-            </option>
-          ))}
-        </select>
+          exclude={other || undefined}
+          onChange={(id) => setPicked((c) => ({ ...c, [side]: id }))}
+        />
 
         <div className={player ? 'compare-card filled' : 'compare-card'}>
           {player ? (
@@ -94,6 +77,7 @@ export function ComparePage() {
       </div>
 
       {left && right ? (
+        <div className="compare-table-wrap">
         <table className="compare-table">
           <tbody>
             {rows.map((row) => {
@@ -119,6 +103,7 @@ export function ComparePage() {
             </tr>
           </tbody>
         </table>
+        </div>
       ) : null}
 
       <p className="compare-note">
