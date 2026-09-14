@@ -750,13 +750,13 @@ input:focus {
 
 .logo img {
   display: block;
-  height: 78px;
+  height: 104px;
   width: auto;
   object-fit: contain;
 }
 
 .logo-compact img {
-  height: 64px;
+  height: 86px;
 }
 
 .logo-fallback {
@@ -1531,6 +1531,26 @@ input:focus {
   letter-spacing: 0.04em;
   fill: var(--ink-faint);
   text-transform: uppercase;
+}
+
+.radar-rank {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  fill: var(--ink-faint);
+}
+
+.radar-rank.top1 {
+  fill: #c9a227;
+}
+
+.radar-rank.top2 {
+  fill: #8f9298;
+}
+
+.radar-rank.top3 {
+  fill: #b2703c;
 }
 
 .radar-legend {
