@@ -1463,99 +1463,217 @@ input:focus {
   color: var(--ink-faint);
 }
 
-.grade-team {
+.grade-strip {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1.1rem 1rem;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--paper-raised);
-  padding: 1rem 1.1rem 1.2rem;
   box-shadow: var(--shadow-sm);
 }
 
-.grade-team-head {
+.strip-team {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--line);
+  gap: 0.55rem;
+  min-width: 170px;
+  padding-bottom: 0.3rem;
 }
 
-.grade-team-head img {
-  width: 38px;
-  height: 38px;
+.strip-team img {
+  width: 34px;
+  height: 34px;
   object-fit: contain;
+  flex: none;
 }
 
-.grade-team-head > div {
+.strip-team span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 1.05rem;
+}
+
+.strip-cells {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
   margin-right: auto;
 }
 
-.grade-team-head h2 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.grade-rows {
-  list-style: none;
-  margin: 0.9rem 0 0;
-  padding: 0;
+.strip-col {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-}
-
-.grade-rows li {
-  display: flex;
   align-items: center;
-  gap: 0.9rem;
-  flex-wrap: wrap;
-  padding: 0.35rem 0.4rem;
+  gap: 0.28rem;
+  padding: 0.2rem 0.25rem;
   border-radius: 3px;
 }
 
-.grade-rows li.on {
+.strip-col.on {
   background: var(--accent-soft);
 }
 
-.grade-team-row {
-  margin-top: 0.4rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--line);
+.strip-col-team {
+  margin-left: 0.5rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--line);
 }
 
-.grade-player {
-  display: flex;
+.strip-name {
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  min-width: 190px;
+  gap: 0.25rem;
   padding: 0;
   border: 0;
   background: none;
   box-shadow: none;
-  text-align: left;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  max-width: 78px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.grade-player:hover:not(:disabled) {
+button.strip-name:hover:not(:disabled) {
+  color: var(--ink);
   transform: none;
   box-shadow: none;
 }
 
-.grade-face {
-  width: 34px;
-  height: 40px;
+.strip-name img {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
   flex: none;
+}
+
+.strip-validate {
+  align-self: center;
+}
+
+.gcell {
+  position: relative;
+}
+
+.gcell-box {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 46px;
+  padding: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  box-shadow: none;
+  color: var(--ink-faint);
+}
+
+span.gcell-box {
+  cursor: default;
+}
+
+.gcell-box.filled {
+  border-width: 1px;
+}
+
+.gcell-empty {
+  color: var(--ink-faint);
+  font-size: 1rem;
+}
+
+.gcell-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  width: 216px;
+  padding: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper-raised);
+  box-shadow: var(--shadow-lg);
+  animation: modal-in 0.24s var(--overshoot) both;
+}
+
+.gcell-menu-head {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.gcell-options {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.25rem;
+}
+
+.gcell-option {
+  padding: 0.3rem 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.86rem;
+  background: transparent;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.gcell-option.on {
+  color: #ffffff;
+}
+
+.gcell-clear {
+  display: block;
+  margin: 0.55rem auto 0;
+}
+
+.player-panel.panel-below {
+  position: static;
+  max-height: none;
+  margin-top: 1rem;
+}
+
+.panel-below .radar {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-below .panel-scope {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-below .panel-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0 1.5rem;
+}
+
+.strip-face {
+  display: block;
+  width: 46px;
+  height: 40px;
   overflow: hidden;
   border-radius: 3px;
 }
 
-.grade-face.team {
-  display: grid;
-  place-items: center;
-}
-
-.grade-face img {
+.strip-face img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1563,61 +1681,71 @@ input:focus {
   display: block;
 }
 
-.grade-face.team img {
-  object-fit: contain;
-  width: 80%;
-  height: 80%;
-}
-
-.grade-names {
+.strip-trophies {
   display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.grade-names strong {
-  font-size: 0.9rem;
+  gap: 0.22rem;
+  font-size: 0.58rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
 }
 
-.grade-names small {
+.strip-trophies span {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 0.72rem;
-  color: var(--ink-soft);
+  gap: 0.12rem;
+  padding: 0.05rem 0.24rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
 }
 
-.grade-names small img {
-  width: 12px;
-  height: 12px;
-  object-fit: contain;
+.strip-trophies b {
+  color: var(--ink);
+  font-size: 0.62rem;
 }
 
-.grade-picker {
+.strip-trophies.empty {
+  opacity: 0.35;
+}
+
+.trophy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 0.2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.grade-chip {
-  min-width: 34px;
-  padding: 0.2rem 0.35rem;
-  font-size: 0.74rem;
-  font-weight: 700;
+.trophy-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.trophy-count {
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
-  background: transparent;
-  border-color: var(--line);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: right;
+}
+
+.trophy-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.trophy-list small {
+  grid-column: 2;
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+}
+
+.recap-strip {
   box-shadow: none;
-}
-
-.grade-chip.on {
-  color: #ffffff;
-}
-
-.grade-hint {
-  margin-top: 0.9rem;
 }
 
 .recap {
@@ -1675,57 +1803,9 @@ input:focus {
 }
 
 .recap-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 1rem;
-}
-
-.recap-team header {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.4rem;
-}
-
-.recap-team header img {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-}
-
-.recap-team h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-size: 1rem;
-}
-
-.recap-team table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.recap-team th {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink-faint);
-  padding: 0.2rem 0.1rem;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.recap-team td {
-  border: 1px solid var(--line-strong);
-  text-align: center;
-  padding: 0.3rem 0.1rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .team-mark {

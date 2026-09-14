@@ -1,12 +1,26 @@
 import { useMemo, useRef, useState } from 'react'
 import { gradeColor } from '../lib/grades'
-import { PLAYERS, ROLE_ORDER, asset, teamByShort } from '../lib/players'
-import type { Player } from '../lib/players'
+import { asset, teamByShort, trophies } from '../lib/players'
 import type { Tierlist } from '../types'
-import { teamKey } from './GradeBoard'
+import { rostersOf, teamKey } from './GradeBoard'
 
 interface Props {
   tierlist: Tierlist
+}
+
+function TrophyRow({ playerId }: { playerId: string }) {
+  const list = trophies(playerId).filter((t) => ['WORLDS', 'MSI', 'EWC'].includes(t.code) || t.count >= 3)
+  if (list.length === 0) return <span className="strip-trophies empty">—</span>
+  return (
+    <span className="strip-trophies">
+      {list.slice(0, 3).map((t) => (
+        <span key={t.code} title={t.detail ? `${t.label} : ${t.detail}` : t.label}>
+          {t.code === 'WORLDS' ? 'W' : t.code === 'MSI' ? 'MSI' : t.code}
+          <b>{t.count}</b>
+        </span>
+      ))}
+    </span>
+  )
 }
 
 export function GradeRecap({ tierlist }: Props) {
@@ -14,26 +28,16 @@ export function GradeRecap({ tierlist }: Props) {
   const [exporting, setExporting] = useState(false)
   const [error, setError] = useState('')
 
-  const rosters = useMemo(() => {
-    const byTeam = new Map<string, Player[]>()
-    tierlist.items.forEach((item) => {
-      const player = item.playerId ? PLAYERS.find((p) => p.id === item.playerId) : undefined
-      if (!player) return
-      const list = byTeam.get(player.team) ?? []
-      list.push(player)
-      byTeam.set(player.team, list)
-    })
-    return [...byTeam.entries()]
-      .map(([short, players]) => ({
-        short,
-        players: players.sort((a, b) => ROLE_ORDER.indexOf(a.role) - ROLE_ORDER.indexOf(b.role)),
-      }))
-      .filter((r) => tierlist.validatedTeams.includes(r.short))
-      .sort(
-        (a, b) =>
-          tierlist.validatedTeams.indexOf(a.short) - tierlist.validatedTeams.indexOf(b.short),
-      )
-  }, [tierlist.items, tierlist.validatedTeams])
+  const rosters = useMemo(
+    () =>
+      rostersOf(tierlist)
+        .filter((r) => tierlist.validatedTeams.includes(r.short))
+        .sort(
+          (a, b) =>
+            tierlist.validatedTeams.indexOf(a.short) - tierlist.validatedTeams.indexOf(b.short),
+        ),
+    [tierlist],
+  )
 
   async function exportImage() {
     if (!sheetRef.current) return
@@ -87,38 +91,42 @@ export function GradeRecap({ tierlist }: Props) {
           {rosters.map((roster) => {
             const team = teamByShort(roster.short)
             return (
-              <article key={roster.short} className="recap-team">
-                <header>
+              <article key={roster.short} className="grade-strip recap-strip">
+                <div className="strip-team">
                   {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
-                  <h3>{team?.name ?? roster.short}</h3>
-                </header>
-                <table>
-                  <thead>
-                    <tr>
-                      {roster.players.map((player) => (
-                        <th key={player.id}>{player.name}</th>
-                      ))}
-                      <th>Équipe</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      {roster.players.map((player) => {
-                        const grade = tierlist.grades[player.id]
-                        return (
-                          <td key={player.id}>
-                            <span style={{ color: gradeColor(grade ?? '') }}>{grade ?? '—'}</span>
-                          </td>
-                        )
-                      })}
-                      <td>
-                        <span style={{ color: gradeColor(tierlist.grades[teamKey(roster.short)] ?? '') }}>
-                          {tierlist.grades[teamKey(roster.short)] ?? '—'}
+                  <span>{team?.name ?? roster.short}</span>
+                </div>
+                <div className="strip-cells">
+                  {roster.players.map((player) => {
+                    const grade = tierlist.grades[player.id]
+                    return (
+                      <div key={player.id} className="strip-col">
+                        <span className="strip-face" title={player.name}>
+                          {player.image ? <img src={asset(player.image) ?? ''} alt={player.name} /> : null}
                         </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                        <span
+                          className="gcell-box filled"
+                          style={{ color: gradeColor(grade ?? ''), borderColor: gradeColor(grade ?? '') }}
+                        >
+                          {grade ?? '—'}
+                        </span>
+                        <TrophyRow playerId={player.id} />
+                      </div>
+                    )
+                  })}
+                  <div className="strip-col strip-col-team">
+                    <span className="strip-name">Team</span>
+                    <span
+                      className="gcell-box filled"
+                      style={{
+                        color: gradeColor(tierlist.grades[teamKey(roster.short)] ?? ''),
+                        borderColor: gradeColor(tierlist.grades[teamKey(roster.short)] ?? ''),
+                      }}
+                    >
+                      {tierlist.grades[teamKey(roster.short)] ?? '—'}
+                    </span>
+                  </div>
+                </div>
               </article>
             )
           })}

@@ -34,6 +34,20 @@ B+ a B-, C+ a C-, F+ et F), chaque joueur plus une note d'equipe. Valider une eq
 la suivante. Toutes les notes de la session alimentent un tableau recapitulatif exportable
 en PNG, une carte par equipe avec ses joueurs en colonnes.
 
+## Palmares
+
+`src/data/achievements.json` compte les titres de chaque joueur : Worlds et MSI avec les
+annees, Esports World Cup, First Stand, coupes de ligue et titres par ligue.
+
+Source : les tables Cargo `TournamentPlayers` et `TournamentResults` de Leaguepedia, jointes
+sur `PageAndTeam`, filtrees sur les premieres places.
+
+Regle importante : Leaguepedia enregistre separement la saison reguliere et les playoffs, et
+une premiere place de saison reguliere n'est pas un titre. Un split ne compte donc que si les
+playoffs sont gagnes, ou s'il n'existe pas de page playoffs pour ce split (cas des anciennes
+saisons Champions). Sans cette regle Faker affichait 11 titres LCK au lieu de 10, parce que T1
+a fini premier de la saison reguliere LCK 2023 Spring avant de perdre la finale.
+
 ## Base de joueurs
 
 `src/data/players.json` contient les equipes qualifiees pour Worlds 2026 et leurs joueurs.

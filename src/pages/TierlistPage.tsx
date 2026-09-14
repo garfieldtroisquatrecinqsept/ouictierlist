@@ -399,28 +399,28 @@ export function TierlistPage() {
       )}
 
       {gradeMode ? (
-        <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
-          <div>
-            <GradeBoard
-              tierlist={tierlist}
-              onGrade={handleGrade}
-              onValidate={handleValidate}
-              onSelectPlayer={(playerId) =>
-                setSelectedItemId((current) => (current === playerId ? null : playerId))
-              }
-              selectedPlayerId={selectedItemId}
-            />
-            <GradeRecap tierlist={tierlist} />
-          </div>
+        <>
+          <GradeBoard
+            tierlist={tierlist}
+            onGrade={handleGrade}
+            onValidate={handleValidate}
+            onSelectPlayer={(playerId) =>
+              setSelectedItemId((current) => (current === playerId ? null : playerId))
+            }
+            selectedPlayerId={selectedItemId}
+          />
 
           {selectedItemId ? (
             <PlayerPanel
+              className="panel-below"
               player={gradePlayer}
               fallbackLabel={null}
               onClose={() => setSelectedItemId(null)}
             />
           ) : null}
-        </div>
+
+          <GradeRecap tierlist={tierlist} />
+        </>
       ) : (
         <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
           <TierList

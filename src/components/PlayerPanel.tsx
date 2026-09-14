@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { StatRadar } from './StatRadar'
 import {
   ROLE_LABELS,
+  trophies,
   STATS_SEASON,
   STAT_BLOCKS,
   asset,
@@ -15,15 +16,16 @@ import type { Player } from '../lib/players'
 interface Props {
   player: Player | null
   fallbackLabel?: string | null
+  className?: string
   onClose: () => void
 }
 
-export function PlayerPanel({ player, fallbackLabel, onClose }: Props) {
+export function PlayerPanel({ player, fallbackLabel, className = '', onClose }: Props) {
   const [scope, setScope] = useState<'all' | 'role'>('all')
 
   if (!player) {
     return (
-      <aside className="player-panel empty">
+      <aside className={`player-panel empty ${className}`.trim()}>
         <p className="hint">
           {fallbackLabel
             ? `« ${fallbackLabel} » n'est pas un joueur de la base.`
@@ -37,7 +39,7 @@ export function PlayerPanel({ player, fallbackLabel, onClose }: Props) {
   const stats = statsFor(player.id)
 
   return (
-    <aside className="player-panel">
+    <aside className={`player-panel ${className}`.trim()}>
       <header className="panel-head">
         <span className="panel-face">
           {player.image ? <img src={asset(player.image) ?? ''} alt="" /> : null}
@@ -76,6 +78,22 @@ export function PlayerPanel({ player, fallbackLabel, onClose }: Props) {
 
           <StatRadar players={[player]} scope={scope} size={240} />
 
+          {trophies(player.id).length > 0 ? (
+            <section className="panel-block">
+              <h3>Palmarès</h3>
+              <ul className="trophy-list">
+                {trophies(player.id).map((t) => (
+                  <li key={t.code} title={t.detail ? `${t.label} : ${t.detail}` : t.label}>
+                    <span className="trophy-count">{t.count}</span>
+                    <span className="trophy-label">{t.label}</span>
+                    {t.detail ? <small>{t.detail}</small> : null}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
+          <div className="panel-blocks">
           {STAT_BLOCKS.map((block) => (
             <section key={block.key as string} className="panel-block">
               <h3>{block.title}</h3>
@@ -92,6 +110,7 @@ export function PlayerPanel({ player, fallbackLabel, onClose }: Props) {
               </dl>
             </section>
           ))}
+          </div>
 
           <section className="panel-block">
             <h3>Champions les plus joués</h3>
