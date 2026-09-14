@@ -2353,7 +2353,7 @@ span.gcell-box {
 }
 
 .recap-worlds {
-  height: 30px;
+  height: 40px;
   width: auto;
   flex: none;
   object-fit: contain;
@@ -2376,13 +2376,13 @@ span.gcell-box {
 .recap-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   flex: none;
 }
 
 .recap-brand img {
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
@@ -2836,7 +2836,7 @@ span.gcell-box {
 
 .bg-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.4rem;
 }
 
@@ -2844,8 +2844,10 @@ span.gcell-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.3rem 0.1rem;
+  gap: 0.28rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.3rem 0.15rem;
   font-size: 0.6rem;
   font-weight: 500;
   color: var(--ink-faint);
@@ -2853,11 +2855,15 @@ span.gcell-box {
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bg-swatch span {
+  display: block;
   width: 100%;
-  height: 26px;
+  aspect-ratio: 1 / 1;
   border-radius: 2px;
   border: 1px solid var(--line-strong);
   background: var(--paper);
