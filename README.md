@@ -23,7 +23,27 @@ la même inversion.
 
 Si un fichier est absent, le site retombe sur le texte « RaphCorp » sans rien casser.
 
-## Développement
+## Base de joueurs
+
+`src/data/players.json` contient les equipes qualifiees pour Worlds 2026 et leurs joueurs
+(nom, equipe, role, pays, chemin de la photo). Les visuels sont dans `public/` :
+
+| Dossier | Contenu |
+| --- | --- |
+| `public/players/` | portraits 220 px en WebP, nommes `<equipe>-<joueur>.webp` |
+| `public/teams/` | logos d'equipe 80 px en WebP |
+| `public/roles/` | pictos de role en deux tons de gris, suffixes `-light` et `-dark` |
+
+Source : [Leaguepedia](https://lol.fandom.com/wiki/2026_Season_World_Championship).
+L'URL d'une image du wiki se calcule sans appeler l'API : le chemin est
+`images/<h0>/<h0h1>/<NomDeFichier>` ou `h` est le MD5 du nom de fichier avec les espaces
+remplaces par des underscores. L'API Cargo elle-meme est fortement limitee en anonyme ;
+`Special:CargoExport` ne l'est pas et rend le meme JSON.
+
+La qualification n'etait pas terminee a la date de collecte (2026-09-14) : 11 equipes sur
+une vingtaine de places. Pour completer, relancer la collecte et regenerer le JSON.
+
+## Developpement
 
 ```bash
 npm install

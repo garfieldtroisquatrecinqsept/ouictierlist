@@ -14,6 +14,7 @@ export interface TierItem {
   image: string | null
   role: RoleId | null
   teamLogo: string | null
+  playerId: string | null
 }
 
 export interface Tier {

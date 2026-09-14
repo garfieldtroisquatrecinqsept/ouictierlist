@@ -2,10 +2,13 @@ import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Logo } from '../components/Logo'
+import { PlayerPicker } from '../components/PlayerPicker'
 import { ThemeToggle } from '../components/ThemeToggle'
 import { TierList } from '../components/TierList'
 import type { TierListValue } from '../components/TierList'
 import { getCategory } from '../lib/categories'
+import { asset, teamByShort } from '../lib/players'
+import type { Player } from '../lib/players'
 import { createId } from '../lib/storage'
 import { useTierlists } from '../store/TierlistsContext'
 import type { TierItem } from '../types'
@@ -17,6 +20,7 @@ export function TierlistPage() {
   const navigate = useNavigate()
   const { getTierlist, updateTierlist, loading } = useTierlists()
   const [label, setLabel] = useState('')
+  const [pickerOpen, setPickerOpen] = useState(false)
 
   const tierlist = getTierlist(id)
 
@@ -90,6 +94,7 @@ export function TierlistPage() {
           image: tile.image ?? existing?.image ?? null,
           role: existing?.role ?? null,
           teamLogo: existing?.teamLogo ?? null,
+          playerId: existing?.playerId ?? null,
         })
         return tile.id
       }
@@ -115,12 +120,42 @@ export function TierlistPage() {
     }))
   }
 
+  function handleAddPlayers(players: Player[]) {
+    updateTierlist(id, (current) => {
+      const known = new Set(current.items.map((item) => item.playerId).filter(Boolean))
+      const fresh = players
+        .filter((player) => !known.has(player.id))
+        .map((player) => ({
+          id: createId(),
+          label: player.name,
+          image: asset(player.image),
+          role: player.role,
+          teamLogo: asset(teamByShort(player.team)?.logo ?? null),
+          playerId: player.id,
+        }))
+      if (fresh.length === 0) return current
+      return {
+        ...current,
+        items: [...current.items, ...fresh],
+        poolItemIds: [...current.poolItemIds, ...fresh.map((item) => item.id)],
+      }
+    })
+    setPickerOpen(false)
+  }
+
   function handleAddItem(event: FormEvent) {
     event.preventDefault()
     const trimmed = label.trim()
     if (!trimmed) return
     updateTierlist(id, (current) => {
-      const item = { id: createId(), label: trimmed, image: null, role: null, teamLogo: null }
+      const item = {
+        id: createId(),
+        label: trimmed,
+        image: null,
+        role: null,
+        teamLogo: null,
+        playerId: null,
+      }
       return {
         ...current,
         items: [...current.items, item],
@@ -147,16 +182,19 @@ export function TierlistPage() {
         </div>
       </header>
 
-      <form onSubmit={handleAddItem} className="pool-form">
-        <input
-          value={label}
-          onChange={(event) => setLabel(event.target.value)}
-          placeholder="Ajouter un joueur ou une équipe"
-        />
-        <button type="submit" className="primary">
-          Ajouter
+      <div className="pool-form">
+        <button type="button" className="primary" onClick={() => setPickerOpen(true)}>
+          Ajouter des joueurs
         </button>
-      </form>
+        <form onSubmit={handleAddItem} className="pool-custom">
+          <input
+            value={label}
+            onChange={(event) => setLabel(event.target.value)}
+            placeholder="ou une entrée libre"
+          />
+          <button type="submit">Ajouter</button>
+        </form>
+      </div>
 
       <TierList
         className="board"
@@ -165,6 +203,13 @@ export function TierlistPage() {
         onRemoveItem={handleRemoveItem}
         tierColors={TIER_COLORS}
         tileSize={84}
+      />
+
+      <PlayerPicker
+        open={pickerOpen}
+        alreadyIn={tierlist.items.map((item) => item.playerId).filter((v): v is string => !!v)}
+        onClose={() => setPickerOpen(false)}
+        onAdd={handleAddPlayers}
       />
     </div>
   )
