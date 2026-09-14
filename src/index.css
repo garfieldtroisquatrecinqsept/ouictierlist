@@ -654,6 +654,19 @@ input:focus {
   font-weight: 500;
 }
 
+.compare-value > span {
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-value .stat-rank {
+  min-width: 0;
+  margin: 0 0.45rem;
+}
+
+.compare-table th {
+  font-size: 0.72rem;
+}
+
 .compare-table tr:not(.same) .compare-value {
   color: var(--ink);
 }

@@ -49,8 +49,9 @@ export function StatRadar({ players, scope = 'all', size = 260 }: Props) {
   }, [players, scope])
 
   const single = players.length === 1 ? players[0] : null
+  const showRanks = players.length <= 2
   const width = size
-  const height = size * (single ? 0.95 : 0.88)
+  const height = size * (showRanks ? 0.95 : 0.88)
   const cx = width / 2
   const cy = height / 2
   const radius = Math.min(width / 2 - 46, height / 2 - 20)
@@ -106,25 +107,36 @@ export function StatRadar({ players, scope = 'all', size = 260 }: Props) {
 
         {RADAR_AXES.map((axis, i) => {
           const [x, y] = labelPoint(i)
-          const rank = single ? statRank(single.id, axis.block, axis.key) : null
+          const ranks = showRanks
+            ? players.map((player) => statRank(player.id, axis.block, axis.key))
+            : []
+          const hasRank = ranks.some(Boolean)
           const anchor = x > cx + 4 ? 'start' : x < cx - 4 ? 'end' : 'middle'
           return (
             <text
               key={axis.key}
               className="radar-label"
               x={x}
-              y={rank ? y - 5 : y}
+              y={hasRank ? y - 5 : y}
               textAnchor={anchor}
               dominantBaseline="middle"
             >
               <tspan x={x}>{axis.label}</tspan>
-              {rank ? (
-                <tspan
-                  x={x}
-                  dy="1.25em"
-                  className={`radar-rank${rank.rank <= 3 ? ` top${rank.rank}` : ''}`}
-                >
-                  {rankLabel(rank.rank)}
+              {hasRank ? (
+                <tspan x={x} dy="1.25em">
+                  {ranks.map((rank, ri) =>
+                    rank ? (
+                      <tspan
+                        key={players[ri].id}
+                        className={
+                          single && rank.rank <= 3 ? `radar-rank top${rank.rank}` : 'radar-rank'
+                        }
+                        fill={single ? undefined : COLORS[ri % COLORS.length]}
+                      >
+                        {(ri > 0 ? ' · ' : '') + rankLabel(rank.rank)}
+                      </tspan>
+                    ) : null,
+                  )}
                 </tspan>
               ) : null}
             </text>

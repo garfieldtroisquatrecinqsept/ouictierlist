@@ -9,7 +9,9 @@ import {
   STAT_BLOCKS,
   asset,
   championIcon,
+  rankLabel,
   roleIcon,
+  statRank,
   statsFor,
   teamByShort,
 } from '../lib/players'
@@ -69,6 +71,17 @@ export function ComparePage() {
     )
   }
 
+  function rankTag(playerId: string | undefined, blockKey: keyof PlayerStats, field: string) {
+    if (!playerId) return null
+    const rank = statRank(playerId, blockKey, field)
+    if (!rank) return null
+    return (
+      <span className={`stat-rank${rank.rank <= 3 ? ` top${rank.rank}` : ''}`}>
+        {rankLabel(rank.rank)}
+      </span>
+    )
+  }
+
   function statRow(field: string, label: string, blockKey: keyof PlayerStats) {
     const a = (leftStats?.[blockKey] as Record<string, string | null>)?.[field] ?? null
     const b = (rightStats?.[blockKey] as Record<string, string | null>)?.[field] ?? null
@@ -81,9 +94,15 @@ export function ComparePage() {
     }
     return (
       <tr key={field}>
-        <td className={lead === 'left' ? 'compare-value lead' : 'compare-value'}>{a ?? '—'}</td>
+        <td className={lead === 'left' ? 'compare-value lead' : 'compare-value'}>
+          {rankTag(left?.id, blockKey, field)}
+          <span>{a ?? '—'}</span>
+        </td>
         <th>{label}</th>
-        <td className={lead === 'right' ? 'compare-value lead' : 'compare-value'}>{b ?? '—'}</td>
+        <td className={lead === 'right' ? 'compare-value lead' : 'compare-value'}>
+          <span>{b ?? '—'}</span>
+          {rankTag(right?.id, blockKey, field)}
+        </td>
       </tr>
     )
   }
