@@ -1698,26 +1698,6 @@ input:focus {
   color: #b2703c;
 }
 
-.stats-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.25rem 0.1rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  border: 0;
-  background: none;
-  box-shadow: none;
-}
-
-.stats-toggle:hover:not(:disabled) {
-  color: var(--ink);
-  transform: none;
-}
-
 .panel-scope-note {
   margin: 0.1rem 0 0;
   text-align: center;
