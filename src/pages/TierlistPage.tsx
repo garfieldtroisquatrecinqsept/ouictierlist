@@ -106,14 +106,15 @@ export function TierlistPage() {
     const toTile = (itemId: string) => {
       const item = byId.get(itemId)
       if (!item) return null
+      const team = item.teamShort ? teamByShort(item.teamShort) : undefined
       return {
         id: item.id,
         label: item.label,
-        image: item.image ?? undefined,
+        image: item.image ?? asset(team?.logo ?? null) ?? undefined,
         badge: item.teamLogo ?? undefined,
         roleIcon: item.role ? roleIcon(item.role) : undefined,
         kind: item.teamShort ? ('team' as const) : ('player' as const),
-        accent: item.teamColor ?? undefined,
+        accent: team?.color ?? item.teamColor ?? undefined,
       }
     }
     return {
