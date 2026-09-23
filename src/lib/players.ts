@@ -9,6 +9,7 @@ export interface PlayerTeam {
   region: string
   league: string
   logo: string | null
+  color?: string
 }
 
 export type LeagueId = 'LCK' | 'LPL' | 'LEC' | 'LCP'

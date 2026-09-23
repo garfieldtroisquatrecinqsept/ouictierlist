@@ -33,6 +33,7 @@ function createTeamItems(category: CategoryId): TierItem[] {
     teamLogo: null,
     playerId: null,
     teamShort: team.short,
+    teamColor: team.color ?? null,
   }))
 }
 

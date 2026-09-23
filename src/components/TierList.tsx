@@ -13,6 +13,7 @@ export type TierItem = {
   roleIcon?: string;
   badge?: string;
   kind?: "player" | "team";
+  accent?: string;
 };
 
 export type Tier = {
@@ -470,11 +471,18 @@ function TileFace({ item, size, dragging }: { item: TierItem; size: number; drag
       style={{ width: size, height: Math.round(size * TILE_RATIO) }}
     >
       {item.image && item.kind === "team" ? (
-        <span className="grid h-full w-full place-items-center p-[14%] pb-[22%]">
+        <span className="team-face grid h-full w-full place-items-center p-[15%] pb-[24%]">
           <img
             src={item.image}
             alt={item.label ?? ""}
             className="max-h-full max-w-full object-contain"
+            style={
+              item.accent
+                ? {
+                    filter: `drop-shadow(0 0 7px ${item.accent}80) drop-shadow(0 2px 4px rgba(0,0,0,.3))`,
+                  }
+                : undefined
+            }
             draggable={false}
           />
         </span>

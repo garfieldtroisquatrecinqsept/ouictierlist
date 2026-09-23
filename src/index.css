@@ -1206,6 +1206,18 @@ input:focus {
   background: transparent;
 }
 
+.team-face {
+  background:
+    radial-gradient(120% 90% at 50% 18%, rgba(255, 255, 255, 0.1), transparent 62%),
+    linear-gradient(170deg, #2b2b33, #17171b 78%);
+}
+
+:root:not([data-theme='dark']) .team-face {
+  background:
+    radial-gradient(120% 90% at 50% 18%, rgba(255, 255, 255, 0.95), transparent 62%),
+    linear-gradient(170deg, #e9e9ec, #cfcfd6 82%);
+}
+
 .preview-faces.contain img {
   object-fit: contain;
   object-position: center;

@@ -1,677 +1,688 @@
 {
-  "tournament": "Worlds 2026",
-  "source": "https://lol.fandom.com/wiki/2026_Season_World_Championship",
-  "updated": "2026-09-14",
-  "note": "Equipes qualifiees a la date de collecte. La qualification n est pas terminee.",
-  "teams": [
-    {
-      "short": "DK",
-      "name": "Dplus Kia",
-      "region": "Korea",
-      "league": "LCK",
-      "logo": "teams/dk.webp"
-    },
-    {
-      "short": "GEN",
-      "name": "Gen.G",
-      "region": "Korea",
-      "league": "LCK",
-      "logo": "teams/gen.webp"
-    },
-    {
-      "short": "HLE",
-      "name": "Hanwha Life Esports",
-      "region": "Korea",
-      "league": "LCK",
-      "logo": "teams/hle.webp"
-    },
-    {
-      "short": "T1",
-      "name": "T1",
-      "region": "Korea",
-      "league": "LCK",
-      "logo": "teams/t1.webp"
-    },
-    {
-      "short": "CFO",
-      "name": "CTBC Flying Oyster",
-      "region": "Asia Pacific",
-      "league": "LCP",
-      "logo": "teams/cfo.webp"
-    },
-    {
-      "short": "MVK",
-      "name": "MVK Esports",
-      "region": "Asia Pacific",
-      "league": "LCP",
-      "logo": "teams/mvk.webp"
-    },
-    {
-      "short": "TSW",
-      "name": "Team Secret Whales",
-      "region": "Asia Pacific",
-      "league": "LCP",
-      "logo": "teams/tsw.webp"
-    },
-    {
-      "short": "G2",
-      "name": "G2 Esports",
-      "region": "EMEA",
-      "league": "LEC",
-      "logo": "teams/g2.webp"
-    },
-    {
-      "short": "KC",
-      "name": "Karmine Corp",
-      "region": "EMEA",
-      "league": "LEC",
-      "logo": "teams/kc.webp"
-    },
-    {
-      "short": "AL",
-      "name": "Anyone's Legend",
-      "region": "China",
-      "league": "LPL",
-      "logo": "teams/al.webp"
-    },
-    {
-      "short": "BLG",
-      "name": "Bilibili Gaming",
-      "region": "China",
-      "league": "LPL",
-      "logo": "teams/blg.webp"
-    }
-  ],
-  "players": [
-    {
-      "id": "AL-Breathe",
-      "name": "Breathe",
-      "team": "AL",
-      "league": "LPL",
-      "region": "China",
-      "role": "top",
-      "country": "China",
-      "image": "players/al-breathe.webp"
-    },
-    {
-      "id": "AL-Tarzan",
-      "name": "Tarzan",
-      "team": "AL",
-      "league": "LPL",
-      "region": "China",
-      "role": "jungle",
-      "country": "South Korea",
-      "image": "players/al-tarzan.webp"
-    },
-    {
-      "id": "AL-Shanks",
-      "name": "Shanks",
-      "team": "AL",
-      "league": "LPL",
-      "region": "China",
-      "role": "mid",
-      "country": "China",
-      "image": "players/al-shanks.webp"
-    },
-    {
-      "id": "AL-Hope",
-      "name": "Hope",
-      "team": "AL",
-      "league": "LPL",
-      "region": "China",
-      "role": "bot",
-      "country": "China",
-      "image": "players/al-hope.webp"
-    },
-    {
-      "id": "AL-Kael",
-      "name": "Kael",
-      "team": "AL",
-      "league": "LPL",
-      "region": "China",
-      "role": "support",
-      "country": "South Korea",
-      "image": "players/al-kael.webp"
-    },
-    {
-      "id": "BLG-Bin",
-      "name": "Bin",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "top",
-      "country": "China",
-      "image": "players/blg-bin.webp"
-    },
-    {
-      "id": "BLG-Flandre",
-      "name": "Flandre",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "top",
-      "country": "China",
-      "image": "players/blg-flandre.webp"
-    },
-    {
-      "id": "BLG-Wenbo",
-      "name": "Wenbo",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "top",
-      "country": "China",
-      "image": "players/blg-wenbo.webp"
-    },
-    {
-      "id": "BLG-Xun",
-      "name": "Xun",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "jungle",
-      "country": "China",
-      "image": "players/blg-xun.webp"
-    },
-    {
-      "id": "BLG-Knight",
-      "name": "Knight",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "mid",
-      "country": "China",
-      "image": "players/blg-knight.webp"
-    },
-    {
-      "id": "BLG-Viper",
-      "name": "Viper",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "bot",
-      "country": "South Korea",
-      "image": "players/blg-viper.webp"
-    },
-    {
-      "id": "BLG-ON",
-      "name": "ON",
-      "team": "BLG",
-      "league": "LPL",
-      "region": "China",
-      "role": "support",
-      "country": "China",
-      "image": "players/blg-on.webp"
-    },
-    {
-      "id": "CFO-Rest",
-      "name": "Rest",
-      "team": "CFO",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "top",
-      "country": "Taiwan",
-      "image": "players/cfo-rest.webp"
-    },
-    {
-      "id": "CFO-Shad0w",
-      "name": "Shad0w",
-      "team": "CFO",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "jungle",
-      "country": "Italy",
-      "image": "players/cfo-shad0w.webp"
-    },
-    {
-      "id": "CFO-Pout",
-      "name": "Pout",
-      "team": "CFO",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "mid",
-      "country": "South Korea",
-      "image": "players/cfo-pout.webp"
-    },
-    {
-      "id": "CFO-Doggo",
-      "name": "Doggo",
-      "team": "CFO",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "bot",
-      "country": "Taiwan",
-      "image": "players/cfo-doggo.webp"
-    },
-    {
-      "id": "CFO-Kino",
-      "name": "Kino",
-      "team": "CFO",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "support",
-      "country": "Taiwan",
-      "image": "players/cfo-kino.webp"
-    },
-    {
-      "id": "DK-Siwoo",
-      "name": "Siwoo",
-      "team": "DK",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "top",
-      "country": "South Korea",
-      "image": "players/dk-siwoo.webp"
-    },
-    {
-      "id": "DK-Lucid",
-      "name": "Lucid",
-      "team": "DK",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "jungle",
-      "country": "South Korea",
-      "image": "players/dk-lucid.webp"
-    },
-    {
-      "id": "DK-ShowMaker",
-      "name": "ShowMaker",
-      "team": "DK",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "mid",
-      "country": "South Korea",
-      "image": "players/dk-showmaker.webp"
-    },
-    {
-      "id": "DK-Smash",
-      "name": "Smash",
-      "team": "DK",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "bot",
-      "country": "South Korea",
-      "image": "players/dk-smash.webp"
-    },
-    {
-      "id": "DK-Career",
-      "name": "Career",
-      "team": "DK",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "support",
-      "country": "South Korea",
-      "image": "players/dk-career.webp"
-    },
-    {
-      "id": "G2-BrokenBlade",
-      "name": "BrokenBlade",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "top",
-      "country": "Germany",
-      "image": "players/g2-brokenblade.webp"
-    },
-    {
-      "id": "G2-SkewMond",
-      "name": "SkewMond",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "jungle",
-      "country": "France",
-      "image": "players/g2-skewmond.webp"
-    },
-    {
-      "id": "G2-Caps",
-      "name": "Caps",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "mid",
-      "country": "Denmark",
-      "image": "players/g2-caps.webp"
-    },
-    {
-      "id": "G2-Hans Sama",
-      "name": "Hans Sama",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "bot",
-      "country": "France",
-      "image": "players/g2-hans-sama.webp"
-    },
-    {
-      "id": "G2-Labrov",
-      "name": "Labrov",
-      "team": "G2",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "support",
-      "country": "Greece",
-      "image": "players/g2-labrov.webp"
-    },
-    {
-      "id": "GEN-Kiin",
-      "name": "Kiin",
-      "team": "GEN",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "top",
-      "country": "South Korea",
-      "image": "players/gen-kiin.webp"
-    },
-    {
-      "id": "GEN-Canyon",
-      "name": "Canyon",
-      "team": "GEN",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "jungle",
-      "country": "South Korea",
-      "image": "players/gen-canyon.webp"
-    },
-    {
-      "id": "GEN-Chovy",
-      "name": "Chovy",
-      "team": "GEN",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "mid",
-      "country": "South Korea",
-      "image": "players/gen-chovy.webp"
-    },
-    {
-      "id": "GEN-Ruler",
-      "name": "Ruler",
-      "team": "GEN",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "bot",
-      "country": "South Korea",
-      "image": "players/gen-ruler.webp"
-    },
-    {
-      "id": "GEN-Duro",
-      "name": "Duro",
-      "team": "GEN",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "support",
-      "country": "South Korea",
-      "image": "players/gen-duro.webp"
-    },
-    {
-      "id": "HLE-Zeus",
-      "name": "Zeus",
-      "team": "HLE",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "top",
-      "country": "South Korea",
-      "image": "players/hle-zeus.webp"
-    },
-    {
-      "id": "HLE-Kanavi",
-      "name": "Kanavi",
-      "team": "HLE",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "jungle",
-      "country": "South Korea",
-      "image": "players/hle-kanavi.webp"
-    },
-    {
-      "id": "HLE-Zeka",
-      "name": "Zeka",
-      "team": "HLE",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "mid",
-      "country": "South Korea",
-      "image": "players/hle-zeka.webp"
-    },
-    {
-      "id": "HLE-Gumayusi",
-      "name": "Gumayusi",
-      "team": "HLE",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "bot",
-      "country": "South Korea",
-      "image": "players/hle-gumayusi.webp"
-    },
-    {
-      "id": "HLE-Delight",
-      "name": "Delight",
-      "team": "HLE",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "support",
-      "country": "South Korea",
-      "image": "players/hle-delight.webp"
-    },
-    {
-      "id": "KC-Canna",
-      "name": "Canna",
-      "team": "KC",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "top",
-      "country": "South Korea",
-      "image": "players/kc-canna.webp"
-    },
-    {
-      "id": "KC-Yike",
-      "name": "Yike",
-      "team": "KC",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "jungle",
-      "country": "Sweden",
-      "image": "players/kc-yike.webp"
-    },
-    {
-      "id": "KC-kyeahoo",
-      "name": "kyeahoo",
-      "team": "KC",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "mid",
-      "country": "South Korea",
-      "image": "players/kc-kyeahoo.webp"
-    },
-    {
-      "id": "KC-Caliste",
-      "name": "Caliste",
-      "team": "KC",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "bot",
-      "country": "France",
-      "image": "players/kc-caliste.webp"
-    },
-    {
-      "id": "KC-Busio",
-      "name": "Busio",
-      "team": "KC",
-      "league": "LEC",
-      "region": "EMEA",
-      "role": "support",
-      "country": "United States",
-      "image": "players/kc-busio.webp"
-    },
-    {
-      "id": "MVK-Kratos",
-      "name": "Kratos",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "top",
-      "country": "Vietnam",
-      "image": "players/mvk-kratos.webp"
-    },
-    {
-      "id": "MVK-Gury",
-      "name": "Gury",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "jungle",
-      "country": "Vietnam",
-      "image": "players/mvk-gury.webp"
-    },
-    {
-      "id": "MVK-SanSan",
-      "name": "SanSan",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "jungle",
-      "country": "Vietnam",
-      "image": "players/mvk-sansan.webp"
-    },
-    {
-      "id": "MVK-SofM",
-      "name": "SofM",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "jungle",
-      "country": "Vietnam",
-      "image": "players/mvk-sofm.webp"
-    },
-    {
-      "id": "MVK-Chika",
-      "name": "Chika",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "mid",
-      "country": "Vietnam",
-      "image": "players/mvk-chika.webp"
-    },
-    {
-      "id": "MVK-Harky",
-      "name": "Harky",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "bot",
-      "country": "Vietnam",
-      "image": "players/mvk-harky.webp"
-    },
-    {
-      "id": "MVK-SiuLoong",
-      "name": "SiuLoong",
-      "team": "MVK",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "support",
-      "country": "Vietnam",
-      "image": "players/mvk-siuloong.webp"
-    },
-    {
-      "id": "T1-Doran",
-      "name": "Doran",
-      "team": "T1",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "top",
-      "country": "South Korea",
-      "image": "players/t1-doran.webp"
-    },
-    {
-      "id": "T1-Oner",
-      "name": "Oner",
-      "team": "T1",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "jungle",
-      "country": "South Korea",
-      "image": "players/t1-oner.webp"
-    },
-    {
-      "id": "T1-Faker",
-      "name": "Faker",
-      "team": "T1",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "mid",
-      "country": "South Korea",
-      "image": "players/t1-faker.webp"
-    },
-    {
-      "id": "T1-Peyz",
-      "name": "Peyz",
-      "team": "T1",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "bot",
-      "country": "South Korea",
-      "image": "players/t1-peyz.webp"
-    },
-    {
-      "id": "T1-Keria",
-      "name": "Keria",
-      "team": "T1",
-      "league": "LCK",
-      "region": "Korea",
-      "role": "support",
-      "country": "South Korea",
-      "image": "players/t1-keria.webp"
-    },
-    {
-      "id": "TSW-Pun",
-      "name": "Pun",
-      "team": "TSW",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "top",
-      "country": "Vietnam",
-      "image": "players/tsw-pun.webp"
-    },
-    {
-      "id": "TSW-Hizto",
-      "name": "Hizto",
-      "team": "TSW",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "jungle",
-      "country": "Vietnam",
-      "image": "players/tsw-hizto.webp"
-    },
-    {
-      "id": "TSW-Dire",
-      "name": "Dire",
-      "team": "TSW",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "mid",
-      "country": "Vietnam",
-      "image": "players/tsw-dire.webp"
-    },
-    {
-      "id": "TSW-Eddie",
-      "name": "Eddie",
-      "team": "TSW",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "bot",
-      "country": "Vietnam",
-      "image": "players/tsw-eddie.webp"
-    },
-    {
-      "id": "TSW-Bie",
-      "name": "Bie",
-      "team": "TSW",
-      "league": "LCP",
-      "region": "Asia Pacific",
-      "role": "support",
-      "country": "Vietnam",
-      "image": "players/tsw-bie.webp"
-    }
-  ]
+ "tournament": "Worlds 2026",
+ "source": "https://lol.fandom.com/wiki/2026_Season_World_Championship",
+ "updated": "2026-09-14",
+ "note": "Equipes qualifiees a la date de collecte. La qualification n est pas terminee.",
+ "teams": [
+  {
+   "short": "DK",
+   "name": "Dplus Kia",
+   "region": "Korea",
+   "league": "LCK",
+   "logo": "teams/dk.webp",
+   "color": "#8b8b95"
+  },
+  {
+   "short": "GEN",
+   "name": "Gen.G",
+   "region": "Korea",
+   "league": "LCK",
+   "logo": "teams/gen.webp",
+   "color": "#d3ba85"
+  },
+  {
+   "short": "HLE",
+   "name": "Hanwha Life Esports",
+   "region": "Korea",
+   "league": "LCK",
+   "logo": "teams/hle.webp",
+   "color": "#a67c61"
+  },
+  {
+   "short": "T1",
+   "name": "T1",
+   "region": "Korea",
+   "league": "LCK",
+   "logo": "teams/t1.webp",
+   "color": "#e7002b"
+  },
+  {
+   "short": "CFO",
+   "name": "CTBC Flying Oyster",
+   "region": "Asia Pacific",
+   "league": "LCP",
+   "logo": "teams/cfo.webp",
+   "color": "#7a7352"
+  },
+  {
+   "short": "MVK",
+   "name": "MVK Esports",
+   "region": "Asia Pacific",
+   "league": "LCP",
+   "logo": "teams/mvk.webp",
+   "color": "#e55406"
+  },
+  {
+   "short": "TSW",
+   "name": "Team Secret Whales",
+   "region": "Asia Pacific",
+   "league": "LCP",
+   "logo": "teams/tsw.webp",
+   "color": "#8b8b95"
+  },
+  {
+   "short": "G2",
+   "name": "G2 Esports",
+   "region": "EMEA",
+   "league": "LEC",
+   "logo": "teams/g2.webp",
+   "color": "#7f7e7d"
+  },
+  {
+   "short": "KC",
+   "name": "Karmine Corp",
+   "region": "EMEA",
+   "league": "LEC",
+   "logo": "teams/kc.webp",
+   "color": "#01cdff"
+  },
+  {
+   "short": "AL",
+   "name": "Anyone's Legend",
+   "region": "China",
+   "league": "LPL",
+   "logo": "teams/al.webp",
+   "color": "#b65554"
+  },
+  {
+   "short": "BLG",
+   "name": "Bilibili Gaming",
+   "region": "China",
+   "league": "LPL",
+   "logo": "teams/blg.webp",
+   "color": "#4cc7eb"
+  }
+ ],
+ "players": [
+  {
+   "id": "AL-Breathe",
+   "name": "Breathe",
+   "team": "AL",
+   "league": "LPL",
+   "region": "China",
+   "role": "top",
+   "country": "China",
+   "image": "players/al-breathe.webp"
+  },
+  {
+   "id": "AL-Tarzan",
+   "name": "Tarzan",
+   "team": "AL",
+   "league": "LPL",
+   "region": "China",
+   "role": "jungle",
+   "country": "South Korea",
+   "image": "players/al-tarzan.webp"
+  },
+  {
+   "id": "AL-Shanks",
+   "name": "Shanks",
+   "team": "AL",
+   "league": "LPL",
+   "region": "China",
+   "role": "mid",
+   "country": "China",
+   "image": "players/al-shanks.webp"
+  },
+  {
+   "id": "AL-Hope",
+   "name": "Hope",
+   "team": "AL",
+   "league": "LPL",
+   "region": "China",
+   "role": "bot",
+   "country": "China",
+   "image": "players/al-hope.webp"
+  },
+  {
+   "id": "AL-Kael",
+   "name": "Kael",
+   "team": "AL",
+   "league": "LPL",
+   "region": "China",
+   "role": "support",
+   "country": "South Korea",
+   "image": "players/al-kael.webp"
+  },
+  {
+   "id": "BLG-Bin",
+   "name": "Bin",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "top",
+   "country": "China",
+   "image": "players/blg-bin.webp"
+  },
+  {
+   "id": "BLG-Flandre",
+   "name": "Flandre",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "top",
+   "country": "China",
+   "image": "players/blg-flandre.webp"
+  },
+  {
+   "id": "BLG-Wenbo",
+   "name": "Wenbo",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "top",
+   "country": "China",
+   "image": "players/blg-wenbo.webp"
+  },
+  {
+   "id": "BLG-Xun",
+   "name": "Xun",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "jungle",
+   "country": "China",
+   "image": "players/blg-xun.webp"
+  },
+  {
+   "id": "BLG-Knight",
+   "name": "Knight",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "mid",
+   "country": "China",
+   "image": "players/blg-knight.webp"
+  },
+  {
+   "id": "BLG-Viper",
+   "name": "Viper",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "bot",
+   "country": "South Korea",
+   "image": "players/blg-viper.webp"
+  },
+  {
+   "id": "BLG-ON",
+   "name": "ON",
+   "team": "BLG",
+   "league": "LPL",
+   "region": "China",
+   "role": "support",
+   "country": "China",
+   "image": "players/blg-on.webp"
+  },
+  {
+   "id": "CFO-Rest",
+   "name": "Rest",
+   "team": "CFO",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "top",
+   "country": "Taiwan",
+   "image": "players/cfo-rest.webp"
+  },
+  {
+   "id": "CFO-Shad0w",
+   "name": "Shad0w",
+   "team": "CFO",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "jungle",
+   "country": "Italy",
+   "image": "players/cfo-shad0w.webp"
+  },
+  {
+   "id": "CFO-Pout",
+   "name": "Pout",
+   "team": "CFO",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/cfo-pout.webp"
+  },
+  {
+   "id": "CFO-Doggo",
+   "name": "Doggo",
+   "team": "CFO",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "bot",
+   "country": "Taiwan",
+   "image": "players/cfo-doggo.webp"
+  },
+  {
+   "id": "CFO-Kino",
+   "name": "Kino",
+   "team": "CFO",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "support",
+   "country": "Taiwan",
+   "image": "players/cfo-kino.webp"
+  },
+  {
+   "id": "DK-Siwoo",
+   "name": "Siwoo",
+   "team": "DK",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/dk-siwoo.webp"
+  },
+  {
+   "id": "DK-Lucid",
+   "name": "Lucid",
+   "team": "DK",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "jungle",
+   "country": "South Korea",
+   "image": "players/dk-lucid.webp"
+  },
+  {
+   "id": "DK-ShowMaker",
+   "name": "ShowMaker",
+   "team": "DK",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/dk-showmaker.webp"
+  },
+  {
+   "id": "DK-Smash",
+   "name": "Smash",
+   "team": "DK",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "bot",
+   "country": "South Korea",
+   "image": "players/dk-smash.webp"
+  },
+  {
+   "id": "DK-Career",
+   "name": "Career",
+   "team": "DK",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "support",
+   "country": "South Korea",
+   "image": "players/dk-career.webp"
+  },
+  {
+   "id": "G2-BrokenBlade",
+   "name": "BrokenBlade",
+   "team": "G2",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "top",
+   "country": "Germany",
+   "image": "players/g2-brokenblade.webp"
+  },
+  {
+   "id": "G2-SkewMond",
+   "name": "SkewMond",
+   "team": "G2",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "jungle",
+   "country": "France",
+   "image": "players/g2-skewmond.webp"
+  },
+  {
+   "id": "G2-Caps",
+   "name": "Caps",
+   "team": "G2",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "mid",
+   "country": "Denmark",
+   "image": "players/g2-caps.webp"
+  },
+  {
+   "id": "G2-Hans Sama",
+   "name": "Hans Sama",
+   "team": "G2",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "bot",
+   "country": "France",
+   "image": "players/g2-hans-sama.webp"
+  },
+  {
+   "id": "G2-Labrov",
+   "name": "Labrov",
+   "team": "G2",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "support",
+   "country": "Greece",
+   "image": "players/g2-labrov.webp"
+  },
+  {
+   "id": "GEN-Kiin",
+   "name": "Kiin",
+   "team": "GEN",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/gen-kiin.webp"
+  },
+  {
+   "id": "GEN-Canyon",
+   "name": "Canyon",
+   "team": "GEN",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "jungle",
+   "country": "South Korea",
+   "image": "players/gen-canyon.webp"
+  },
+  {
+   "id": "GEN-Chovy",
+   "name": "Chovy",
+   "team": "GEN",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/gen-chovy.webp"
+  },
+  {
+   "id": "GEN-Ruler",
+   "name": "Ruler",
+   "team": "GEN",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "bot",
+   "country": "South Korea",
+   "image": "players/gen-ruler.webp"
+  },
+  {
+   "id": "GEN-Duro",
+   "name": "Duro",
+   "team": "GEN",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "support",
+   "country": "South Korea",
+   "image": "players/gen-duro.webp"
+  },
+  {
+   "id": "HLE-Zeus",
+   "name": "Zeus",
+   "team": "HLE",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/hle-zeus.webp"
+  },
+  {
+   "id": "HLE-Kanavi",
+   "name": "Kanavi",
+   "team": "HLE",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "jungle",
+   "country": "South Korea",
+   "image": "players/hle-kanavi.webp"
+  },
+  {
+   "id": "HLE-Zeka",
+   "name": "Zeka",
+   "team": "HLE",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/hle-zeka.webp"
+  },
+  {
+   "id": "HLE-Gumayusi",
+   "name": "Gumayusi",
+   "team": "HLE",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "bot",
+   "country": "South Korea",
+   "image": "players/hle-gumayusi.webp"
+  },
+  {
+   "id": "HLE-Delight",
+   "name": "Delight",
+   "team": "HLE",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "support",
+   "country": "South Korea",
+   "image": "players/hle-delight.webp"
+  },
+  {
+   "id": "KC-Canna",
+   "name": "Canna",
+   "team": "KC",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/kc-canna.webp"
+  },
+  {
+   "id": "KC-Yike",
+   "name": "Yike",
+   "team": "KC",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "jungle",
+   "country": "Sweden",
+   "image": "players/kc-yike.webp"
+  },
+  {
+   "id": "KC-kyeahoo",
+   "name": "kyeahoo",
+   "team": "KC",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/kc-kyeahoo.webp"
+  },
+  {
+   "id": "KC-Caliste",
+   "name": "Caliste",
+   "team": "KC",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "bot",
+   "country": "France",
+   "image": "players/kc-caliste.webp"
+  },
+  {
+   "id": "KC-Busio",
+   "name": "Busio",
+   "team": "KC",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "support",
+   "country": "United States",
+   "image": "players/kc-busio.webp"
+  },
+  {
+   "id": "MVK-Kratos",
+   "name": "Kratos",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "top",
+   "country": "Vietnam",
+   "image": "players/mvk-kratos.webp"
+  },
+  {
+   "id": "MVK-Gury",
+   "name": "Gury",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "jungle",
+   "country": "Vietnam",
+   "image": "players/mvk-gury.webp"
+  },
+  {
+   "id": "MVK-SanSan",
+   "name": "SanSan",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "jungle",
+   "country": "Vietnam",
+   "image": "players/mvk-sansan.webp"
+  },
+  {
+   "id": "MVK-SofM",
+   "name": "SofM",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "jungle",
+   "country": "Vietnam",
+   "image": "players/mvk-sofm.webp"
+  },
+  {
+   "id": "MVK-Chika",
+   "name": "Chika",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "mid",
+   "country": "Vietnam",
+   "image": "players/mvk-chika.webp"
+  },
+  {
+   "id": "MVK-Harky",
+   "name": "Harky",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "bot",
+   "country": "Vietnam",
+   "image": "players/mvk-harky.webp"
+  },
+  {
+   "id": "MVK-SiuLoong",
+   "name": "SiuLoong",
+   "team": "MVK",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "support",
+   "country": "Vietnam",
+   "image": "players/mvk-siuloong.webp"
+  },
+  {
+   "id": "T1-Doran",
+   "name": "Doran",
+   "team": "T1",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/t1-doran.webp"
+  },
+  {
+   "id": "T1-Oner",
+   "name": "Oner",
+   "team": "T1",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "jungle",
+   "country": "South Korea",
+   "image": "players/t1-oner.webp"
+  },
+  {
+   "id": "T1-Faker",
+   "name": "Faker",
+   "team": "T1",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/t1-faker.webp"
+  },
+  {
+   "id": "T1-Peyz",
+   "name": "Peyz",
+   "team": "T1",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "bot",
+   "country": "South Korea",
+   "image": "players/t1-peyz.webp"
+  },
+  {
+   "id": "T1-Keria",
+   "name": "Keria",
+   "team": "T1",
+   "league": "LCK",
+   "region": "Korea",
+   "role": "support",
+   "country": "South Korea",
+   "image": "players/t1-keria.webp"
+  },
+  {
+   "id": "TSW-Pun",
+   "name": "Pun",
+   "team": "TSW",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "top",
+   "country": "Vietnam",
+   "image": "players/tsw-pun.webp"
+  },
+  {
+   "id": "TSW-Hizto",
+   "name": "Hizto",
+   "team": "TSW",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "jungle",
+   "country": "Vietnam",
+   "image": "players/tsw-hizto.webp"
+  },
+  {
+   "id": "TSW-Dire",
+   "name": "Dire",
+   "team": "TSW",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "mid",
+   "country": "Vietnam",
+   "image": "players/tsw-dire.webp"
+  },
+  {
+   "id": "TSW-Eddie",
+   "name": "Eddie",
+   "team": "TSW",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "bot",
+   "country": "Vietnam",
+   "image": "players/tsw-eddie.webp"
+  },
+  {
+   "id": "TSW-Bie",
+   "name": "Bie",
+   "team": "TSW",
+   "league": "LCP",
+   "region": "Asia Pacific",
+   "role": "support",
+   "country": "Vietnam",
+   "image": "players/tsw-bie.webp"
+  }
+ ]
 }

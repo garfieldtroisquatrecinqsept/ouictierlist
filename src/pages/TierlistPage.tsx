@@ -113,6 +113,7 @@ export function TierlistPage() {
         badge: item.teamLogo ?? undefined,
         roleIcon: item.role ? roleIcon(item.role) : undefined,
         kind: item.teamShort ? ('team' as const) : ('player' as const),
+        accent: item.teamColor ?? undefined,
       }
     }
     return {
