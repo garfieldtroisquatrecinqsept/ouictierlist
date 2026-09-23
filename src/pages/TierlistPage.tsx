@@ -112,6 +112,7 @@ export function TierlistPage() {
         image: item.image ?? undefined,
         badge: item.teamLogo ?? undefined,
         roleIcon: item.role ? roleIcon(item.role) : undefined,
+        kind: item.teamShort ? ('team' as const) : ('player' as const),
       }
     }
     return {
@@ -160,6 +161,7 @@ export function TierlistPage() {
     ? PLAYERS.find((p) => p.id === selectedItem.playerId) ?? null
     : null
   const gradeMode = tierlist.mode === 'grades'
+  const teamsMode = tierlist.mode === 'teams'
   const gradePlayer = gradeMode ? PLAYERS.find((p) => p.id === selectedItemId) ?? null : null
 
   function handleGrade(key: string, grade: string | null) {
@@ -347,18 +349,22 @@ export function TierlistPage() {
 
       {gradeMode ? null : (
       <div className="board-toolbar">
-        <button type="button" className="primary" onClick={() => setPickerOpen(true)}>
-          Ajouter des joueurs
-        </button>
-        <button
-          type="button"
-          className={filtersOpen ? 'toolbar-toggle on' : 'toolbar-toggle'}
-          onClick={() => setFiltersOpen((value) => !value)}
-          aria-expanded={filtersOpen}
-        >
-          Filtrer le banc
-          {activeFilters > 0 ? <span className="bench-badge">{activeFilters}</span> : null}
-        </button>
+        {teamsMode ? null : (
+          <>
+            <button type="button" className="primary" onClick={() => setPickerOpen(true)}>
+              Ajouter des joueurs
+            </button>
+            <button
+              type="button"
+              className={filtersOpen ? 'toolbar-toggle on' : 'toolbar-toggle'}
+              onClick={() => setFiltersOpen((value) => !value)}
+              aria-expanded={filtersOpen}
+            >
+              Filtrer le banc
+              {activeFilters > 0 ? <span className="bench-badge">{activeFilters}</span> : null}
+            </button>
+          </>
+        )}
         <button
           type="button"
           className={freeEntry ? 'toolbar-toggle on' : 'toolbar-toggle'}
@@ -393,7 +399,7 @@ export function TierlistPage() {
 
       {exportError ? <p className="error">{exportError}</p> : null}
 
-      {gradeMode || !filtersOpen ? null : (
+      {gradeMode || teamsMode || !filtersOpen ? null : (
       <section className="bench-filter">
         <header className="bench-filter-head">
           <h2>Filtrer le banc</h2>
@@ -542,7 +548,7 @@ export function TierlistPage() {
               value={board}
               onChange={handleBoardChange}
               onRemoveItem={handleRemoveItem}
-              onSelectItem={setSelectedItemId}
+              onSelectItem={teamsMode ? undefined : setSelectedItemId}
               selectedItemId={selectedItemId}
               tierColors={TIER_COLORS}
               tileSize={96}

@@ -184,10 +184,15 @@ export function HomePage() {
                   ) : null}
                   <span className="badge">{category ? category.label : tierlist.category}</span>
                   {tierlist.mode === 'grades' ? <span className="badge">Notation</span> : null}
+                  {tierlist.mode === 'teams' ? <span className="badge">Équipes</span> : null}
                   <h2>{tierlist.name}</h2>
                   <TierlistPreview tierlist={tierlist} />
                   <p className="meta">
-                    {tierlist.items.length} élément{tierlist.items.length > 1 ? 's' : ''} ·{' '}
+                    {tierlist.items.length}{' '}
+                    {tierlist.mode === 'teams'
+                      ? `équipe${tierlist.items.length > 1 ? 's' : ''}`
+                      : `élément${tierlist.items.length > 1 ? 's' : ''}`}{' '}
+                    ·{' '}
                     {new Date(tierlist.updatedAt).toLocaleDateString('fr-FR')}
                   </p>
                 </article>

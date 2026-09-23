@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { CATEGORIES } from '../lib/categories'
-import { playersForCategory } from '../lib/storage'
+import { playersForCategory, teamsForCategory } from '../lib/storage'
 import type { CategoryId, TierlistMode } from '../types'
 
 interface Props {
@@ -90,6 +90,15 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
                 <strong>Notation</strong>
                 <span>Noter équipe par équipe, avec tableau récapitulatif</span>
               </button>
+              <button
+                type="button"
+                disabled={submitting}
+                className={mode === 'teams' ? 'category-option selected' : 'category-option'}
+                onClick={() => setMode('teams')}
+              >
+                <strong>Équipes</strong>
+                <span>Placer les équipes de Play-in à Winner</span>
+              </button>
             </div>
           </fieldset>
 
@@ -113,7 +122,9 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
 
           {category ? (
             <p className="create-note">
-              {playersForCategory(category).length} joueurs seront ajoutés au banc, prêts à classer.
+              {mode === 'teams'
+                ? `${teamsForCategory(category).length} équipes seront ajoutées au banc, à placer de Play-in à Winner.`
+                : `${playersForCategory(category).length} joueurs seront ajoutés au banc, prêts à classer.`}
             </p>
           ) : null}
 
