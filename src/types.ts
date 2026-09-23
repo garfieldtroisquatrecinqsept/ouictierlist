@@ -16,6 +16,7 @@ export interface TierItem {
   teamLogo: string | null
   playerId: string | null
   teamShort?: string | null
+  teamColor?: string | null
 }
 
 export interface Tier {
