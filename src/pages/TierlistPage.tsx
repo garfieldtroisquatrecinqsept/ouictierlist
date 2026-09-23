@@ -223,6 +223,8 @@ export function TierlistPage() {
           role: existing?.role ?? null,
           teamLogo: existing?.teamLogo ?? null,
           playerId: existing?.playerId ?? null,
+          teamShort: existing?.teamShort ?? null,
+          teamColor: existing?.teamColor ?? null,
         })
         return tile.id
       }
