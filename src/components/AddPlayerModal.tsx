@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { fetchGolggStats, golggId } from '../lib/golgg'
+import { dominantColor } from '../lib/logoColor'
 import {
   LEAGUES,
   LEAGUE_LABELS,
@@ -54,6 +55,7 @@ export function AddPlayerModal({ open, onClose, onAdded }: Props) {
   const [country, setCountry] = useState('')
   const [photo, setPhoto] = useState<string | null>(null)
   const [teamLogo, setTeamLogo] = useState<string | null>(null)
+  const [teamColor, setTeamColor] = useState<string | null>(null)
   const [golgg, setGolgg] = useState('')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState('')
@@ -70,6 +72,7 @@ export function AddPlayerModal({ open, onClose, onAdded }: Props) {
     setCountry('')
     setPhoto(null)
     setTeamLogo(null)
+    setTeamColor(null)
     setGolgg('')
     setError('')
     setBusy('')
@@ -93,8 +96,12 @@ export function AddPlayerModal({ open, onClose, onAdded }: Props) {
     if (!file) return
     try {
       const data = await shrink(file)
-      if (target === 'photo') setPhoto(data)
-      else setTeamLogo(data)
+      if (target === 'photo') {
+        setPhoto(data)
+        return
+      }
+      setTeamLogo(data)
+      setTeamColor(await dominantColor(data))
     } catch {
       setError("Cette image n'a pas pu être lue.")
     }
@@ -143,6 +150,9 @@ export function AddPlayerModal({ open, onClose, onAdded }: Props) {
       custom: true,
       teamName: creatingTeam ? newTeamName.trim() || short : existing?.name,
       teamLogo: creatingTeam ? teamLogo : (existing?.logo ?? null),
+      teamColor: creatingTeam
+        ? teamColor
+        : (existing?.color ?? (existing?.logo ? await dominantColor(asset(existing.logo) ?? '') : null)),
       golgg: golgg.trim() || null,
       stats,
     }

@@ -274,6 +274,7 @@ export interface CustomPlayer extends Player {
   custom: true
   teamName?: string | null
   teamLogo?: string | null
+  teamColor?: string | null
   golgg?: string | null
   stats?: PlayerStats | null
 }
@@ -289,7 +290,7 @@ function readCustom(): CustomPlayer[] {
 }
 
 function applyCustom(entry: CustomPlayer) {
-  const { stats, teamName, teamLogo, ...player } = entry
+  const { stats, teamName, teamLogo, teamColor, ...player } = entry
   const index = PLAYERS.findIndex((existing) => existing.id === entry.id)
   if (index >= 0) PLAYERS[index] = player as Player
   else PLAYERS.push(player as Player)
@@ -301,6 +302,7 @@ function applyCustom(entry: CustomPlayer) {
       region: entry.region,
       league: entry.league,
       logo: teamLogo ?? null,
+      color: teamColor ?? undefined,
     })
   }
   if (stats) STATS[entry.id] = stats
