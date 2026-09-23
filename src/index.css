@@ -1206,6 +1206,11 @@ input:focus {
   background: transparent;
 }
 
+.preview-faces.contain img {
+  object-fit: contain;
+  object-position: center;
+}
+
 .preview-logos img {
   width: 20px;
   height: 20px;

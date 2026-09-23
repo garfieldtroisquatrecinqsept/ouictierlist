@@ -1,19 +1,38 @@
 import type { CategoryId, Tier, TierItem, Tierlist, TierlistMode } from '../types'
-import { PLAYERS, ROLE_ORDER, asset, leagueForCategory, teamByShort } from './players'
+import { PLAYERS, ROLE_ORDER, TEAMS, asset, leagueForCategory, teamByShort } from './players'
 
 const STORAGE_KEY = 'tierlists.v1'
 
 export const DEFAULT_TIER_LABELS = ['S', 'A', 'B', 'C', 'D']
 
+export const RUN_TIER_LABELS = ['Play-in', 'Swiss', 'Quarts', 'Demies', 'Finale', 'Winner']
+
 export function createId(): string {
   return Math.random().toString(36).slice(2, 10) + Date.now().toString(36)
 }
 
-function createDefaultTiers(): Tier[] {
-  return DEFAULT_TIER_LABELS.map((label) => ({
+function createTiers(labels: string[]): Tier[] {
+  return labels.map((label) => ({
     id: createId(),
     label,
     itemIds: [],
+  }))
+}
+
+export function teamsForCategory(category: CategoryId) {
+  const league = leagueForCategory(category)
+  return TEAMS.filter((team) => !league || team.league === league)
+}
+
+function createTeamItems(category: CategoryId): TierItem[] {
+  return teamsForCategory(category).map((team) => ({
+    id: createId(),
+    label: team.name,
+    image: asset(team.logo),
+    role: null,
+    teamLogo: null,
+    playerId: null,
+    teamShort: team.short,
   }))
 }
 
@@ -46,7 +65,8 @@ export function createTierlist(
   mode: TierlistMode = 'tiers',
 ): Tierlist {
   const now = Date.now()
-  const items = createRoster(category)
+  const teamsMode = mode === 'teams'
+  const items = teamsMode ? createTeamItems(category) : createRoster(category)
   return {
     id: createId(),
     name,
@@ -54,7 +74,7 @@ export function createTierlist(
     mode,
     grades: {},
     validatedTeams: [],
-    tiers: createDefaultTiers(),
+    tiers: createTiers(teamsMode ? RUN_TIER_LABELS : DEFAULT_TIER_LABELS),
     items,
     poolItemIds: items.map((item) => item.id),
     createdAt: now,

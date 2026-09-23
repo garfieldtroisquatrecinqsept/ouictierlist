@@ -15,6 +15,7 @@ export interface TierItem {
   role: RoleId | null
   teamLogo: string | null
   playerId: string | null
+  teamShort?: string | null
 }
 
 export interface Tier {
@@ -23,7 +24,7 @@ export interface Tier {
   itemIds: string[]
 }
 
-export type TierlistMode = 'tiers' | 'grades'
+export type TierlistMode = 'tiers' | 'grades' | 'teams'
 
 export interface Tierlist {
   id: string

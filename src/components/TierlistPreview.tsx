@@ -74,6 +74,7 @@ function GradesPreview({ tierlist }: { tierlist: Tierlist }) {
 }
 
 function TiersPreview({ tierlist }: { tierlist: Tierlist }) {
+  const faceClass = tierlist.mode === 'teams' ? 'preview-faces contain' : 'preview-faces'
   const byId = new Map(tierlist.items.map((item) => [item.id, item]))
   const filled = tierlist.tiers.filter((tier) => tier.itemIds.length > 0)
   const ranked = tierlist.tiers.reduce((total, tier) => total + tier.itemIds.length, 0)
@@ -81,7 +82,7 @@ function TiersPreview({ tierlist }: { tierlist: Tierlist }) {
   if (filled.length === 0) {
     return (
       <div className="preview empty">
-        <div className="preview-faces">
+        <div className={faceClass}>
           {tierlist.items.slice(0, 9).map((item) =>
             item.image ? (
               <img key={item.id} src={item.image} alt="" />
@@ -92,7 +93,9 @@ function TiersPreview({ tierlist }: { tierlist: Tierlist }) {
             ),
           )}
         </div>
-        <span className="preview-hint">{tierlist.items.length} joueurs au banc</span>
+        <span className="preview-hint">
+          {tierlist.items.length} {tierlist.mode === 'teams' ? 'équipes' : 'joueurs'} au banc
+        </span>
       </div>
     )
   }
@@ -110,7 +113,7 @@ function TiersPreview({ tierlist }: { tierlist: Tierlist }) {
             >
               {tier.label}
             </span>
-            <span className="preview-faces">
+            <span className={faceClass}>
               {items.slice(0, MAX_FACES).map((item) =>
                 item!.image ? (
                   <img key={item!.id} src={item!.image} alt="" />
