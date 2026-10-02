@@ -36,19 +36,8 @@ HEADERS = {
     "Sec-Fetch-Site": "same-origin",
 }
 
-TEAM_PAGES = {
-    "AL": "Anyone's Legend",
-    "BLG": "Bilibili Gaming",
-    "CFO": "CTBC Flying Oyster",
-    "DK": "Dplus Kia",
-    "G2": "G2 Esports",
-    "GEN": "Gen.G",
-    "HLE": "Hanwha Life Esports",
-    "KC": "Karmine Corp",
-    "MVK": "MVK Esports",
-    "T1": "T1",
-    "TSW": "Team Secret Whales",
-}
+with open(PLAYERS_JSON, encoding="utf-8") as _handle:
+    TEAM_PAGES = {team["short"]: team["name"] for team in json.load(_handle)["teams"]}
 
 MAJOR = {
     "LoL Champions Korea": "LCK",

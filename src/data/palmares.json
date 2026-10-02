@@ -1,6 +1,6 @@
 {
  "source": "https://lol.fandom.com/ (Cargo : TournamentPlayers + TournamentResults)",
- "updated": "2026-09-14",
+ "updated": "2026-10-02",
  "note": "Uniquement les finales : 1 = titre, 2 = finaliste.",
  "players": {
   "AL-Breathe": [
@@ -436,96 +436,6 @@
       "y": "23",
       "t": "",
       "w": 1
-     }
-    ]
-   }
-  ],
-  "BLG-Flandre": [
-   {
-    "code": "LPL",
-    "label": "LPL",
-    "lines": [
-     {
-      "y": "21",
-      "t": "Summer",
-      "w": 1
-     },
-     {
-      "y": "25",
-      "t": "Split 1",
-      "w": 2
-     },
-     {
-      "y": "25",
-      "t": "Split 2",
-      "w": 1
-     },
-     {
-      "y": "26",
-      "t": "Split 3",
-      "w": 1
-     }
-    ]
-   },
-   {
-    "code": "WORLDS",
-    "label": "Worlds",
-    "lines": [
-     {
-      "y": "21",
-      "t": "",
-      "w": 1
-     }
-    ]
-   },
-   {
-    "code": "EWC",
-    "label": "EWC",
-    "lines": [
-     {
-      "y": "25",
-      "t": "",
-      "w": 2
-     }
-    ]
-   },
-   {
-    "code": "DC",
-    "label": "Demacia Cup",
-    "lines": [
-     {
-      "y": "24",
-      "t": "",
-      "w": 1
-     }
-    ]
-   }
-  ],
-  "BLG-Wenbo": [
-   {
-    "code": "LPL",
-    "label": "LPL",
-    "lines": [
-     {
-      "y": "26",
-      "t": "Split 3",
-      "w": 1
-     }
-    ]
-   },
-   {
-    "code": "LDL",
-    "label": "LDL",
-    "lines": [
-     {
-      "y": "25",
-      "t": "Split 2 Round 1",
-      "w": 2
-     },
-     {
-      "y": "25",
-      "t": "Split 2 Round 2",
-      "w": 2
      }
     ]
    }
@@ -1542,6 +1452,11 @@
      },
      {
       "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
       "t": "Versus",
       "w": 1
      }
@@ -1582,6 +1497,11 @@
      {
       "y": "26",
       "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Summer",
       "w": 1
      },
      {
@@ -1732,6 +1652,11 @@
      },
      {
       "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
       "t": "Versus",
       "w": 1
      }
@@ -1870,6 +1795,11 @@
      },
      {
       "y": "26",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "26",
       "t": "Versus",
       "w": 1
      }
@@ -1926,6 +1856,11 @@
      {
       "y": "26",
       "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Summer",
       "w": 1
      },
      {
@@ -2999,6 +2934,288 @@
     ]
    }
   ],
+  "IG-TheShy": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "IG-Wei": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "25",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer - East",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "IG-Rookie": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "14",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "IG-JiaQi": [
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Split 2",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Split 3",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "IG-Meiko": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "15",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "16",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "16",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "17",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "18",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "15",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "16",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "AG",
+    "label": "Asian Games",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
   "KC-Canna": [
    {
     "code": "LCK",
@@ -3029,11 +3246,6 @@
       "y": "26",
       "t": "Spring",
       "w": 2
-     },
-     {
-      "y": "26",
-      "t": "Summer",
-      "w": 1
      },
      {
       "y": "26",
@@ -3117,11 +3329,6 @@
      },
      {
       "y": "26",
-      "t": "Summer",
-      "w": 1
-     },
-     {
-      "y": "26",
       "t": "Versus",
       "w": 2
      }
@@ -3189,11 +3396,6 @@
      },
      {
       "y": "26",
-      "t": "Summer",
-      "w": 1
-     },
-     {
-      "y": "26",
       "t": "Versus",
       "w": 2
      }
@@ -3236,11 +3438,6 @@
       "y": "26",
       "t": "Spring",
       "w": 2
-     },
-     {
-      "y": "26",
-      "t": "Summer",
-      "w": 1
      },
      {
       "y": "26",
@@ -3332,11 +3529,6 @@
      },
      {
       "y": "26",
-      "t": "Summer",
-      "w": 1
-     },
-     {
-      "y": "26",
       "t": "Versus",
       "w": 2
      }
@@ -3386,6 +3578,199 @@
     ]
    }
   ],
+  "MKOI-Myrwn": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MKOI-Elyoya": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MKOI-Jojopyun": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Lock In",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MKOI-Supa": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EM",
+    "label": "EM",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer Main Event",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "MKOI-Alvaro": [
+   {
+    "code": "LEC",
+    "label": "LEC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Winter",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EM",
+    "label": "EM",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer Main Event",
+      "w": 2
+     }
+    ]
+   }
+  ],
   "MVK-Kratos": [],
   "MVK-Gury": [
    {
@@ -3395,53 +3780,6 @@
      {
       "y": "24",
       "t": "Summer",
-      "w": 2
-     }
-    ]
-   }
-  ],
-  "MVK-SanSan": [
-   {
-    "code": "VCS",
-    "label": "VCS",
-    "lines": [
-     {
-      "y": "25",
-      "t": "Summer",
-      "w": 2
-     },
-     {
-      "y": "26",
-      "t": "Spring",
-      "w": 1
-     }
-    ]
-   }
-  ],
-  "MVK-SofM": [
-   {
-    "code": "VCS",
-    "label": "VCS",
-    "lines": [
-     {
-      "y": "24",
-      "t": "Spring",
-      "w": 2
-     },
-     {
-      "y": "24",
-      "t": "Summer",
-      "w": 2
-     }
-    ]
-   },
-   {
-    "code": "WORLDS",
-    "label": "Worlds",
-    "lines": [
-     {
-      "y": "20",
-      "t": "",
       "w": 2
      }
     ]
@@ -4070,6 +4408,582 @@
       "y": "25",
       "t": "",
       "w": 1
+     }
+    ]
+   }
+  ],
+  "TES-ZUIAN": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 2 Round 1",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TES-Tian": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "19",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LSPL",
+    "label": "LSPL",
+    "lines": [
+     {
+      "y": "17",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "TES-Creme": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "TES-JackeyLove": [
+   {
+    "code": "LPL",
+    "label": "LPL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "20",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Grand Finals",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "EWC",
+    "label": "EWC",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "TES-Zhuo": [
+   {
+    "code": "DC",
+    "label": "Demacia Cup",
+    "lines": [
+     {
+      "y": "20",
+      "t": "",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LDL",
+    "label": "LDL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer - South",
+      "w": 1
+     },
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TL-Morgan": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "24",
+      "t": "",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TL-Josedeodo": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "NACL",
+    "label": "NACL",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TL-Quid": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     },
+     {
+      "y": "25",
+      "t": "Split 3",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "TL-Yeon": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Lock In",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Championship",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "NACL",
+    "label": "NACL",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "TL-CoreJJ": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Championship",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Lock In",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Lock In",
+      "w": 1
+     },
+     {
+      "y": "24",
+      "t": "Championship",
+      "w": 2
+     },
+     {
+      "y": "24",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "26",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "WORLDS",
+    "label": "Worlds",
+    "lines": [
+     {
+      "y": "16",
+      "t": "",
+      "w": 2
+     },
+     {
+      "y": "17",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "MSI",
+    "label": "MSI",
+    "lines": [
+     {
+      "y": "19",
+      "t": "",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "AG",
+    "label": "Asian Games",
+    "lines": [
+     {
+      "y": "18",
+      "t": "",
+      "w": 2
      }
     ]
    }

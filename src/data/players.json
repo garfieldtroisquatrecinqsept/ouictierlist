@@ -1,7 +1,7 @@
 {
  "tournament": "Worlds 2026",
  "source": "https://lol.fandom.com/wiki/2026_Season_World_Championship",
- "updated": "2026-09-14",
+ "updated": "2026-10-02",
  "note": "Equipes qualifiees a la date de collecte. La qualification n est pas terminee.",
  "teams": [
   {
@@ -91,6 +91,38 @@
    "league": "LPL",
    "logo": "teams/blg.webp",
    "color": "#4cc7eb"
+  },
+  {
+   "short": "IG",
+   "name": "Invictus Gaming",
+   "region": "China",
+   "league": "LPL",
+   "logo": "teams/ig.webp",
+   "color": "#8b8b95"
+  },
+  {
+   "short": "MKOI",
+   "name": "Movistar KOI",
+   "region": "EMEA",
+   "league": "LEC",
+   "logo": "teams/mkoi.webp",
+   "color": "#029de0"
+  },
+  {
+   "short": "TL",
+   "name": "Team Liquid",
+   "region": "North America",
+   "league": "LCS",
+   "logo": "teams/tl.webp",
+   "color": "#778196"
+  },
+  {
+   "short": "TES",
+   "name": "Top Esports",
+   "region": "China",
+   "league": "LPL",
+   "logo": "teams/tes.webp",
+   "color": "#ef483a"
   }
  ],
  "players": [
@@ -153,26 +185,6 @@
    "role": "top",
    "country": "China",
    "image": "players/blg-bin.webp"
-  },
-  {
-   "id": "BLG-Flandre",
-   "name": "Flandre",
-   "team": "BLG",
-   "league": "LPL",
-   "region": "China",
-   "role": "top",
-   "country": "China",
-   "image": "players/blg-flandre.webp"
-  },
-  {
-   "id": "BLG-Wenbo",
-   "name": "Wenbo",
-   "team": "BLG",
-   "league": "LPL",
-   "region": "China",
-   "role": "top",
-   "country": "China",
-   "image": "players/blg-wenbo.webp"
   },
   {
    "id": "BLG-Xun",
@@ -465,6 +477,56 @@
    "image": "players/hle-delight.webp"
   },
   {
+   "id": "IG-TheShy",
+   "name": "TheShy",
+   "team": "IG",
+   "league": "LPL",
+   "region": "China",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/ig-theshy.webp"
+  },
+  {
+   "id": "IG-Wei",
+   "name": "Wei",
+   "team": "IG",
+   "league": "LPL",
+   "region": "China",
+   "role": "jungle",
+   "country": "China",
+   "image": "players/ig-wei.webp"
+  },
+  {
+   "id": "IG-Rookie",
+   "name": "Rookie",
+   "team": "IG",
+   "league": "LPL",
+   "region": "China",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/ig-rookie.webp"
+  },
+  {
+   "id": "IG-JiaQi",
+   "name": "JiaQi",
+   "team": "IG",
+   "league": "LPL",
+   "region": "China",
+   "role": "bot",
+   "country": "China",
+   "image": "players/ig-jiaqi.webp"
+  },
+  {
+   "id": "IG-Meiko",
+   "name": "Meiko",
+   "team": "IG",
+   "league": "LPL",
+   "region": "China",
+   "role": "support",
+   "country": "China",
+   "image": "players/ig-meiko.webp"
+  },
+  {
    "id": "KC-Canna",
    "name": "Canna",
    "team": "KC",
@@ -515,6 +577,56 @@
    "image": "players/kc-busio.webp"
   },
   {
+   "id": "MKOI-Myrwn",
+   "name": "Myrwn",
+   "team": "MKOI",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "top",
+   "country": "Spain",
+   "image": "players/mkoi-myrwn.webp"
+  },
+  {
+   "id": "MKOI-Elyoya",
+   "name": "Elyoya",
+   "team": "MKOI",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "jungle",
+   "country": "Spain",
+   "image": "players/mkoi-elyoya.webp"
+  },
+  {
+   "id": "MKOI-Jojopyun",
+   "name": "Jojopyun",
+   "team": "MKOI",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "mid",
+   "country": "Canada",
+   "image": "players/mkoi-jojopyun.webp"
+  },
+  {
+   "id": "MKOI-Supa",
+   "name": "Supa",
+   "team": "MKOI",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "bot",
+   "country": "Spain",
+   "image": "players/mkoi-supa.webp"
+  },
+  {
+   "id": "MKOI-Alvaro",
+   "name": "Alvaro",
+   "team": "MKOI",
+   "league": "LEC",
+   "region": "EMEA",
+   "role": "support",
+   "country": "Spain",
+   "image": "players/mkoi-alvaro.webp"
+  },
+  {
    "id": "MVK-Kratos",
    "name": "Kratos",
    "team": "MVK",
@@ -533,26 +645,6 @@
    "role": "jungle",
    "country": "Vietnam",
    "image": "players/mvk-gury.webp"
-  },
-  {
-   "id": "MVK-SanSan",
-   "name": "SanSan",
-   "team": "MVK",
-   "league": "LCP",
-   "region": "Asia Pacific",
-   "role": "jungle",
-   "country": "Vietnam",
-   "image": "players/mvk-sansan.webp"
-  },
-  {
-   "id": "MVK-SofM",
-   "name": "SofM",
-   "team": "MVK",
-   "league": "LCP",
-   "region": "Asia Pacific",
-   "role": "jungle",
-   "country": "Vietnam",
-   "image": "players/mvk-sofm.webp"
   },
   {
    "id": "MVK-Chika",
@@ -633,6 +725,106 @@
    "role": "support",
    "country": "South Korea",
    "image": "players/t1-keria.webp"
+  },
+  {
+   "id": "TES-ZUIAN",
+   "name": "ZUIAN",
+   "team": "TES",
+   "league": "LPL",
+   "region": "China",
+   "role": "top",
+   "country": "China",
+   "image": "players/tes-zuian.webp"
+  },
+  {
+   "id": "TES-Tian",
+   "name": "Tian",
+   "team": "TES",
+   "league": "LPL",
+   "region": "China",
+   "role": "jungle",
+   "country": "China",
+   "image": "players/tes-tian.webp"
+  },
+  {
+   "id": "TES-Creme",
+   "name": "Creme",
+   "team": "TES",
+   "league": "LPL",
+   "region": "China",
+   "role": "mid",
+   "country": "China",
+   "image": "players/tes-creme.webp"
+  },
+  {
+   "id": "TES-JackeyLove",
+   "name": "JackeyLove",
+   "team": "TES",
+   "league": "LPL",
+   "region": "China",
+   "role": "bot",
+   "country": "China",
+   "image": "players/tes-jackeylove.webp"
+  },
+  {
+   "id": "TES-Zhuo",
+   "name": "Zhuo",
+   "team": "TES",
+   "league": "LPL",
+   "region": "China",
+   "role": "support",
+   "country": "China",
+   "image": "players/tes-zhuo.webp"
+  },
+  {
+   "id": "TL-Morgan",
+   "name": "Morgan",
+   "team": "TL",
+   "league": "LCS",
+   "region": "North America",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/tl-morgan.webp"
+  },
+  {
+   "id": "TL-Josedeodo",
+   "name": "Josedeodo",
+   "team": "TL",
+   "league": "LCS",
+   "region": "North America",
+   "role": "jungle",
+   "country": "Argentina",
+   "image": "players/tl-josedeodo.webp"
+  },
+  {
+   "id": "TL-Quid",
+   "name": "Quid",
+   "team": "TL",
+   "league": "LCS",
+   "region": "North America",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/tl-quid.webp"
+  },
+  {
+   "id": "TL-Yeon",
+   "name": "Yeon",
+   "team": "TL",
+   "league": "LCS",
+   "region": "North America",
+   "role": "bot",
+   "country": "United States",
+   "image": "players/tl-yeon.webp"
+  },
+  {
+   "id": "TL-CoreJJ",
+   "name": "CoreJJ",
+   "team": "TL",
+   "league": "LCS",
+   "region": "North America",
+   "role": "support",
+   "country": "South Korea",
+   "image": "players/tl-corejj.webp"
   },
   {
    "id": "TSW-Pun",

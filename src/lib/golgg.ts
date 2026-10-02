@@ -138,12 +138,12 @@ export async function fetchGolggStats(
 
   const url = `https://gol.gg/players/player-stats/${id}/season-${season}/split-ALL/tournament-ALL/`
   const controller = new AbortController()
-  const timer = window.setTimeout(() => controller.abort(), 20000)
+  const timer = window.setTimeout(() => controller.abort(), 70000)
 
   try {
     const response = await fetch(READER + url, {
       signal: controller.signal,
-      headers: { Accept: 'text/plain' },
+      headers: { Accept: 'text/plain', 'X-Timeout': '60' },
     })
     if (!response.ok) return { stats: null, error: `lecture gol.gg refusée (${response.status})` }
     const markdown = await response.text()
