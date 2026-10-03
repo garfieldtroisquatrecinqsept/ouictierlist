@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
 import { GradeCell } from './GradeCell'
+import { isDarkBackground, sheetStyle } from '../lib/exportImage'
+import type { ExportChoice } from '../lib/exportImage'
 import { PLAYERS, ROLE_LABELS, ROLE_ORDER, asset, roleIcon, teamByShort } from '../lib/players'
 import type { Player } from '../lib/players'
 import type { Tierlist } from '../types'
@@ -10,6 +12,7 @@ interface Props {
   onValidate: (teamShort: string) => void
   onSelectPlayer: (playerId: string) => void
   selectedPlayerId: string | null
+  background: ExportChoice
 }
 
 export function teamKey(short: string) {
@@ -39,6 +42,7 @@ export function GradeBoard({
   onValidate,
   onSelectPlayer,
   selectedPlayerId,
+  background,
 }: Props) {
   const rosters = useMemo(() => rostersOf(tierlist), [tierlist.items])
   const firstPending = rosters.find((r) => !tierlist.validatedTeams.includes(r.short))
@@ -92,52 +96,57 @@ export function GradeBoard({
         </button>
       </nav>
 
-      <section className="grade-strip">
-        <div className="strip-team">
-          {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
-          <span>{team?.name ?? active.short}</span>
-        </div>
+      <div
+        className={isDarkBackground(background) ? 'grade-sheet on-dark' : 'grade-sheet'}
+        style={sheetStyle(background)}
+      >
+        <section className="grade-strip">
+          <div className="strip-team">
+            {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
+            <span>{team?.name ?? active.short}</span>
+          </div>
 
-        <div className="strip-cells">
-          {active.players.map((player) => (
-            <div
-              key={player.id}
-              className={player.id === selectedPlayerId ? 'strip-col on' : 'strip-col'}
-            >
-              <button
-                type="button"
-                className="strip-face-button"
-                onClick={() => onSelectPlayer(player.id)}
-                title={`${player.name} — ${ROLE_LABELS[player.role]} — voir les stats`}
+          <div className="strip-cells">
+            {active.players.map((player) => (
+              <div
+                key={player.id}
+                className={player.id === selectedPlayerId ? 'strip-col on' : 'strip-col'}
               >
-                <span className="strip-face">
-                  {player.image ? <img src={asset(player.image) ?? ''} alt={player.name} /> : null}
-                  <img className="strip-role" src={roleIcon(player.role)} alt="" />
-                </span>
-                <span className="strip-label">{player.name}</span>
-              </button>
+                <button
+                  type="button"
+                  className="strip-face-button"
+                  onClick={() => onSelectPlayer(player.id)}
+                  title={`${player.name} — ${ROLE_LABELS[player.role]} — voir les stats`}
+                >
+                  <span className="strip-face">
+                    {player.image ? <img src={asset(player.image) ?? ''} alt={player.name} /> : null}
+                    <img className="strip-role" src={roleIcon(player.role)} alt="" />
+                  </span>
+                  <span className="strip-label">{player.name}</span>
+                </button>
+                <GradeCell
+                  value={tierlist.grades[player.id]}
+                  label={player.name}
+                  onPick={(grade) => onGrade(player.id, grade)}
+                />
+              </div>
+            ))}
+
+            <div className="strip-col strip-col-team">
+              <span className="strip-face team">
+                {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
+              </span>
+              <span className="strip-label">Team</span>
               <GradeCell
-                value={tierlist.grades[player.id]}
-                label={player.name}
-                onPick={(grade) => onGrade(player.id, grade)}
+                value={tierlist.grades[teamKey(active.short)]}
+                label={team?.name ?? active.short}
+                onPick={(grade) => onGrade(teamKey(active.short), grade)}
               />
             </div>
-          ))}
-
-          <div className="strip-col strip-col-team">
-            <span className="strip-face team">
-              {team?.logo ? <img src={asset(team.logo) ?? ''} alt="" /> : null}
-            </span>
-            <span className="strip-label">Team</span>
-            <GradeCell
-              value={tierlist.grades[teamKey(active.short)]}
-              label={team?.name ?? active.short}
-              onPick={(grade) => onGrade(teamKey(active.short), grade)}
-            />
           </div>
-        </div>
 
-      </section>
+        </section>
+      </div>
     </div>
   )
 }

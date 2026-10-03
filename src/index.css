@@ -2307,68 +2307,48 @@ span.gcell-box {
   box-shadow: none;
 }
 
-.recap {
-  margin-top: 2rem;
-}
-
-.recap-head {
+.export-preview {
+  width: min(1180px, 100%);
+  min-width: 0;
+  max-height: min(90vh, 980px);
   display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
-  margin-bottom: 0.9rem;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 1.1rem;
 }
 
-.recap-toggle {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.45rem;
-  padding: 0.2rem 0.1rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  font-size: 1.2rem;
-  color: var(--ink);
-  border: 0;
-  background: none;
-  box-shadow: none;
+.export-preview h2 {
+  margin-bottom: 1rem;
 }
 
-.recap-caret {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--ink-faint);
-  transition: transform 0.2s ease;
+.export-preview-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 1rem;
 }
 
-.recap-caret.open {
-  transform: rotate(90deg);
-}
-
-.recap-clip {
-  height: 0;
+.scaled-preview {
+  width: 100%;
   overflow: hidden;
 }
 
-.recap-clip.open {
-  height: auto;
-  overflow-x: auto;
+.grade-sheet {
+  transition: background 0.25s ease, padding 0.25s ease;
 }
 
+
+
+
+
+
+
+/* Largeur fixe : l'image exportee garde la meme mise en page sur tous les ecrans. */
 .recap-sheet {
   width: 1100px;
 }
 
-.recap-head h2 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  font-size: 1.2rem;
-  margin: 0;
-}
 
-.recap-head button {
-  margin-left: auto;
-}
 
 .recap-sheet {
   padding: 1.1rem;

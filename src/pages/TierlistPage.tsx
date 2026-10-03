@@ -3,9 +3,10 @@ import type { FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { TopNav } from '../components/TopNav'
 import { GradeBoard } from '../components/GradeBoard'
-import { GradeRecap } from '../components/GradeRecap'
+import { GradeRecap, gradedRosters } from '../components/GradeRecap'
 import { ExportControls } from '../components/ExportControls'
 import { SheetHeader } from '../components/SheetHeader'
+import { ScaledPreview } from '../components/ScaledPreview'
 import { PlayerPanel } from '../components/PlayerPanel'
 import { PlayerPicker } from '../components/PlayerPicker'
 import { TierList } from '../components/TierList'
@@ -44,6 +45,7 @@ export function TierlistPage() {
   const [benchLeagues, setBenchLeagues] = useState<LeagueId[]>([])
   const [exporting, setExporting] = useState(false)
   const [exportError, setExportError] = useState('')
+  const [previewOpen, setPreviewOpen] = useState(false)
   const boardSheet = useRef<HTMLDivElement>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [freeEntry, setFreeEntry] = useState(false)
@@ -205,6 +207,16 @@ export function TierlistPage() {
     }
   }
 
+  function openPreview() {
+    if (!tierlist) return
+    if (gradedRosters(tierlist).length === 0) {
+      setExportError("Note au moins une équipe avant d'exporter.")
+      return
+    }
+    setExportError('')
+    setPreviewOpen(true)
+  }
+
   function resetBench() {
     setBenchRoles([])
     setBenchTeams([])
@@ -351,9 +363,8 @@ export function TierlistPage() {
         </div>
       </header>
 
-      {gradeMode ? null : (
       <div className="board-toolbar">
-        {teamsMode ? null : (
+        {teamsMode || gradeMode ? null : (
           <>
             <button type="button" className="primary" onClick={() => setPickerOpen(true)}>
               Ajouter des joueurs
@@ -369,16 +380,18 @@ export function TierlistPage() {
             </button>
           </>
         )}
-        <button
-          type="button"
-          className={freeEntry ? 'toolbar-toggle on' : 'toolbar-toggle'}
-          onClick={() => setFreeEntry((value) => !value)}
-          aria-expanded={freeEntry}
-        >
-          Entrée libre
-        </button>
+        {gradeMode ? null : (
+          <button
+            type="button"
+            className={freeEntry ? 'toolbar-toggle on' : 'toolbar-toggle'}
+            onClick={() => setFreeEntry((value) => !value)}
+            aria-expanded={freeEntry}
+          >
+            Entrée libre
+          </button>
+        )}
 
-        {freeEntry ? (
+        {freeEntry && !gradeMode ? (
           <form onSubmit={handleAddItem} className="pool-custom">
             <input
               autoFocus
@@ -394,12 +407,11 @@ export function TierlistPage() {
           <ExportControls
             choice={background}
             onChoose={setBackground}
-            onExport={exportBoard}
+            onExport={gradeMode ? openPreview : exportBoard}
             busy={exporting}
           />
         </div>
       </div>
-      )}
 
       {exportError ? <p className="error">{exportError}</p> : null}
 
@@ -518,6 +530,7 @@ export function TierlistPage() {
               setSelectedItemId((current) => (current === playerId ? null : playerId))
             }
             selectedPlayerId={selectedItemId}
+            background={background}
           />
 
           {selectedItemId ? (
@@ -528,8 +541,6 @@ export function TierlistPage() {
               onClose={() => setSelectedItemId(null)}
             />
           ) : null}
-
-          <GradeRecap tierlist={tierlist} />
         </>
       ) : (
         <div className={selectedItemId ? 'board-layout with-panel' : 'board-layout'}>
@@ -570,6 +581,29 @@ export function TierlistPage() {
           ) : null}
         </div>
       )}
+
+      {previewOpen ? (
+        <div className="modal-backdrop" onMouseDown={exporting ? undefined : () => setPreviewOpen(false)}>
+          <div className="modal export-preview" onMouseDown={(event) => event.stopPropagation()}>
+            <h2>Aperçu de l'export</h2>
+            {exportError ? <p className="error">{exportError}</p> : null}
+            <div className="export-preview-scroll">
+              <ScaledPreview width={1100}>
+                <GradeRecap ref={boardSheet} tierlist={tierlist} background={background} />
+              </ScaledPreview>
+            </div>
+            <div className="modal-actions">
+              <button type="button" className="ghost" disabled={exporting} onClick={() => setPreviewOpen(false)}>
+                Fermer
+              </button>
+              <button type="button" className="primary" disabled={exporting} onClick={exportBoard}>
+                {exporting ? <span className="spinner" /> : null}
+                {exporting ? 'Export…' : "Télécharger l'image"}
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <PlayerPicker
         open={pickerOpen}
