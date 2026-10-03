@@ -12,7 +12,7 @@ export interface PlayerTeam {
   color?: string
 }
 
-export type LeagueId = 'LCK' | 'LPL' | 'LEC' | 'LCS' | 'LCP'
+export type LeagueId = 'LCK' | 'LPL' | 'LEC' | 'LCS' | 'LCP' | 'CBLOL'
 
 export interface Player {
   id: string
@@ -25,7 +25,7 @@ export interface Player {
   image: string | null
 }
 
-export const LEAGUES: LeagueId[] = ['LCK', 'LPL', 'LEC', 'LCS', 'LCP']
+export const LEAGUES: LeagueId[] = ['LCK', 'LPL', 'LEC', 'LCS', 'LCP', 'CBLOL']
 
 export const LEAGUE_LABELS: Record<LeagueId, string> = {
   LCK: 'Corée',
@@ -33,6 +33,7 @@ export const LEAGUE_LABELS: Record<LeagueId, string> = {
   LEC: 'EMEA',
   LCS: 'Amérique du Nord',
   LCP: 'Asie-Pacifique',
+  CBLOL: 'Brésil',
 }
 
 const CATEGORY_LEAGUE: Record<string, LeagueId> = {

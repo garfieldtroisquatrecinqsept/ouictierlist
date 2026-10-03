@@ -51,8 +51,17 @@ REGION_LEAGUE = {
     "North America": "LCS",
     "Asia-Pacific": "LCP",
     "Asia Pacific": "LCP",
+    "Brazil": "CBLOL",
 }
 ROLES = {"Top": "top", "Jungle": "jungle", "Mid": "mid", "Bot": "bot", "Support": "support"}
+# Equipes qualifiees dont Leaguepedia n'a pas encore saisi le roster Worlds :
+# on prend celui de leurs playoffs regionaux. Nom -> (tournoi, page de l'equipe).
+REGIONAL_ROSTERS = {
+    "Cloud9": ("LCS/2026 Season/Summer Playoffs", "Cloud9"),
+    "LYON": ("LCS/2026 Season/Summer Playoffs", "LYON (2024 American Team)"),
+    "FURIA": ("CBLOL/2026 Season/Split 2 Playoffs", "FURIA"),
+    "LØS": ("CBLOL/2026 Season/Split 2 Playoffs", "LØS"),
+}
 ROLE_ORDER = ["top", "jungle", "mid", "bot", "support"]
 
 
@@ -92,7 +101,13 @@ def fetch_image(filename, width, relative):
     local = os.path.join(PUBLIC, relative)
     if os.path.exists(local):
         return Image.open(local).convert("RGBA"), False
-    return download(filename, width), True
+    try:
+        return download(filename, width), True
+    except Exception as error:
+        # Le CDN Wikia refuse souvent Python (403) : l'image se recupere alors a la main
+        # (navigateur) dans public/<relative>, puis on relance le script.
+        print("! image a recuperer (%s) : %s -> public/%s" % (error, wikia_url(filename, width), relative))
+        return None, False
 
 
 def download(filename, width):
@@ -127,6 +142,35 @@ def display_name(raw):
     return re.sub(r"\s*\(.*\)\s*$", "", raw).strip()
 
 
+def regional_roster(team, page):
+    """Roster d'un tournoi regional, un joueur par poste : le dernier titulaire."""
+    rows = cargo(
+        tables="TournamentPlayers",
+        fields="TournamentPlayers.Team=team,TournamentPlayers.Player=player,"
+        "TournamentPlayers.Role=role,TournamentPlayers.Link=link",
+        where="TournamentPlayers.Team=%s AND TournamentPlayers.OverviewPage=%s" % (quote([team]), quote([page])),
+    )
+    by_role = {}
+    for row in rows:
+        if row["role"] in ROLES:
+            by_role.setdefault(row["role"], []).append(row)
+    members = {}
+    for role, candidates in by_role.items():
+        if len(candidates) > 1:
+            last = cargo(
+                tables="ScoreboardPlayers",
+                fields="ScoreboardPlayers.Link=link",
+                where="ScoreboardPlayers.Team=%s AND ScoreboardPlayers.Role=%s"
+                % (quote([team]), quote([role])),
+                order_by="ScoreboardPlayers.DateTime_UTC DESC",
+                limit="1",
+            )
+            starter = last[0]["link"] if last else None
+            candidates = [row for row in candidates if row["link"] == starter] or candidates[:1]
+        members[candidates[0]["link"]] = candidates[0]
+    return members
+
+
 def main():
     data = json.load(open(PLAYERS_JSON, encoding="utf-8"))
     known_teams = {team["name"]: team for team in data["teams"]}
@@ -143,18 +187,21 @@ def main():
         if row["role"] not in ROLES or not row["team"]:
             continue
         roster.setdefault(row["team"], {})[row["link"]] = row
+    for team, (page, team_page) in REGIONAL_ROSTERS.items():
+        if team not in roster and team_page not in roster:
+            roster[team] = regional_roster(team_page, page)
     print("%d equipes avec roster sur Leaguepedia" % len(roster))
 
     team_rows = {
         row["name"]: row
         for row in cargo(
             tables="Teams",
-            fields="Teams.Name=name,Teams.Short=short,Teams.Region=region",
-            where="Teams.OverviewPage IN (%s)" % quote(roster.keys()),
+            fields="Teams.Name=name,Teams.Short=short,Teams.Region=region,Teams.OverviewPage=page",
+            where="Teams.OverviewPage IN (%s) OR Teams.Name IN (%s)" % (quote(roster.keys()), quote(roster.keys())),
         )
     }
 
-    new_teams = []
+    new_teams, logo_files = [], {}
     for name in roster:
         if name in known_teams:
             continue
@@ -166,6 +213,7 @@ def main():
         if not league:
             print("! region sans ligue connue pour %s : %s (ajouter dans REGION_LEAGUE)" % (name, meta["region"]))
             continue
+        logo_files[name] = meta["page"] + "logo square.png"
         new_teams.append(
             {
                 "short": meta["short"].upper(),
@@ -178,7 +226,10 @@ def main():
 
     for team in new_teams:
         print("+ equipe %-4s %s (%s)" % (team["short"], team["name"], team["league"]))
-        logo, fresh = fetch_image(team["name"] + "logo square.png", 80, team["logo"])
+        logo, fresh = fetch_image(logo_files[team["name"]], 80, team["logo"])
+        if logo is None:
+            team["color"] = dominant_color(Image.new("RGBA", (1, 1)))
+            continue
         logo.thumbnail((80, 80), Image.LANCZOS)
         team["color"] = dominant_color(logo)
         if fresh and not DRY:
@@ -242,7 +293,8 @@ def main():
             photo, fresh = fetch_image(filename, 220, relative)
             if fresh and not DRY:
                 photo.save(os.path.join(PUBLIC, relative), "WEBP", quality=85)
-            entry["image"] = relative
+            if photo is not None:
+                entry["image"] = relative
         else:
             print("! pas de photo pour %s" % identifier)
         print("+ joueur %-14s %-7s %-12s %s" % (identifier, entry["role"], entry["country"], filename))

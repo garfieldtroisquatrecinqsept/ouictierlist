@@ -8206,6 +8206,2106 @@
           "kda": "3.6"
         }
       ]
+    },
+    "C9-Thanatos": {
+      "golggId": "3434",
+      "general": {
+        "record": "61W - 42L",
+        "winrate": "59.2%",
+        "kda": "3.1",
+        "csPerMin": "8.8",
+        "goldPerMin": "399",
+        "goldShare": "20.4%",
+        "killParticipation": "54.6%"
+      },
+      "earlyGame": {
+        "csDiff15": "+10.3",
+        "goldDiff15": "+248",
+        "xpDiff15": "+217",
+        "aheadInCs15": "71.8%",
+        "firstBloodParticipation": "13.6%",
+        "firstBloodVictim": "4.9%"
+      },
+      "aggression": {
+        "damagePerMin": "595.1",
+        "damageShare": "22.2%",
+        "kaPerMin": "0.24",
+        "soloKills": "27",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.31",
+        "wardsPerMin": "0.42",
+        "controlWardsPerMin": "0.12",
+        "wardsClearedPerMin": "0.18"
+      },
+      "champions": [
+        {
+          "name": "Renekton",
+          "slug": "renekton",
+          "games": 16,
+          "winrate": "50%",
+          "kda": "1.9"
+        },
+        {
+          "name": "Rumble",
+          "slug": "rumble",
+          "games": 15,
+          "winrate": "46.7%",
+          "kda": "3.0"
+        },
+        {
+          "name": "KSante",
+          "slug": "ksante",
+          "games": 14,
+          "winrate": "50%",
+          "kda": "2.5"
+        },
+        {
+          "name": "Gnar",
+          "slug": "gnar",
+          "games": 12,
+          "winrate": "83.3%",
+          "kda": "5.1"
+        },
+        {
+          "name": "Ambessa",
+          "slug": "ambessa",
+          "games": 8,
+          "winrate": "50%",
+          "kda": "2.0"
+        },
+        {
+          "name": "Sion",
+          "slug": "sion",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "11.2"
+        },
+        {
+          "name": "Aurora",
+          "slug": "aurora",
+          "games": 5,
+          "winrate": "80%",
+          "kda": "3.5"
+        },
+        {
+          "name": "RekSai",
+          "slug": "reksai",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "7.6"
+        },
+        {
+          "name": "Gwen",
+          "slug": "gwen",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "2.8"
+        },
+        {
+          "name": "Varus",
+          "slug": "varus",
+          "games": 2,
+          "winrate": "50%",
+          "kda": "1.6"
+        }
+      ]
+    },
+    "C9-Blaber": {
+      "golggId": "1634",
+      "general": {
+        "record": "61W - 42L",
+        "winrate": "59.2%",
+        "kda": "3.8",
+        "csPerMin": "7.5",
+        "goldPerMin": "403",
+        "goldShare": "20.6%",
+        "killParticipation": "72.5%"
+      },
+      "earlyGame": {
+        "csDiff15": "+1.7",
+        "goldDiff15": "+23",
+        "xpDiff15": "+80",
+        "aheadInCs15": "54.4%",
+        "firstBloodParticipation": "42.7%",
+        "firstBloodVictim": "11.7%"
+      },
+      "aggression": {
+        "damagePerMin": "434",
+        "damageShare": "15.9%",
+        "kaPerMin": "0.33",
+        "soloKills": "4",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.79",
+        "wardsPerMin": "0.35",
+        "controlWardsPerMin": "0.25",
+        "wardsClearedPerMin": "0.39"
+      },
+      "champions": [
+        {
+          "name": "Wukong",
+          "slug": "wukong",
+          "games": 14,
+          "winrate": "57.1%",
+          "kda": "3.0"
+        },
+        {
+          "name": "Jarvan IV",
+          "slug": "jarvaniv",
+          "games": 14,
+          "winrate": "64.3%",
+          "kda": "4.4"
+        },
+        {
+          "name": "Nocturne",
+          "slug": "nocturne",
+          "games": 10,
+          "winrate": "50%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Vi",
+          "slug": "vi",
+          "games": 9,
+          "winrate": "55.6%",
+          "kda": "3.5"
+        },
+        {
+          "name": "Sejuani",
+          "slug": "sejuani",
+          "games": 9,
+          "winrate": "66.7%",
+          "kda": "7.8"
+        },
+        {
+          "name": "Xin Zhao",
+          "slug": "xinzhao",
+          "games": 7,
+          "winrate": "42.9%",
+          "kda": "2.2"
+        },
+        {
+          "name": "Pantheon",
+          "slug": "pantheon",
+          "games": 6,
+          "winrate": "83.3%",
+          "kda": "3.3"
+        },
+        {
+          "name": "Trundle",
+          "slug": "trundle",
+          "games": 5,
+          "winrate": "40%",
+          "kda": "3.6"
+        },
+        {
+          "name": "Ambessa",
+          "slug": "ambessa",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "6.9"
+        },
+        {
+          "name": "Lee Sin",
+          "slug": "leesin",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "4.3"
+        }
+      ]
+    },
+    "C9-Loki": {
+      "golggId": "4861",
+      "general": {
+        "record": "22W - 24L",
+        "winrate": "47.8%",
+        "kda": "3.7",
+        "csPerMin": "9.1",
+        "goldPerMin": "406",
+        "goldShare": "20.9%",
+        "killParticipation": "65.9%"
+      },
+      "earlyGame": {
+        "csDiff15": "-1.2",
+        "goldDiff15": "-153",
+        "xpDiff15": "-129",
+        "aheadInCs15": "52.2%",
+        "firstBloodParticipation": "21.7%",
+        "firstBloodVictim": "6.5%"
+      },
+      "aggression": {
+        "damagePerMin": "630.9",
+        "damageShare": "24.7%",
+        "kaPerMin": "0.29",
+        "soloKills": "9",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.38",
+        "wardsPerMin": "0.43",
+        "controlWardsPerMin": "0.19",
+        "wardsClearedPerMin": "0.24"
+      },
+      "champions": [
+        {
+          "name": "Orianna",
+          "slug": "orianna",
+          "games": 7,
+          "winrate": "57.1%",
+          "kda": "5.5"
+        },
+        {
+          "name": "Ryze",
+          "slug": "ryze",
+          "games": 6,
+          "winrate": "16.7%",
+          "kda": "2.3"
+        },
+        {
+          "name": "Aurora",
+          "slug": "aurora",
+          "games": 4,
+          "winrate": "25%",
+          "kda": "4.3"
+        },
+        {
+          "name": "Akali",
+          "slug": "akali",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "3.3"
+        },
+        {
+          "name": "Yone",
+          "slug": "yone",
+          "games": 4,
+          "winrate": "25%",
+          "kda": "3.1"
+        },
+        {
+          "name": "Sylas",
+          "slug": "sylas",
+          "games": 4,
+          "winrate": "100%",
+          "kda": "8.0"
+        },
+        {
+          "name": "Syndra",
+          "slug": "syndra",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "3.1"
+        },
+        {
+          "name": "Taliyah",
+          "slug": "taliyah",
+          "games": 3,
+          "winrate": "33.3%",
+          "kda": "3.0"
+        },
+        {
+          "name": "Cassiopeia",
+          "slug": "cassiopeia",
+          "games": 2,
+          "winrate": "50%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Annie",
+          "slug": "annie",
+          "games": 2,
+          "winrate": "50%",
+          "kda": "1.6"
+        }
+      ]
+    },
+    "C9-Tactical": {
+      "golggId": "1979",
+      "general": {
+        "record": "31W - 16L",
+        "winrate": "66%",
+        "kda": "4.5",
+        "csPerMin": "10",
+        "goldPerMin": "484",
+        "goldShare": "24.6%",
+        "killParticipation": "61.1%"
+      },
+      "earlyGame": {
+        "csDiff15": "+0.2",
+        "goldDiff15": "+127",
+        "xpDiff15": "-15",
+        "aheadInCs15": "48.9%",
+        "firstBloodParticipation": "31.9%",
+        "firstBloodVictim": "14.9%"
+      },
+      "aggression": {
+        "damagePerMin": "801.2",
+        "damageShare": "28.6%",
+        "kaPerMin": "0.29",
+        "soloKills": "4",
+        "pentakills": "1"
+      },
+      "vision": {
+        "visionScorePerMin": "1.28",
+        "wardsPerMin": "0.51",
+        "controlWardsPerMin": "0.18",
+        "wardsClearedPerMin": "0.27"
+      },
+      "champions": [
+        {
+          "name": "Ezreal",
+          "slug": "ezreal",
+          "games": 10,
+          "winrate": "60%",
+          "kda": "3.6"
+        },
+        {
+          "name": "Caitlyn",
+          "slug": "caitlyn",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "4.7"
+        },
+        {
+          "name": "Jhin",
+          "slug": "jhin",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "8.8"
+        },
+        {
+          "name": "Lucian",
+          "slug": "lucian",
+          "games": 4,
+          "winrate": "0%",
+          "kda": "1.4"
+        },
+        {
+          "name": "Yunara",
+          "slug": "yunara",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "5.0"
+        },
+        {
+          "name": "Kalista",
+          "slug": "kalista",
+          "games": 4,
+          "winrate": "100%",
+          "kda": "6.6"
+        },
+        {
+          "name": "Corki",
+          "slug": "corki",
+          "games": 3,
+          "winrate": "66.7%",
+          "kda": "3.5"
+        },
+        {
+          "name": "Varus",
+          "slug": "varus",
+          "games": 3,
+          "winrate": "100%",
+          "kda": "10.3"
+        },
+        {
+          "name": "Ziggs",
+          "slug": "ziggs",
+          "games": 3,
+          "winrate": "66.7%",
+          "kda": "3.6"
+        },
+        {
+          "name": "Ashe",
+          "slug": "ashe",
+          "games": 2,
+          "winrate": "100%",
+          "kda": "17.0"
+        }
+      ]
+    },
+    "C9-Vulcan": {
+      "golggId": "1301",
+      "general": {
+        "record": "61W - 42L",
+        "winrate": "59.2%",
+        "kda": "5.9",
+        "csPerMin": "1.1",
+        "goldPerMin": "267",
+        "goldShare": "13.6%",
+        "killParticipation": "75.3%"
+      },
+      "earlyGame": {
+        "csDiff15": "+0.4",
+        "goldDiff15": "+46",
+        "xpDiff15": "+329",
+        "aheadInCs15": "48.5%",
+        "firstBloodParticipation": "35%",
+        "firstBloodVictim": "4.9%"
+      },
+      "aggression": {
+        "damagePerMin": "227.4",
+        "damageShare": "8.5%",
+        "kaPerMin": "0.35",
+        "soloKills": "2",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "3.67",
+        "wardsPerMin": "1.67",
+        "controlWardsPerMin": "0.43",
+        "wardsClearedPerMin": "0.37"
+      },
+      "champions": [
+        {
+          "name": "Bard",
+          "slug": "bard",
+          "games": 13,
+          "winrate": "61.5%",
+          "kda": "7.5"
+        },
+        {
+          "name": "Nautilus",
+          "slug": "nautilus",
+          "games": 11,
+          "winrate": "54.5%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Nami",
+          "slug": "nami",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "9.9"
+        },
+        {
+          "name": "Karma",
+          "slug": "karma",
+          "games": 10,
+          "winrate": "30%",
+          "kda": "3.5"
+        },
+        {
+          "name": "Lulu",
+          "slug": "lulu",
+          "games": 9,
+          "winrate": "33.3%",
+          "kda": "3.5"
+        },
+        {
+          "name": "Seraphine",
+          "slug": "seraphine",
+          "games": 9,
+          "winrate": "77.8%",
+          "kda": "9.1"
+        },
+        {
+          "name": "Alistar",
+          "slug": "alistar",
+          "games": 8,
+          "winrate": "75%",
+          "kda": "11.3"
+        },
+        {
+          "name": "Neeko",
+          "slug": "neeko",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "4.2"
+        },
+        {
+          "name": "Rakan",
+          "slug": "rakan",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "11.3"
+        },
+        {
+          "name": "Renata Glasc",
+          "slug": "renataglasc",
+          "games": 6,
+          "winrate": "100%",
+          "kda": "9.9"
+        }
+      ]
+    },
+    "FUR-Guigo": {
+      "golggId": "3116",
+      "general": {
+        "record": "62W - 35L",
+        "winrate": "63.9%",
+        "kda": "3.3",
+        "csPerMin": "8.4",
+        "goldPerMin": "397",
+        "goldShare": "20.2%",
+        "killParticipation": "58.2%"
+      },
+      "earlyGame": {
+        "csDiff15": "-1.8",
+        "goldDiff15": "-39",
+        "xpDiff15": "-98",
+        "aheadInCs15": "45.4%",
+        "firstBloodParticipation": "12.4%",
+        "firstBloodVictim": "14.4%"
+      },
+      "aggression": {
+        "damagePerMin": "619",
+        "damageShare": "22.8%",
+        "kaPerMin": "0.27",
+        "soloKills": "32",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.35",
+        "wardsPerMin": "0.39",
+        "controlWardsPerMin": "0.15",
+        "wardsClearedPerMin": "0.23"
+      },
+      "champions": [
+        {
+          "name": "Ambessa",
+          "slug": "ambessa",
+          "games": 16,
+          "winrate": "56.3%",
+          "kda": "2.6"
+        },
+        {
+          "name": "KSante",
+          "slug": "ksante",
+          "games": 15,
+          "winrate": "46.7%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Sion",
+          "slug": "sion",
+          "games": 13,
+          "winrate": "69.2%",
+          "kda": "3.2"
+        },
+        {
+          "name": "Ornn",
+          "slug": "ornn",
+          "games": 10,
+          "winrate": "80%",
+          "kda": "8.3"
+        },
+        {
+          "name": "Volibear",
+          "slug": "volibear",
+          "games": 6,
+          "winrate": "100%",
+          "kda": "8.1"
+        },
+        {
+          "name": "Jax",
+          "slug": "jax",
+          "games": 5,
+          "winrate": "80%",
+          "kda": "2.8"
+        },
+        {
+          "name": "Rumble",
+          "slug": "rumble",
+          "games": 5,
+          "winrate": "80%",
+          "kda": "7.1"
+        },
+        {
+          "name": "Camille",
+          "slug": "camille",
+          "games": 5,
+          "winrate": "80%",
+          "kda": "2.9"
+        },
+        {
+          "name": "Olaf",
+          "slug": "olaf",
+          "games": 5,
+          "winrate": "40%",
+          "kda": "2.6"
+        },
+        {
+          "name": "Gwen",
+          "slug": "gwen",
+          "games": 4,
+          "winrate": "100%",
+          "kda": "5.4"
+        }
+      ]
+    },
+    "FUR-Tatu": {
+      "golggId": "4776",
+      "general": {
+        "record": "61W - 30L",
+        "winrate": "67%",
+        "kda": "5.4",
+        "csPerMin": "7.2",
+        "goldPerMin": "410",
+        "goldShare": "20.7%",
+        "killParticipation": "73.9%"
+      },
+      "earlyGame": {
+        "csDiff15": "+2.1",
+        "goldDiff15": "+200",
+        "xpDiff15": "+70",
+        "aheadInCs15": "58.2%",
+        "firstBloodParticipation": "33%",
+        "firstBloodVictim": "5.5%"
+      },
+      "aggression": {
+        "damagePerMin": "482.6",
+        "damageShare": "17.5%",
+        "kaPerMin": "0.36",
+        "soloKills": "16",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.89",
+        "wardsPerMin": "0.32",
+        "controlWardsPerMin": "0.27",
+        "wardsClearedPerMin": "0.46"
+      },
+      "champions": [
+        {
+          "name": "Xin Zhao",
+          "slug": "xinzhao",
+          "games": 13,
+          "winrate": "61.5%",
+          "kda": "4.5"
+        },
+        {
+          "name": "Pantheon",
+          "slug": "pantheon",
+          "games": 11,
+          "winrate": "81.8%",
+          "kda": "5.5"
+        },
+        {
+          "name": "Wukong",
+          "slug": "wukong",
+          "games": 8,
+          "winrate": "50%",
+          "kda": "4.6"
+        },
+        {
+          "name": "Skarner",
+          "slug": "skarner",
+          "games": 7,
+          "winrate": "85.7%",
+          "kda": "8.8"
+        },
+        {
+          "name": "Jarvan IV",
+          "slug": "jarvaniv",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "5.5"
+        },
+        {
+          "name": "Trundle",
+          "slug": "trundle",
+          "games": 5,
+          "winrate": "60%",
+          "kda": "3.9"
+        },
+        {
+          "name": "Aatrox",
+          "slug": "aatrox",
+          "games": 5,
+          "winrate": "60%",
+          "kda": "5.6"
+        },
+        {
+          "name": "Lee Sin",
+          "slug": "leesin",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "2.9"
+        },
+        {
+          "name": "Nasus",
+          "slug": "nasus",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "9.0"
+        },
+        {
+          "name": "Naafiri",
+          "slug": "naafiri",
+          "games": 3,
+          "winrate": "66.7%",
+          "kda": "7.0"
+        }
+      ]
+    },
+    "FUR-Tutsz": {
+      "golggId": "2709",
+      "general": {
+        "record": "62W - 35L",
+        "winrate": "63.9%",
+        "kda": "4.1",
+        "csPerMin": "8.8",
+        "goldPerMin": "407",
+        "goldShare": "20.7%",
+        "killParticipation": "63.8%"
+      },
+      "earlyGame": {
+        "csDiff15": "-2.4",
+        "goldDiff15": "-9",
+        "xpDiff15": "-61",
+        "aheadInCs15": "43.3%",
+        "firstBloodParticipation": "25.8%",
+        "firstBloodVictim": "13.4%"
+      },
+      "aggression": {
+        "damagePerMin": "635.9",
+        "damageShare": "23.4%",
+        "kaPerMin": "0.31",
+        "soloKills": "32",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.41",
+        "wardsPerMin": "0.41",
+        "controlWardsPerMin": "0.23",
+        "wardsClearedPerMin": "0.26"
+      },
+      "champions": [
+        {
+          "name": "Ryze",
+          "slug": "ryze",
+          "games": 16,
+          "winrate": "68.8%",
+          "kda": "5.0"
+        },
+        {
+          "name": "Akali",
+          "slug": "akali",
+          "games": 11,
+          "winrate": "63.6%",
+          "kda": "3.2"
+        },
+        {
+          "name": "Syndra",
+          "slug": "syndra",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "3.9"
+        },
+        {
+          "name": "Galio",
+          "slug": "galio",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "6.4"
+        },
+        {
+          "name": "Viktor",
+          "slug": "viktor",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "4.3"
+        },
+        {
+          "name": "Annie",
+          "slug": "annie",
+          "games": 8,
+          "winrate": "50%",
+          "kda": "3.2"
+        },
+        {
+          "name": "Ahri",
+          "slug": "ahri",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Twisted Fate",
+          "slug": "twistedfate",
+          "games": 7,
+          "winrate": "100%",
+          "kda": "8.6"
+        },
+        {
+          "name": "Anivia",
+          "slug": "anivia",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Orianna",
+          "slug": "orianna",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "3.8"
+        }
+      ]
+    },
+    "FUR-Ayu": {
+      "golggId": "4976",
+      "general": {
+        "record": "62W - 35L",
+        "winrate": "63.9%",
+        "kda": "5.3",
+        "csPerMin": "9.6",
+        "goldPerMin": "488",
+        "goldShare": "24.8%",
+        "killParticipation": "67.3%"
+      },
+      "earlyGame": {
+        "csDiff15": "-4",
+        "goldDiff15": "-4",
+        "xpDiff15": "+19",
+        "aheadInCs15": "45.4%",
+        "firstBloodParticipation": "23.7%",
+        "firstBloodVictim": "9.3%"
+      },
+      "aggression": {
+        "damagePerMin": "763.3",
+        "damageShare": "28%",
+        "kaPerMin": "0.33",
+        "soloKills": "10",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.24",
+        "wardsPerMin": "0.42",
+        "controlWardsPerMin": "0.13",
+        "wardsClearedPerMin": "0.31"
+      },
+      "champions": [
+        {
+          "name": "Ezreal",
+          "slug": "ezreal",
+          "games": 16,
+          "winrate": "62.5%",
+          "kda": "7.9"
+        },
+        {
+          "name": "Yunara",
+          "slug": "yunara",
+          "games": 13,
+          "winrate": "84.6%",
+          "kda": "7.3"
+        },
+        {
+          "name": "Ashe",
+          "slug": "ashe",
+          "games": 11,
+          "winrate": "90.9%",
+          "kda": "5.2"
+        },
+        {
+          "name": "Corki",
+          "slug": "corki",
+          "games": 8,
+          "winrate": "50%",
+          "kda": "4.1"
+        },
+        {
+          "name": "Lucian",
+          "slug": "lucian",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "4.2"
+        },
+        {
+          "name": "Caitlyn",
+          "slug": "caitlyn",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "5.5"
+        },
+        {
+          "name": "Jhin",
+          "slug": "jhin",
+          "games": 4,
+          "winrate": "0%",
+          "kda": "2.2"
+        },
+        {
+          "name": "Xayah",
+          "slug": "xayah",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "13.3"
+        },
+        {
+          "name": "Varus",
+          "slug": "varus",
+          "games": 3,
+          "winrate": "66.7%",
+          "kda": "6.4"
+        },
+        {
+          "name": "Kalista",
+          "slug": "kalista",
+          "games": 3,
+          "winrate": "33.3%",
+          "kda": "4.2"
+        }
+      ]
+    },
+    "FUR-JoJo": {
+      "golggId": "2329",
+      "general": {
+        "record": "62W - 35L",
+        "winrate": "63.9%",
+        "kda": "6.2",
+        "csPerMin": "1.1",
+        "goldPerMin": "269",
+        "goldShare": "13.7%",
+        "killParticipation": "77.3%"
+      },
+      "earlyGame": {
+        "csDiff15": "-0.9",
+        "goldDiff15": "+71",
+        "xpDiff15": "+28",
+        "aheadInCs15": "46.4%",
+        "firstBloodParticipation": "27.8%",
+        "firstBloodVictim": "6.2%"
+      },
+      "aggression": {
+        "damagePerMin": "220.3",
+        "damageShare": "8.2%",
+        "kaPerMin": "0.37",
+        "soloKills": "1",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "4.11",
+        "wardsPerMin": "1.89",
+        "controlWardsPerMin": "0.57",
+        "wardsClearedPerMin": "0.48"
+      },
+      "champions": [
+        {
+          "name": "Seraphine",
+          "slug": "seraphine",
+          "games": 12,
+          "winrate": "75%",
+          "kda": "7.2"
+        },
+        {
+          "name": "Lulu",
+          "slug": "lulu",
+          "games": 11,
+          "winrate": "81.8%",
+          "kda": "12.7"
+        },
+        {
+          "name": "Rakan",
+          "slug": "rakan",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "7.5"
+        },
+        {
+          "name": "Karma",
+          "slug": "karma",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "6.0"
+        },
+        {
+          "name": "Bard",
+          "slug": "bard",
+          "games": 8,
+          "winrate": "75%",
+          "kda": "5.9"
+        },
+        {
+          "name": "Milio",
+          "slug": "milio",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "10.8"
+        },
+        {
+          "name": "Nami",
+          "slug": "nami",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "7.8"
+        },
+        {
+          "name": "Alistar",
+          "slug": "alistar",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "3.9"
+        },
+        {
+          "name": "Yuumi",
+          "slug": "yuumi",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "13.8"
+        },
+        {
+          "name": "Leona",
+          "slug": "leona",
+          "games": 4,
+          "winrate": "25%",
+          "kda": "1.7"
+        }
+      ]
+    },
+    "LOS-Zest": {
+      "golggId": "4244",
+      "general": {
+        "record": "62W - 38L",
+        "winrate": "62%",
+        "kda": "3.4",
+        "csPerMin": "9.2",
+        "goldPerMin": "430",
+        "goldShare": "21.8%",
+        "killParticipation": "55.3%"
+      },
+      "earlyGame": {
+        "csDiff15": "+13.4",
+        "goldDiff15": "+541",
+        "xpDiff15": "+373",
+        "aheadInCs15": "74%",
+        "firstBloodParticipation": "13%",
+        "firstBloodVictim": "7%"
+      },
+      "aggression": {
+        "damagePerMin": "717.6",
+        "damageShare": "25.8%",
+        "kaPerMin": "0.28",
+        "soloKills": "48",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.26",
+        "wardsPerMin": "0.37",
+        "controlWardsPerMin": "0.1",
+        "wardsClearedPerMin": "0.2"
+      },
+      "champions": [
+        {
+          "name": "Rumble",
+          "slug": "rumble",
+          "games": 13,
+          "winrate": "76.9%",
+          "kda": "4.6"
+        },
+        {
+          "name": "Gnar",
+          "slug": "gnar",
+          "games": 11,
+          "winrate": "45.5%",
+          "kda": "2.3"
+        },
+        {
+          "name": "Jayce",
+          "slug": "jayce",
+          "games": 10,
+          "winrate": "60%",
+          "kda": "4.1"
+        },
+        {
+          "name": "Kennen",
+          "slug": "kennen",
+          "games": 7,
+          "winrate": "57.1%",
+          "kda": "5.2"
+        },
+        {
+          "name": "Vayne",
+          "slug": "vayne",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "4.5"
+        },
+        {
+          "name": "Ambessa",
+          "slug": "ambessa",
+          "games": 5,
+          "winrate": "100%",
+          "kda": "6.4"
+        },
+        {
+          "name": "Renekton",
+          "slug": "renekton",
+          "games": 5,
+          "winrate": "100%",
+          "kda": "5.7"
+        },
+        {
+          "name": "KSante",
+          "slug": "ksante",
+          "games": 5,
+          "winrate": "20%",
+          "kda": "1.6"
+        },
+        {
+          "name": "Varus",
+          "slug": "varus",
+          "games": 5,
+          "winrate": "60%",
+          "kda": "3.0"
+        },
+        {
+          "name": "Aurora",
+          "slug": "aurora",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "4.6"
+        }
+      ]
+    },
+    "LOS-Curse": {
+      "golggId": "5274",
+      "general": {
+        "record": "66W - 41L",
+        "winrate": "61.7%",
+        "kda": "3.7",
+        "csPerMin": "6.5",
+        "goldPerMin": "377",
+        "goldShare": "19.1%",
+        "killParticipation": "70.5%"
+      },
+      "earlyGame": {
+        "csDiff15": "-4.2",
+        "goldDiff15": "-92",
+        "xpDiff15": "-65",
+        "aheadInCs15": "43.9%",
+        "firstBloodParticipation": "32.7%",
+        "firstBloodVictim": "11.2%"
+      },
+      "aggression": {
+        "damagePerMin": "477.1",
+        "damageShare": "16.3%",
+        "kaPerMin": "0.36",
+        "soloKills": "13",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.64",
+        "wardsPerMin": "0.29",
+        "controlWardsPerMin": "0.23",
+        "wardsClearedPerMin": "0.32"
+      },
+      "champions": [
+        {
+          "name": "Pantheon",
+          "slug": "pantheon",
+          "games": 16,
+          "winrate": "68.8%",
+          "kda": "4.3"
+        },
+        {
+          "name": "Xin Zhao",
+          "slug": "xinzhao",
+          "games": 15,
+          "winrate": "33.3%",
+          "kda": "2.1"
+        },
+        {
+          "name": "Jarvan IV",
+          "slug": "jarvaniv",
+          "games": 12,
+          "winrate": "50%",
+          "kda": "3.1"
+        },
+        {
+          "name": "Vi",
+          "slug": "vi",
+          "games": 12,
+          "winrate": "58.3%",
+          "kda": "3.4"
+        },
+        {
+          "name": "Nocturne",
+          "slug": "nocturne",
+          "games": 11,
+          "winrate": "63.6%",
+          "kda": "3.1"
+        },
+        {
+          "name": "Trundle",
+          "slug": "trundle",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "5.1"
+        },
+        {
+          "name": "Wukong",
+          "slug": "wukong",
+          "games": 6,
+          "winrate": "83.3%",
+          "kda": "4.9"
+        },
+        {
+          "name": "Naafiri",
+          "slug": "naafiri",
+          "games": 6,
+          "winrate": "100%",
+          "kda": "10.0"
+        },
+        {
+          "name": "RekSai",
+          "slug": "reksai",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "5.9"
+        },
+        {
+          "name": "Aatrox",
+          "slug": "aatrox",
+          "games": 3,
+          "winrate": "33.3%",
+          "kda": "2.8"
+        }
+      ]
+    },
+    "LOS-Feisty": {
+      "golggId": "4234",
+      "general": {
+        "record": "62W - 38L",
+        "winrate": "62%",
+        "kda": "4.4",
+        "csPerMin": "8.7",
+        "goldPerMin": "400",
+        "goldShare": "20.3%",
+        "killParticipation": "64.3%"
+      },
+      "earlyGame": {
+        "csDiff15": "+7.9",
+        "goldDiff15": "+280",
+        "xpDiff15": "+73",
+        "aheadInCs15": "68%",
+        "firstBloodParticipation": "23%",
+        "firstBloodVictim": "12%"
+      },
+      "aggression": {
+        "damagePerMin": "646.6",
+        "damageShare": "23.1%",
+        "kaPerMin": "0.31",
+        "soloKills": "30",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.3",
+        "wardsPerMin": "0.39",
+        "controlWardsPerMin": "0.26",
+        "wardsClearedPerMin": "0.27"
+      },
+      "champions": [
+        {
+          "name": "Ryze",
+          "slug": "ryze",
+          "games": 20,
+          "winrate": "70%",
+          "kda": "5.8"
+        },
+        {
+          "name": "Orianna",
+          "slug": "orianna",
+          "games": 13,
+          "winrate": "53.8%",
+          "kda": "4.4"
+        },
+        {
+          "name": "Taliyah",
+          "slug": "taliyah",
+          "games": 12,
+          "winrate": "66.7%",
+          "kda": "3.9"
+        },
+        {
+          "name": "Viktor",
+          "slug": "viktor",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Cassiopeia",
+          "slug": "cassiopeia",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "5.7"
+        },
+        {
+          "name": "Galio",
+          "slug": "galio",
+          "games": 7,
+          "winrate": "85.7%",
+          "kda": "5.2"
+        },
+        {
+          "name": "Ahri",
+          "slug": "ahri",
+          "games": 6,
+          "winrate": "33.3%",
+          "kda": "2.7"
+        },
+        {
+          "name": "Syndra",
+          "slug": "syndra",
+          "games": 5,
+          "winrate": "60%",
+          "kda": "3.6"
+        },
+        {
+          "name": "Aurora",
+          "slug": "aurora",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Zoe",
+          "slug": "zoe",
+          "games": 3,
+          "winrate": "0%",
+          "kda": "2.6"
+        }
+      ]
+    },
+    "LOS-Duduhh": {
+      "golggId": "5786",
+      "general": {
+        "record": "62W - 38L",
+        "winrate": "62%",
+        "kda": "3.9",
+        "csPerMin": "9.5",
+        "goldPerMin": "492",
+        "goldShare": "24.9%",
+        "killParticipation": "63.2%"
+      },
+      "earlyGame": {
+        "csDiff15": "+4",
+        "goldDiff15": "+306",
+        "xpDiff15": "+194",
+        "aheadInCs15": "54%",
+        "firstBloodParticipation": "24%",
+        "firstBloodVictim": "14%"
+      },
+      "aggression": {
+        "damagePerMin": "763.9",
+        "damageShare": "27%",
+        "kaPerMin": "0.32",
+        "soloKills": "22",
+        "pentakills": "1"
+      },
+      "vision": {
+        "visionScorePerMin": "1.13",
+        "wardsPerMin": "0.42",
+        "controlWardsPerMin": "0.15",
+        "wardsClearedPerMin": "0.25"
+      },
+      "champions": [
+        {
+          "name": "Corki",
+          "slug": "corki",
+          "games": 13,
+          "winrate": "76.9%",
+          "kda": "5.8"
+        },
+        {
+          "name": "Ezreal",
+          "slug": "ezreal",
+          "games": 13,
+          "winrate": "46.2%",
+          "kda": "2.7"
+        },
+        {
+          "name": "Lucian",
+          "slug": "lucian",
+          "games": 11,
+          "winrate": "45.5%",
+          "kda": "2.4"
+        },
+        {
+          "name": "Caitlyn",
+          "slug": "caitlyn",
+          "games": 9,
+          "winrate": "66.7%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Sivir",
+          "slug": "sivir",
+          "games": 8,
+          "winrate": "100%",
+          "kda": "6.8"
+        },
+        {
+          "name": "Viktor",
+          "slug": "viktor",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "3.7"
+        },
+        {
+          "name": "Yunara",
+          "slug": "yunara",
+          "games": 4,
+          "winrate": "25%",
+          "kda": "2.4"
+        },
+        {
+          "name": "Xayah",
+          "slug": "xayah",
+          "games": 4,
+          "winrate": "100%",
+          "kda": "6.0"
+        },
+        {
+          "name": "Varus",
+          "slug": "varus",
+          "games": 4,
+          "winrate": "25%",
+          "kda": "2.3"
+        },
+        {
+          "name": "Aphelios",
+          "slug": "aphelios",
+          "games": 3,
+          "winrate": "33.3%",
+          "kda": "2.8"
+        }
+      ]
+    },
+    "LOS-Ackerman": {
+      "golggId": "3640",
+      "general": {
+        "record": "62W - 38L",
+        "winrate": "62%",
+        "kda": "6.3",
+        "csPerMin": "1.2",
+        "goldPerMin": "273",
+        "goldShare": "13.9%",
+        "killParticipation": "74.1%"
+      },
+      "earlyGame": {
+        "csDiff15": "+0.6",
+        "goldDiff15": "+91",
+        "xpDiff15": "+165",
+        "aheadInCs15": "56%",
+        "firstBloodParticipation": "37%",
+        "firstBloodVictim": "7%"
+      },
+      "aggression": {
+        "damagePerMin": "250.1",
+        "damageShare": "8.9%",
+        "kaPerMin": "0.37",
+        "soloKills": "4",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "4.31",
+        "wardsPerMin": "1.88",
+        "controlWardsPerMin": "0.61",
+        "wardsClearedPerMin": "0.52"
+      },
+      "champions": [
+        {
+          "name": "Alistar",
+          "slug": "alistar",
+          "games": 12,
+          "winrate": "75%",
+          "kda": "5.6"
+        },
+        {
+          "name": "Neeko",
+          "slug": "neeko",
+          "games": 10,
+          "winrate": "40%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Bard",
+          "slug": "bard",
+          "games": 10,
+          "winrate": "60%",
+          "kda": "7.8"
+        },
+        {
+          "name": "Rakan",
+          "slug": "rakan",
+          "games": 8,
+          "winrate": "100%",
+          "kda": "15.8"
+        },
+        {
+          "name": "Milio",
+          "slug": "milio",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "10.7"
+        },
+        {
+          "name": "Nautilus",
+          "slug": "nautilus",
+          "games": 7,
+          "winrate": "57.1%",
+          "kda": "3.7"
+        },
+        {
+          "name": "Lulu",
+          "slug": "lulu",
+          "games": 7,
+          "winrate": "28.6%",
+          "kda": "5.6"
+        },
+        {
+          "name": "Karma",
+          "slug": "karma",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "8.6"
+        },
+        {
+          "name": "Nami",
+          "slug": "nami",
+          "games": 6,
+          "winrate": "33.3%",
+          "kda": "5.0"
+        },
+        {
+          "name": "Leona",
+          "slug": "leona",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "8.6"
+        }
+      ]
+    },
+    "LYON-Dhokla": {
+      "golggId": "1135",
+      "general": {
+        "record": "72W - 39L",
+        "winrate": "64.9%",
+        "kda": "2.7",
+        "csPerMin": "8.1",
+        "goldPerMin": "380",
+        "goldShare": "19.4%",
+        "killParticipation": "53.2%"
+      },
+      "earlyGame": {
+        "csDiff15": "-5.5",
+        "goldDiff15": "-165",
+        "xpDiff15": "-166",
+        "aheadInCs15": "34.2%",
+        "firstBloodParticipation": "14.4%",
+        "firstBloodVictim": "5.4%"
+      },
+      "aggression": {
+        "damagePerMin": "600.6",
+        "damageShare": "22.5%",
+        "kaPerMin": "0.24",
+        "soloKills": "43",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.17",
+        "wardsPerMin": "0.39",
+        "controlWardsPerMin": "0.1",
+        "wardsClearedPerMin": "0.2"
+      },
+      "champions": [
+        {
+          "name": "Gnar",
+          "slug": "gnar",
+          "games": 16,
+          "winrate": "62.5%",
+          "kda": "2.7"
+        },
+        {
+          "name": "Rumble",
+          "slug": "rumble",
+          "games": 15,
+          "winrate": "66.7%",
+          "kda": "3.3"
+        },
+        {
+          "name": "KSante",
+          "slug": "ksante",
+          "games": 11,
+          "winrate": "54.5%",
+          "kda": "2.7"
+        },
+        {
+          "name": "Renekton",
+          "slug": "renekton",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "3.1"
+        },
+        {
+          "name": "Jayce",
+          "slug": "jayce",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "1.6"
+        },
+        {
+          "name": "Sion",
+          "slug": "sion",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Vayne",
+          "slug": "vayne",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "6.5"
+        },
+        {
+          "name": "Ambessa",
+          "slug": "ambessa",
+          "games": 4,
+          "winrate": "25%",
+          "kda": "2.7"
+        },
+        {
+          "name": "Gwen",
+          "slug": "gwen",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "2.3"
+        },
+        {
+          "name": "Anivia",
+          "slug": "anivia",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "2.0"
+        }
+      ]
+    },
+    "LYON-Inspired": {
+      "golggId": "1501",
+      "general": {
+        "record": "65W - 40L",
+        "winrate": "61.9%",
+        "kda": "4.4",
+        "csPerMin": "7.5",
+        "goldPerMin": "397",
+        "goldShare": "20.3%",
+        "killParticipation": "66%"
+      },
+      "earlyGame": {
+        "csDiff15": "+5.3",
+        "goldDiff15": "+74",
+        "xpDiff15": "+289",
+        "aheadInCs15": "62.9%",
+        "firstBloodParticipation": "34.3%",
+        "firstBloodVictim": "1.9%"
+      },
+      "aggression": {
+        "damagePerMin": "385.9",
+        "damageShare": "14.4%",
+        "kaPerMin": "0.29",
+        "soloKills": "14",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.64",
+        "wardsPerMin": "0.3",
+        "controlWardsPerMin": "0.2",
+        "wardsClearedPerMin": "0.34"
+      },
+      "champions": [
+        {
+          "name": "Xin Zhao",
+          "slug": "xinzhao",
+          "games": 15,
+          "winrate": "73.3%",
+          "kda": "5.8"
+        },
+        {
+          "name": "Wukong",
+          "slug": "wukong",
+          "games": 15,
+          "winrate": "66.7%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Nocturne",
+          "slug": "nocturne",
+          "games": 12,
+          "winrate": "50%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Jarvan IV",
+          "slug": "jarvaniv",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "5.3"
+        },
+        {
+          "name": "Vi",
+          "slug": "vi",
+          "games": 9,
+          "winrate": "44.4%",
+          "kda": "2.0"
+        },
+        {
+          "name": "Lee Sin",
+          "slug": "leesin",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "6.8"
+        },
+        {
+          "name": "Skarner",
+          "slug": "skarner",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Pantheon",
+          "slug": "pantheon",
+          "games": 5,
+          "winrate": "60%",
+          "kda": "4.1"
+        },
+        {
+          "name": "Trundle",
+          "slug": "trundle",
+          "games": 5,
+          "winrate": "100%",
+          "kda": "12.6"
+        },
+        {
+          "name": "Malphite",
+          "slug": "malphite",
+          "games": 4,
+          "winrate": "75%",
+          "kda": "11.0"
+        }
+      ]
+    },
+    "LYON-Saint": {
+      "golggId": "5123",
+      "general": {
+        "record": "72W - 42L",
+        "winrate": "63.2%",
+        "kda": "3.8",
+        "csPerMin": "9.2",
+        "goldPerMin": "427",
+        "goldShare": "21.8%",
+        "killParticipation": "62.6%"
+      },
+      "earlyGame": {
+        "csDiff15": "+1.1",
+        "goldDiff15": "+162",
+        "xpDiff15": "+149",
+        "aheadInCs15": "48.2%",
+        "firstBloodParticipation": "22.8%",
+        "firstBloodVictim": "13.2%"
+      },
+      "aggression": {
+        "damagePerMin": "684.6",
+        "damageShare": "25.8%",
+        "kaPerMin": "0.29",
+        "soloKills": "37",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "1.49",
+        "wardsPerMin": "0.39",
+        "controlWardsPerMin": "0.18",
+        "wardsClearedPerMin": "0.34"
+      },
+      "champions": [
+        {
+          "name": "Ryze",
+          "slug": "ryze",
+          "games": 13,
+          "winrate": "61.5%",
+          "kda": "3.6"
+        },
+        {
+          "name": "Viktor",
+          "slug": "viktor",
+          "games": 11,
+          "winrate": "72.7%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Ahri",
+          "slug": "ahri",
+          "games": 10,
+          "winrate": "60%",
+          "kda": "4.4"
+        },
+        {
+          "name": "Akali",
+          "slug": "akali",
+          "games": 9,
+          "winrate": "77.8%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Sylas",
+          "slug": "sylas",
+          "games": 9,
+          "winrate": "66.7%",
+          "kda": "4.2"
+        },
+        {
+          "name": "Azir",
+          "slug": "azir",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "3.9"
+        },
+        {
+          "name": "Taliyah",
+          "slug": "taliyah",
+          "games": 6,
+          "winrate": "50%",
+          "kda": "3.3"
+        },
+        {
+          "name": "LeBlanc",
+          "slug": "leblanc",
+          "games": 5,
+          "winrate": "80%",
+          "kda": "3.5"
+        },
+        {
+          "name": "Annie",
+          "slug": "annie",
+          "games": 5,
+          "winrate": "80%",
+          "kda": "5.9"
+        },
+        {
+          "name": "Yone",
+          "slug": "yone",
+          "games": 5,
+          "winrate": "100%",
+          "kda": "8.0"
+        }
+      ]
+    },
+    "LYON-Berserker": {
+      "golggId": "3322",
+      "general": {
+        "record": "72W - 42L",
+        "winrate": "63.2%",
+        "kda": "5.2",
+        "csPerMin": "10.1",
+        "goldPerMin": "492",
+        "goldShare": "25.1%",
+        "killParticipation": "64.9%"
+      },
+      "earlyGame": {
+        "csDiff15": "+7.6",
+        "goldDiff15": "+440",
+        "xpDiff15": "+188",
+        "aheadInCs15": "68.4%",
+        "firstBloodParticipation": "24.6%",
+        "firstBloodVictim": "7.9%"
+      },
+      "aggression": {
+        "damagePerMin": "798.2",
+        "damageShare": "29.9%",
+        "kaPerMin": "0.3",
+        "soloKills": "17",
+        "pentakills": "1"
+      },
+      "vision": {
+        "visionScorePerMin": "1.17",
+        "wardsPerMin": "0.41",
+        "controlWardsPerMin": "0.11",
+        "wardsClearedPerMin": "0.28"
+      },
+      "champions": [
+        {
+          "name": "Yunara",
+          "slug": "yunara",
+          "games": 17,
+          "winrate": "70.6%",
+          "kda": "5.4"
+        },
+        {
+          "name": "Ezreal",
+          "slug": "ezreal",
+          "games": 15,
+          "winrate": "73.3%",
+          "kda": "9.4"
+        },
+        {
+          "name": "Lucian",
+          "slug": "lucian",
+          "games": 13,
+          "winrate": "69.2%",
+          "kda": "4.1"
+        },
+        {
+          "name": "Jhin",
+          "slug": "jhin",
+          "games": 8,
+          "winrate": "37.5%",
+          "kda": "5.4"
+        },
+        {
+          "name": "Varus",
+          "slug": "varus",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "8.3"
+        },
+        {
+          "name": "Caitlyn",
+          "slug": "caitlyn",
+          "games": 7,
+          "winrate": "85.7%",
+          "kda": "6.5"
+        },
+        {
+          "name": "Ashe",
+          "slug": "ashe",
+          "games": 7,
+          "winrate": "57.1%",
+          "kda": "3.7"
+        },
+        {
+          "name": "Corki",
+          "slug": "corki",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "5.2"
+        },
+        {
+          "name": "Sivir",
+          "slug": "sivir",
+          "games": 5,
+          "winrate": "40%",
+          "kda": "7.7"
+        },
+        {
+          "name": "Aphelios",
+          "slug": "aphelios",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "3.0"
+        }
+      ]
+    },
+    "LYON-Isles": {
+      "golggId": "2358",
+      "general": {
+        "record": "72W - 42L",
+        "winrate": "63.2%",
+        "kda": "4.5",
+        "csPerMin": "1",
+        "goldPerMin": "264",
+        "goldShare": "13.5%",
+        "killParticipation": "72%"
+      },
+      "earlyGame": {
+        "csDiff15": "-1.7",
+        "goldDiff15": "+29",
+        "xpDiff15": "+22",
+        "aheadInCs15": "39.5%",
+        "firstBloodParticipation": "28.9%",
+        "firstBloodVictim": "15.8%"
+      },
+      "aggression": {
+        "damagePerMin": "193.6",
+        "damageShare": "7.4%",
+        "kaPerMin": "0.33",
+        "soloKills": "2",
+        "pentakills": "0"
+      },
+      "vision": {
+        "visionScorePerMin": "4.16",
+        "wardsPerMin": "2.09",
+        "controlWardsPerMin": "0.6",
+        "wardsClearedPerMin": "0.42"
+      },
+      "champions": [
+        {
+          "name": "Lulu",
+          "slug": "lulu",
+          "games": 17,
+          "winrate": "70.6%",
+          "kda": "7.6"
+        },
+        {
+          "name": "Nautilus",
+          "slug": "nautilus",
+          "games": 12,
+          "winrate": "41.7%",
+          "kda": "3.2"
+        },
+        {
+          "name": "Milio",
+          "slug": "milio",
+          "games": 10,
+          "winrate": "70%",
+          "kda": "9.9"
+        },
+        {
+          "name": "Karma",
+          "slug": "karma",
+          "games": 8,
+          "winrate": "62.5%",
+          "kda": "5.4"
+        },
+        {
+          "name": "Bard",
+          "slug": "bard",
+          "games": 8,
+          "winrate": "75%",
+          "kda": "4.0"
+        },
+        {
+          "name": "Alistar",
+          "slug": "alistar",
+          "games": 7,
+          "winrate": "57.1%",
+          "kda": "4.5"
+        },
+        {
+          "name": "Neeko",
+          "slug": "neeko",
+          "games": 7,
+          "winrate": "71.4%",
+          "kda": "3.8"
+        },
+        {
+          "name": "Seraphine",
+          "slug": "seraphine",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "6.1"
+        },
+        {
+          "name": "Nami",
+          "slug": "nami",
+          "games": 6,
+          "winrate": "66.7%",
+          "kda": "4.8"
+        },
+        {
+          "name": "Poppy",
+          "slug": "poppy",
+          "games": 4,
+          "winrate": "50%",
+          "kda": "2.4"
+        }
+      ]
     }
   }
 }
