@@ -1,6 +1,6 @@
 {
  "source": "https://lol.fandom.com/ (Cargo : TournamentPlayers + TournamentResults)",
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "note": "Uniquement les finales : 1 = titre, 2 = finaliste.",
  "players": {
   "AL-Breathe": [
@@ -932,6 +932,248 @@
     ]
    }
   ],
+  "C9-Thanatos": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "26",
+      "t": "Lock-In",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "LCK CL",
+    "label": "LCK CL",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "22",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "C9-Blaber": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 2
+     },
+     {
+      "y": "19",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Lock In",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Championship",
+      "w": 1
+     },
+     {
+      "y": "23",
+      "t": "Championship",
+      "w": 2
+     },
+     {
+      "y": "23",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Lock-In",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "NACL",
+    "label": "NACL",
+    "lines": [
+     {
+      "y": "18",
+      "t": "Summer",
+      "w": 1
+     },
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "C9-Loki": [
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "C9-Tactical": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "21",
+      "t": "Championship",
+      "w": 2
+     },
+     {
+      "y": "21",
+      "t": "Lock In",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "NACL",
+    "label": "NACL",
+    "lines": [
+     {
+      "y": "19",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "C9-Vulcan": [
+   {
+    "code": "LCS",
+    "label": "LCS",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "21",
+      "t": "Lock In",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Lock In",
+      "w": 2
+     },
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 1
+     },
+     {
+      "y": "26",
+      "t": "Lock-In",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "LTA",
+    "label": "LTA",
+    "lines": [
+     {
+      "y": "25",
+      "t": "Split 1",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Split 2",
+      "w": 2
+     }
+    ]
+   }
+  ],
   "CFO-Rest": [
    {
     "code": "LCP",
@@ -1380,6 +1622,11 @@
     ]
    }
   ],
+  "FUR-Guigo": [],
+  "FUR-Tatu": [],
+  "FUR-Tutsz": [],
+  "FUR-Ayu": [],
+  "FUR-JoJo": [],
   "G2-BrokenBlade": [
    {
     "code": "LEC",
@@ -3578,6 +3825,79 @@
     ]
    }
   ],
+  "LOS-Zest": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "22",
+      "t": "Spring",
+      "w": 2
+     }
+    ]
+   },
+   {
+    "code": "TCL",
+    "label": "TCL",
+    "lines": [
+     {
+      "y": "24",
+      "t": "Summer",
+      "w": 2
+     },
+     {
+      "y": "25",
+      "t": "Summer",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "LOS-Curse": [],
+  "LOS-Feisty": [
+   {
+    "code": "LCK",
+    "label": "LCK",
+    "lines": [
+     {
+      "y": "23",
+      "t": "Summer",
+      "w": 1
+     }
+    ]
+   },
+   {
+    "code": "CUP",
+    "label": "KeSPA Cup",
+    "lines": [
+     {
+      "y": "21",
+      "t": "",
+      "w": 2
+     }
+    ]
+   }
+  ],
+  "LOS-Duduhh": [],
+  "LOS-Ackerman": [],
+  "LYON-Dhokla": [],
+  "LYON-Inspired": [],
+  "LYON-Saint": [
+   {
+    "code": "CK",
+    "label": "CK",
+    "lines": [
+     {
+      "y": "20",
+      "t": "Spring",
+      "w": 1
+     }
+    ]
+   }
+  ],
+  "LYON-Berserker": [],
+  "LYON-Isles": [],
   "MKOI-Myrwn": [
    {
     "code": "LEC",

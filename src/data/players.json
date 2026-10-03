@@ -1,7 +1,7 @@
 {
  "tournament": "Worlds 2026",
  "source": "https://lol.fandom.com/wiki/2026_Season_World_Championship",
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "note": "Equipes qualifiees a la date de collecte. La qualification n est pas terminee.",
  "teams": [
   {
@@ -123,6 +123,38 @@
    "league": "LPL",
    "logo": "teams/tes.webp",
    "color": "#ef483a"
+  },
+  {
+   "short": "C9",
+   "name": "Cloud9",
+   "region": "North America",
+   "league": "LCS",
+   "logo": "teams/c9.webp",
+   "color": "#01afef"
+  },
+  {
+   "short": "LYON",
+   "name": "LYON",
+   "region": "North America",
+   "league": "LCS",
+   "logo": "teams/lyon.webp",
+   "color": "#c6a278"
+  },
+  {
+   "short": "FUR",
+   "name": "FURIA",
+   "region": "Brazil",
+   "league": "CBLOL",
+   "logo": "teams/fur.webp",
+   "color": "#7c7c7c"
+  },
+  {
+   "short": "LOS",
+   "name": "LØS",
+   "region": "Brazil",
+   "league": "CBLOL",
+   "logo": "teams/los.webp",
+   "color": "#8b8b95"
   }
  ],
  "players": [
@@ -227,6 +259,56 @@
    "image": "players/blg-on.webp"
   },
   {
+   "id": "C9-Thanatos",
+   "name": "Thanatos",
+   "team": "C9",
+   "league": "LCS",
+   "region": "North America",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/c9-thanatos.webp"
+  },
+  {
+   "id": "C9-Blaber",
+   "name": "Blaber",
+   "team": "C9",
+   "league": "LCS",
+   "region": "North America",
+   "role": "jungle",
+   "country": "United States",
+   "image": "players/c9-blaber.webp"
+  },
+  {
+   "id": "C9-Loki",
+   "name": "Loki",
+   "team": "C9",
+   "league": "LCS",
+   "region": "North America",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/c9-loki.webp"
+  },
+  {
+   "id": "C9-Tactical",
+   "name": "Tactical",
+   "team": "C9",
+   "league": "LCS",
+   "region": "North America",
+   "role": "bot",
+   "country": "United States",
+   "image": "players/c9-tactical.webp"
+  },
+  {
+   "id": "C9-Vulcan",
+   "name": "Vulcan",
+   "team": "C9",
+   "league": "LCS",
+   "region": "North America",
+   "role": "support",
+   "country": "Canada",
+   "image": "players/c9-vulcan.webp"
+  },
+  {
    "id": "CFO-Rest",
    "name": "Rest",
    "team": "CFO",
@@ -325,6 +407,56 @@
    "role": "support",
    "country": "South Korea",
    "image": "players/dk-career.webp"
+  },
+  {
+   "id": "FUR-Guigo",
+   "name": "Guigo",
+   "team": "FUR",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "top",
+   "country": "Brazil",
+   "image": "players/fur-guigo.webp"
+  },
+  {
+   "id": "FUR-Tatu",
+   "name": "Tatu",
+   "team": "FUR",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "jungle",
+   "country": "Brazil",
+   "image": "players/fur-tatu.webp"
+  },
+  {
+   "id": "FUR-Tutsz",
+   "name": "Tutsz",
+   "team": "FUR",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "mid",
+   "country": "Brazil",
+   "image": "players/fur-tutsz.webp"
+  },
+  {
+   "id": "FUR-Ayu",
+   "name": "Ayu",
+   "team": "FUR",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "bot",
+   "country": "Brazil",
+   "image": "players/fur-ayu.webp"
+  },
+  {
+   "id": "FUR-JoJo",
+   "name": "JoJo",
+   "team": "FUR",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "support",
+   "country": "Brazil",
+   "image": "players/fur-jojo.webp"
   },
   {
    "id": "G2-BrokenBlade",
@@ -575,6 +707,106 @@
    "role": "support",
    "country": "United States",
    "image": "players/kc-busio.webp"
+  },
+  {
+   "id": "LOS-Zest",
+   "name": "Zest",
+   "team": "LOS",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "top",
+   "country": "South Korea",
+   "image": "players/los-zest.webp"
+  },
+  {
+   "id": "LOS-Curse",
+   "name": "Curse",
+   "team": "LOS",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "jungle",
+   "country": "Brazil",
+   "image": "players/los-curse.webp"
+  },
+  {
+   "id": "LOS-Feisty",
+   "name": "Feisty",
+   "team": "LOS",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/los-feisty.webp"
+  },
+  {
+   "id": "LOS-Duduhh",
+   "name": "Duduhh",
+   "team": "LOS",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "bot",
+   "country": "Brazil",
+   "image": "players/los-duduhh.webp"
+  },
+  {
+   "id": "LOS-Ackerman",
+   "name": "Ackerman",
+   "team": "LOS",
+   "league": "CBLOL",
+   "region": "Brazil",
+   "role": "support",
+   "country": "Argentina",
+   "image": "players/los-ackerman.webp"
+  },
+  {
+   "id": "LYON-Dhokla",
+   "name": "Dhokla",
+   "team": "LYON",
+   "league": "LCS",
+   "region": "North America",
+   "role": "top",
+   "country": "India",
+   "image": "players/lyon-dhokla.webp"
+  },
+  {
+   "id": "LYON-Inspired",
+   "name": "Inspired",
+   "team": "LYON",
+   "league": "LCS",
+   "region": "North America",
+   "role": "jungle",
+   "country": "Poland",
+   "image": "players/lyon-inspired.webp"
+  },
+  {
+   "id": "LYON-Saint",
+   "name": "Saint",
+   "team": "LYON",
+   "league": "LCS",
+   "region": "North America",
+   "role": "mid",
+   "country": "South Korea",
+   "image": "players/lyon-saint.webp"
+  },
+  {
+   "id": "LYON-Berserker",
+   "name": "Berserker",
+   "team": "LYON",
+   "league": "LCS",
+   "region": "North America",
+   "role": "bot",
+   "country": "South Korea",
+   "image": "players/lyon-berserker.webp"
+  },
+  {
+   "id": "LYON-Isles",
+   "name": "Isles",
+   "team": "LYON",
+   "league": "LCS",
+   "region": "North America",
+   "role": "support",
+   "country": "Australia",
+   "image": "players/lyon-isles.webp"
   },
   {
    "id": "MKOI-Myrwn",
