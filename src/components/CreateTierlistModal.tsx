@@ -88,7 +88,7 @@ export function CreateTierlistModal({ open, onClose, onCreate }: Props) {
                 onClick={() => setMode('grades')}
               >
                 <strong>Notation</strong>
-                <span>Noter équipe par équipe, avec tableau récapitulatif</span>
+                <span>Noter équipe par équipe, puis exporter le tableau</span>
               </button>
               <button
                 type="button"
